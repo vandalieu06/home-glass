@@ -1,0 +1,456 @@
+/* Home Glass - Selector de Packs de Reforma */
+/* Sistema Step-by-Step */
+
+:root {
+    --hg-primary: #2c3e50;
+    --hg-secondary: #95a5a6;
+    --hg-accent: #3498db;
+    --hg-success: #27ae60;
+    --hg-error: #e74c3c;
+    --hg-bg-light: #f8f9fa;
+    --hg-border: #e0e0e0;
+    --hg-text: #333;
+    --hg-text-muted: #666;
+    --hg-white: #fff;
+    --hg-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --hg-radius: 8px;
+}
+
+/* ============================================
+   LAYOUT PRINCIPAL
+   ============================================ */
+.hg-selector {
+    display: flex;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.hg-stepper {
+    width: 280px;
+    flex-shrink: 0;
+    background: var(--hg-white);
+    border-right: 1px solid var(--hg-border);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.hg-content {
+    flex-grow: 1;
+    padding: 30px;
+    background: var(--hg-bg-light);
+    overflow-y: auto;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .hg-selector {
+        flex-direction: column;
+    }
+
+    .hg-stepper {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--hg-border);
+        padding: 15px;
+    }
+
+    .hg-content {
+        padding: 20px;
+    }
+}
+
+/* ============================================
+   STEPPER
+   ============================================ */
+.hg-stepper-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: var(--hg-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.hg-stepper-item:hover:not(.disabled) {
+    background: var(--hg-bg-light);
+}
+
+.hg-stepper-item.active {
+    background: var(--hg-accent);
+    color: var(--hg-white);
+}
+
+.hg-stepper-item.completed {
+    background: var(--hg-success);
+    color: var(--hg-white);
+}
+
+.hg-stepper-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.hg-stepper-number {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--hg-border);
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.hg-stepper-item.active .hg-stepper-number,
+.hg-stepper-item.completed .hg-stepper-number {
+    background: rgba(255,255,255,0.3);
+}
+
+.hg-stepper-name {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ============================================
+   PRODUCTO
+   ============================================ */
+.hg-product-step {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hg-product-header {
+    margin-bottom: 25px;
+}
+
+.hg-product-header h2 {
+    margin: 0 0 8px 0;
+    color: var(--hg-primary);
+}
+
+.hg-product-card {
+    display: flex;
+    background: var(--hg-white);
+    border-radius: var(--hg-radius);
+    box-shadow: var(--hg-shadow);
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.hg-product-image {
+    width: 200px;
+    flex-shrink: 0;
+    background: var(--hg-bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hg-product-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hg-product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hg-product-info h3 {
+    margin: 0 0 10px 0;
+    color: var(--hg-primary);
+}
+
+.hg-product-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--hg-accent);
+    margin: 0;
+}
+
+@media (max-width: 576px) {
+    .hg-product-card {
+        flex-direction: column;
+    }
+
+    .hg-product-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* ============================================
+   ATRIBUTOS / VARIANTES
+   ============================================ */
+.hg-attributes {
+    background: var(--hg-white);
+    border-radius: var(--hg-radius);
+    padding: 20px;
+    box-shadow: var(--hg-shadow);
+    margin-bottom: 25px;
+}
+
+.hg-attribute {
+    margin-bottom: 20px;
+}
+
+.hg-attribute:last-child {
+    margin-bottom: 0;
+}
+
+.hg-attribute-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--hg-text);
+}
+
+.hg-attribute-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--hg-border);
+    border-radius: var(--hg-radius);
+    font-size: 15px;
+    background: var(--hg-white);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.hg-attribute-select:focus {
+    outline: none;
+    border-color: var(--hg-accent);
+}
+
+.hg-no-variants {
+    text-align: center;
+    padding: 20px;
+    color: var(--hg-text-muted);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.hg-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.hg-btn {
+    padding: 12px 24px;
+    border-radius: var(--hg-radius);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hg-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--hg-shadow);
+}
+
+.hg-btn:active {
+    transform: translateY(0);
+}
+
+.hg-btn-primary {
+    background: var(--hg-accent);
+    color: var(--hg-white);
+}
+
+.hg-btn-primary:hover {
+    background: #2980b9;
+}
+
+.hg-btn-secondary {
+    background: var(--hg-secondary);
+    color: var(--hg-white);
+}
+
+.hg-btn-secondary:hover {
+    background: #7f8c8d;
+}
+
+.hg-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================
+   RESUMEN
+   ============================================ */
+.hg-summary {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hg-summary h2 {
+    margin: 0 0 8px 0;
+    color: var(--hg-primary);
+}
+
+.hg-summary-table {
+    background: var(--hg-white);
+    border-radius: var(--hg-radius);
+    box-shadow: var(--hg-shadow);
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.hg-summary-table table {
+    width: 100%;
+    margin: 0;
+}
+
+.hg-summary-table th,
+.hg-summary-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--hg-border);
+}
+
+.hg-summary-table th {
+    background: var(--hg-bg-light);
+    font-weight: 600;
+    color: var(--hg-primary);
+}
+
+.hg-summary-table tfoot td {
+    background: var(--hg-bg-light);
+    font-size: 18px;
+}
+
+.hg-summary-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* ============================================
+   CONTACTO
+   ============================================ */
+.hg-contact {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hg-contact h2 {
+    margin: 0 0 8px 0;
+    color: var(--hg-primary);
+}
+
+.hg-contact-form {
+    background: var(--hg-white);
+    border-radius: var(--hg-radius);
+    padding: 25px;
+    box-shadow: var(--hg-shadow);
+}
+
+.hg-form-group {
+    margin-bottom: 20px;
+}
+
+.hg-form-group:last-of-type {
+    margin-bottom: 0;
+}
+
+.hg-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--hg-text);
+}
+
+.hg-form-group input,
+.hg-form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--hg-border);
+    border-radius: var(--hg-radius);
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.hg-form-group input:focus,
+.hg-form-group textarea:focus {
+    outline: none;
+    border-color: var(--hg-accent);
+}
+
+.hg-form-group textarea {
+    resize: vertical;
+}
+
+/* ============================================
+   ÉXITO
+   ============================================ */
+.hg-success {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hg-success-icon {
+    font-size: 64px;
+    color: var(--hg-success);
+    margin-bottom: 20px;
+}
+
+.hg-success h2 {
+    margin: 0 0 10px 0;
+    color: var(--hg-primary);
+}
+
+.hg-lead-id {
+    font-size: 18px;
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--hg-bg-light);
+    border-radius: var(--hg-radius);
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+.hg-loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--hg-text-muted);
+}
+
+.hg-loading i {
+    margin-right: 8px;
+}
+
+/* ============================================
+   ERRORES
+   ============================================ */
+.hg-error {
+    color: var(--hg-error);
+    font-size: 14px;
+    margin-top: 5px;
+}

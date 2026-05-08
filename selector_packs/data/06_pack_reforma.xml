@@ -1,0 +1,212 @@
+<odoo>
+    <data>
+        <!-- ========== PACKS DE REFORMA ========== -->
+
+        <!-- Reforma BASIC -->
+        <record id="pack_reforma_basic" model="product.template">
+            <field name="name">Reforma BASIC</field>
+            <field name="type">service</field>
+            <field name="is_pack">True</field>
+            <field name="list_price">0.00</field>
+            <field name="description_sale">Cambio de bañera por plato de ducha - Modelo básico</field>
+        </record>
+        <record id="pack_reforma_basic_line_1" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic"/>
+            <field name="base_product_id" ref="plato_nature"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_basic_line_2" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic"/>
+            <field name="base_product_id" ref="azulejo_30x60_brillo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_basic_line_3" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic"/>
+            <field name="base_product_id" ref="mampara_a20"/>
+            <field name="quantity">1</field>
+        </record>
+
+        <!-- Reforma BASIC PLUS -->
+        <record id="pack_reforma_basic_plus" model="product.template">
+            <field name="name">Reforma BASIC PLUS</field>
+            <field name="type">service</field>
+            <field name="is_pack">True</field>
+            <field name="list_price">0.00</field>
+            <field name="description_sale">Cambio de bañera por plato de ducha con grifo</field>
+        </record>
+        <record id="pack_reforma_basic_plus_line_1" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic_plus"/>
+            <field name="base_product_id" ref="plato_nature"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_basic_plus_line_2" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic_plus"/>
+            <field name="base_product_id" ref="azulejo_30x60_brillo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_basic_plus_line_3" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic_plus"/>
+            <field name="base_product_id" ref="mampara_a20"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_basic_plus_line_4" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic_plus"/>
+            <field name="base_product_id" ref="grifo_star"/>
+            <field name="quantity">1</field>
+        </record>
+
+        <!-- Reforma Integral BASIC -->
+        <record id="pack_reforma_integral_basic" model="product.template">
+            <field name="name">Reforma Integral BASIC</field>
+            <field name="type">service</field>
+            <field name="is_pack">True</field>
+            <field name="list_price">0.00</field>
+            <field name="description_sale">Reforma de baño integral hasta 5m2</field>
+        </record>
+        <record id="pack_reforma_integral_basic_line_1" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
+            <field name="base_product_id" ref="plato_nature"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_basic_line_2" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
+            <field name="base_product_id" ref="grifo_kappa"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_basic_line_3" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
+            <field name="base_product_id" ref="mampara_a40"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_basic_line_4" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
+            <field name="base_product_id" ref="mueble_sansa_80"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_basic_line_5" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
+            <field name="base_product_id" ref="inodoro_sanitario"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_basic_line_6" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
+            <field name="base_product_id" ref="azulejo_30x60_brillo"/>
+            <field name="quantity">1</field>
+        </record>
+
+        <!-- Reforma Integral PREMIUM -->
+        <record id="pack_reforma_integral_premium" model="product.template">
+            <field name="name">Reforma Integral PREMIUM</field>
+            <field name="type">service</field>
+            <field name="is_pack">True</field>
+            <field name="list_price">0.00</field>
+            <field name="description_sale">Reforma integral con todos los materiales a elegir</field>
+        </record>
+        <!-- Platos de ducha -->
+        <record id="pack_reforma_integral_premium_line_1" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="plato_nature"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_2" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="plato_hermes"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_3" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="plato_marco"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_4" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="plato_premium"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_5" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="plato_neo"/>
+            <field name="quantity">1</field>
+        </record>
+        <!-- Mamparas -->
+        <record id="pack_reforma_integral_premium_line_6" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mampara_a20"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_7" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mampara_a40"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_8" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mampara_a25"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_9" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mampara_a90"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_10" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mampara_b20"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_11" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mampara_b40"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_12" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mampara_b90"/>
+            <field name="quantity">1</field>
+        </record>
+        <!-- Grifos -->
+        <record id="pack_reforma_integral_premium_line_13" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="grifo_star"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_14" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="grifo_kappa"/>
+            <field name="quantity">1</field>
+        </record>
+        <!-- Azulejos -->
+        <record id="pack_reforma_integral_premium_line_15" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="azulejo_30x60_brillo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_16" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="azulejo_30x60_mate"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_17" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="revestimiento_30x90_brillo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_18" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="revestimiento_30x90_mate"/>
+            <field name="quantity">1</field>
+        </record>
+        <!-- Muebles -->
+        <record id="pack_reforma_integral_premium_line_19" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_sansa_80"/>
+            <field name="quantity">1</field>
+        </record>
+        <!-- Sanitarios -->
+        <record id="pack_reforma_integral_premium_line_20" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="inodoro_sanitario"/>
+            <field name="quantity">1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,7 +1,7 @@
 {
     'name': 'Home Glass Selector Packs',
     'version': '1.0',
-    'depends': ['base', 'web', 'website', 'product', 'product_combo_pack'],
+    'depends': ['base', 'web', 'website', 'product', 'product_combo_pack', 'crm'],
     'author': 'GSATEK',
     'category': 'Customizations',
     'description': """
@@ -9,8 +9,18 @@
     """,
     'license': 'GPL-3',
     'data': [
-        'data/product.attribute.xml',
-        'data/product.template.xml',
-        'data/pack_reforma.xml',
+        'data/01_atributos.xml',
+        'data/02_mamparas.xml',
+        'data/03_platos_ducha.xml',
+        'data/04_muebles_bano_fase1.xml',
+        'data/05_productos_simples.xml',
+        'data/06_pack_reforma.xml',
+        'views/templates.xml',
     ],
+    'assets': {
+        'web.assets_frontend': [
+            'selector_packs/static/src/css/selector.css',
+            'selector_packs/static/src/js/selector.js',
+        ],
+    },
 }

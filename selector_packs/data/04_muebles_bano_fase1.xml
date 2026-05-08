@@ -1,0 +1,718 @@
+<odoo>
+    <data noupdate="1">
+        <!-- ========== MUEBLES DE BAÑO - FASE 5 (Primeros 15) ========== -->
+
+        <!-- 0003: Vora lavabo integrado Enzo -->
+        <record id="mueble_vora_enzo" model="product.template">
+            <field name="name">Mueble Vora lavabo integrado Enzo</field>
+            <field name="type">product</field>
+            <field name="list_price">380.00</field>
+            <field name="description">Mueble de baño Vora con lavabo integrado Enzo</field>
+        </record>
+        <record id="mueble_vora_enzo_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_enzo"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_hickory_nature'), ref('attr_acabado_nogal'), ref('attr_acabado_notte'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_verde_mineral'), ref('attr_acabado_arena_mate'), ref('attr_acabado_habana_mate')])]"/>
+        </record>
+        <record id="mueble_vora_enzo_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_enzo"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_1c'), ref('attr_modelo_mueble_set_80_1c'), ref('attr_modelo_mueble_set_100_1c'), ref('attr_modelo_mueble_set_120_2c'), ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_vora_enzo_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_enzo"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0004: Vora lavabo integrado Cairo -->
+        <record id="mueble_vora_cairo" model="product.template">
+            <field name="name">Mueble Vora lavabo integrado Cairo</field>
+            <field name="type">product</field>
+            <field name="list_price">400.00</field>
+            <field name="description">Mueble de baño Vora con lavabo integrado Cairo</field>
+        </record>
+        <record id="mueble_vora_cairo_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_cairo"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_nogal'), ref('attr_acabado_notte'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_verde_mineral'), ref('attr_acabado_arena_mate'), ref('attr_acabado_habana_mate')])]"/>
+        </record>
+        <record id="mueble_vora_cairo_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_cairo"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_1c'), ref('attr_modelo_mueble_set_80_1c'), ref('attr_modelo_mueble_set_100_1c'), ref('attr_modelo_mueble_set_120_2c'), ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_vora_cairo_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_cairo"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0007: Win lavabo integrado -->
+        <record id="mueble_win" model="product.template">
+            <field name="name">Mueble Win lavabo integrado</field>
+            <field name="type">product</field>
+            <field name="list_price">302.00</field>
+            <field name="description">Mueble de baño Win con lavabo integrado</field>
+        </record>
+        <record id="mueble_win_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_win"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_hickory_nature'), ref('attr_acabado_nogal'), ref('attr_acabado_notte'), ref('attr_acabado_blanco_mate')])]"/>
+        </record>
+        <record id="mueble_win_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_win"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_70_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_90_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_win_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_win"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0005: Vora lavabo sobre encimera -->
+        <record id="mueble_vora_encimera" model="product.template">
+            <field name="name">Mueble Vora lavabo sobre encimera</field>
+            <field name="type">product</field>
+            <field name="list_price">348.00</field>
+            <field name="description">Mueble de baño Vora con lavabo sobre encimera</field>
+        </record>
+        <record id="mueble_vora_encimera_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_encimera"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_hickory_nature'), ref('attr_acabado_nogal'), ref('attr_acabado_notte'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_verde_mineral'), ref('attr_acabado_arena_mate'), ref('attr_acabado_habana_mate')])]"/>
+        </record>
+        <record id="mueble_vora_encimera_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_encimera"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_1c'), ref('attr_modelo_mueble_set_80_1c'), ref('attr_modelo_mueble_set_100_1c'), ref('attr_modelo_mueble_set_120_2c'), ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_vora_encimera_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vora_encimera"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0008: Win 1C2P -->
+        <record id="mueble_win_1c2p" model="product.template">
+            <field name="name">Mueble Win 1C2P</field>
+            <field name="type">product</field>
+            <field name="list_price">389.00</field>
+            <field name="description">Mueble de baño Win 1C2P con lavabo integrado</field>
+        </record>
+        <record id="mueble_win_1c2p_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_win_1c2p"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_roble_vulcano'), ref('attr_acabado_roble_colonial'), ref('attr_acabado_nogal_artico'), ref('attr_acabado_blanco_pure')])]"/>
+        </record>
+        <record id="mueble_win_1c2p_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_win_1c2p"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_1c2p'), ref('attr_modelo_mueble_set_70_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_win_1c2p_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_win_1c2p"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+
+        <!-- 0009: Logika lavabo integrado -->
+        <record id="mueble_logika" model="product.template">
+            <field name="name">Mueble Logika lavabo integrado</field>
+            <field name="type">product</field>
+            <field name="list_price">390.00</field>
+            <field name="description">Mueble de baño Logika con lavabo integrado</field>
+        </record>
+        <record id="mueble_logika_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_logika"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_brillo'), ref('attr_acabado_roble_nordico'), ref('attr_acabado_fresno_samara'), ref('attr_acabado_arena_mate')])]"/>
+        </record>
+        <record id="mueble_logika_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_logika"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_90_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_2c')])]"/>
+        </record>
+        <record id="mueble_logika_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_logika"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0010: Logika lavabo sobre encimera -->
+        <record id="mueble_logika_encimera" model="product.template">
+            <field name="name">Mueble Logika lavabo sobre encimera</field>
+            <field name="type">product</field>
+            <field name="list_price">415.00</field>
+            <field name="description">Mueble de baño Logika con lavabo sobre encimera</field>
+        </record>
+        <record id="mueble_logika_encimera_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_logika_encimera"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_brillo'), ref('attr_acabado_roble_nordico'), ref('attr_acabado_fresno_samara'), ref('attr_acabado_arena_mate')])]"/>
+        </record>
+        <record id="mueble_logika_encimera_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_logika_encimera"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_logika_encimera_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_logika_encimera"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0011: Econic lavabo integrado -->
+        <record id="mueble_econic" model="product.template">
+            <field name="name">Mueble Econic lavabo integrado</field>
+            <field name="type">product</field>
+            <field name="list_price">495.00</field>
+            <field name="description">Mueble de baño Econic con lavabo integrado</field>
+        </record>
+        <record id="mueble_econic_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_econic"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_azul_navy_mate'), ref('attr_acabado_antracita_brillo'), ref('attr_acabado_negro_mate'), ref('attr_acabado_roble_eternity'), ref('attr_acabado_verde_pure')])]"/>
+        </record>
+        <record id="mueble_econic_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_econic"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_econic_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_econic"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0012: Econic lavabo sobre encimera -->
+        <record id="mueble_econic_encimera" model="product.template">
+            <field name="name">Mueble Econic lavabo sobre encimera</field>
+            <field name="type">product</field>
+            <field name="list_price">495.00</field>
+            <field name="description">Mueble de baño Econic con lavabo sobre encimera</field>
+        </record>
+        <record id="mueble_econic_encimera_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_econic_encimera"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_azul_navy_mate'), ref('attr_acabado_antracita_brillo'), ref('attr_acabado_negro_mate'), ref('attr_acabado_roble_eternity'), ref('attr_acabado_verde_pure')])]"/>
+        </record>
+        <record id="mueble_econic_encimera_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_econic_encimera"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_econic_encimera_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_econic_encimera"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0013: Vitale suspendido Enzo -->
+        <record id="mueble_vitale_enzo" model="product.template">
+            <field name="name">Mueble Vitale suspendido Enzo</field>
+            <field name="type">product</field>
+            <field name="list_price">411.00</field>
+            <field name="description">Mueble de baño Vitale suspendido con lavabo Enzo</field>
+        </record>
+        <record id="mueble_vitale_enzo_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_enzo"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_nature'), ref('attr_acabado_beige_nature'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_azul_mate'), ref('attr_acabado_camel'), ref('attr_acabado_gris_mate'), ref('attr_acabado_verde_mate')])]"/>
+        </record>
+        <record id="mueble_vitale_enzo_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_enzo"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_vitale_enzo_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_enzo"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0014: Vitale suspendido Cairo -->
+        <record id="mueble_vitale_cairo" model="product.template">
+            <field name="name">Mueble Vitale suspendido Cairo</field>
+            <field name="type">product</field>
+            <field name="list_price">431.00</field>
+            <field name="description">Mueble de baño Vitale suspendido con lavabo Cairo</field>
+        </record>
+        <record id="mueble_vitale_cairo_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_cairo"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_nature'), ref('attr_acabado_beige_nature'), ref('attr_acabado_hickory_nature'), ref('attr_acabado_verde_mineral'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_azul_navy_mate')])]"/>
+        </record>
+        <record id="mueble_vitale_cairo_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_cairo"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_vitale_cairo_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_cairo"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0015: Vitale a suelo -->
+        <record id="mueble_vitale_suelo" model="product.template">
+            <field name="name">Mueble Vitale a suelo</field>
+            <field name="type">product</field>
+            <field name="list_price">477.00</field>
+            <field name="description">Mueble de baño Vitale a suelo</field>
+        </record>
+        <record id="mueble_vitale_suelo_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_suelo"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_nature'), ref('attr_acabado_beige_nature'), ref('attr_acabado_hickory_nature'), ref('attr_acabado_verde_mineral'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_azul_navy_mate')])]"/>
+        </record>
+        <record id="mueble_vitale_suelo_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_suelo"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_3c'), ref('attr_modelo_mueble_set_80_3c'), ref('attr_modelo_mueble_set_100_3c'), ref('attr_modelo_mueble_set_120_6c')])]"/>
+        </record>
+        <record id="mueble_vitale_suelo_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_suelo"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0017: Alfa Compact -->
+        <record id="mueble_alfa" model="product.template">
+            <field name="name">Mueble Alfa Compact</field>
+            <field name="type">product</field>
+            <field name="list_price">483.00</field>
+            <field name="description">Mueble de baño Alfa Compact con lavabo integrado</field>
+        </record>
+        <record id="mueble_alfa_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_alfa"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_nature'), ref('attr_acabado_beige_nature'), ref('attr_acabado_hickory_nature'), ref('attr_acabado_verde_mineral'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_roble_nordico'), ref('attr_acabado_fresno_samara')])]"/>
+        </record>
+        <record id="mueble_alfa_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_alfa"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_90_2c')])]"/>
+        </record>
+        <record id="mueble_alfa_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_alfa"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0019: Dai lavabo integrado -->
+        <record id="mueble_dai" model="product.template">
+            <field name="name">Mueble Dai lavabo integrado</field>
+            <field name="type">product</field>
+            <field name="list_price">478.00</field>
+            <field name="description">Mueble de baño Dai con lavabo integrado</field>
+        </record>
+        <record id="mueble_dai_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_dai"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_roble_nordico'), ref('attr_acabado_fresno_samara'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_brillo')])]"/>
+        </record>
+        <record id="mueble_dai_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_dai"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_dai_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_dai"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0021: Urban suspendido -->
+        <record id="mueble_urban" model="product.template">
+            <field name="name">Mueble Urban suspendido</field>
+            <field name="type">product</field>
+            <field name="list_price">483.00</field>
+            <field name="description">Mueble de baño Urban suspendido con lavabo integrado</field>
+        </record>
+        <record id="mueble_urban_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_urban"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_roble_nordico'), ref('attr_acabado_fresno_samara'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_nature'), ref('attr_acabado_gris_nature'), ref('attr_acabado_blanco_mate')])]"/>
+        </record>
+        <record id="mueble_urban_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_urban"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_urban_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_urban"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0023: Sansa suspendido -->
+        <record id="mueble_sansa" model="product.template">
+            <field name="name">Mueble Sansa suspendido</field>
+            <field name="type">product</field>
+            <field name="list_price">302.00</field>
+            <field name="description">Mueble de baño Sansa suspendido con lavabo integrado</field>
+        </record>
+        <record id="mueble_sansa_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_brillo'), ref('attr_acabado_arena_mate'), ref('attr_acabado_gris_mate'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_gris_arenado'), ref('attr_acabado_roble_colonial')])]"/>
+        </record>
+        <record id="mueble_sansa_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_70_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c'), ref('attr_modelo_mueble_set_60_2p'), ref('attr_modelo_mueble_set_70_2p'), ref('attr_modelo_mueble_set_80_2p'), ref('attr_modelo_mueble_set_120_4p')])]"/>
+        </record>
+        <record id="mueble_sansa_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0027: Niwa suspendido -->
+        <record id="mueble_niwa" model="product.template">
+            <field name="name">Mueble Niwa suspendido</field>
+            <field name="type">product</field>
+            <field name="list_price">238.00</field>
+            <field name="description">Mueble de baño Niwa suspendido con lavabo integrado</field>
+        </record>
+        <record id="mueble_niwa_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_niwa"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_nature'), ref('attr_acabado_gris_nature'), ref('attr_acabado_blanco_brillo')])]"/>
+        </record>
+        <record id="mueble_niwa_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_niwa"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_1c1h'), ref('attr_modelo_mueble_set_80_1c1h')])]"/>
+        </record>
+        <record id="mueble_niwa_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_niwa"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+
+        <!-- 0028: Mio Compact -->
+        <record id="mueble_mio" model="product.template">
+            <field name="name">Mueble Mio Compact</field>
+            <field name="type">product</field>
+            <field name="list_price">475.00</field>
+            <field name="description">Mueble de baño Mio Compact con lavabo integrado</field>
+        </record>
+        <record id="mueble_mio_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_mio"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_roble_blanco'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_mate')])]"/>
+        </record>
+        <record id="mueble_mio_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_mio"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_mio_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_mio"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0029: Vida Compact -->
+        <record id="mueble_vida" model="product.template">
+            <field name="name">Mueble Vida Compact</field>
+            <field name="type">product</field>
+            <field name="list_price">418.00</field>
+            <field name="description">Mueble de baño Vida Compact con lavabo integrado</field>
+        </record>
+        <record id="mueble_vida_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vida"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_roble_eternity'), ref('attr_acabado_verde_pure'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_azul_navy_mate'), ref('attr_acabado_antracita_brillo'), ref('attr_acabado_negro_mate')])]"/>
+        </record>
+        <record id="mueble_vida_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vida"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_vida_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vida"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0030: Wave Compact -->
+        <record id="mueble_wave" model="product.template">
+            <field name="name">Mueble Wave Compact</field>
+            <field name="type">product</field>
+            <field name="list_price">596.00</field>
+            <field name="description">Mueble de baño Wave Compact curvo</field>
+        </record>
+        <record id="mueble_wave_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_wave"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_nature'), ref('attr_acabado_beige_nature'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_mate')])]"/>
+        </record>
+        <record id="mueble_wave_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_wave"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_80_1c'), ref('attr_modelo_mueble_set_100_1c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_wave_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_wave"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0033: Street pack -->
+        <record id="mueble_street" model="product.template">
+            <field name="name">Mueble Street Pack</field>
+            <field name="type">product</field>
+            <field name="list_price">263.00</field>
+            <field name="description">Pack completo Street: Mueble + lavabo + espejo</field>
+        </record>
+        <record id="mueble_street_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_street"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_roble_colonial'), ref('attr_acabado_roble_vulcano'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_antracita_brillo')])]"/>
+        </record>
+        <record id="mueble_street_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_street"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_50_2p'), ref('attr_modelo_mueble_set_50_2c')])]"/>
+        </record>
+        <record id="mueble_street_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_street"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo')])]"/>
+        </record>
+
+        <!-- 0033: Enjoy pack -->
+        <record id="mueble_enjoy" model="product.template">
+            <field name="name">Mueble Enjoy Pack</field>
+            <field name="type">product</field>
+            <field name="list_price">254.00</field>
+            <field name="description">Pack completo Enjoy: Mueble + lavabo + espejo</field>
+        </record>
+        <record id="mueble_enjoy_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_enjoy"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_roble_nordico'), ref('attr_acabado_fresno_samara'), ref('attr_acabado_blanco_brillo')])]"/>
+        </record>
+        <record id="mueble_enjoy_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_enjoy"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_45_1p')])]"/>
+        </record>
+        <record id="mueble_enjoy_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_enjoy"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo')])]"/>
+        </record>
+
+<!-- 0034: Elegance pack -->
+        <record id="mueble_elegance" model="product.template">
+            <field name="name">Mueble Elegance Pack</field>
+            <field name="type">product</field>
+            <field name="list_price">274.00</field>
+            <field name="description">Pack completo Elegance: Mueble + lavabo + espejo</field>
+        </record>
+        <record id="mueble_elegance_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_elegance"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_galet_brillo'), ref('attr_acabado_antracita_brillo')])]"/>
+        </record>
+        <record id="mueble_elegance_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_elegance"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_45_1p')])]"/>
+        </record>
+        <record id="mueble_elegance_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_elegance"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo')])]"/>
+        </record>
+
+        <!-- 0016: Vitale profundidad reducida -->
+        <record id="mueble_vitale_reducido" model="product.template">
+            <field name="name">Mueble Vitale profundidad reducida</field>
+            <field name="type">product</field>
+            <field name="list_price">411.00</field>
+            <field name="description">Mueble de baño Vitale profundidad reducida (fondo 39)</field>
+        </record>
+        <record id="mueble_vitale_reducido_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_reducido"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_nature'), ref('attr_acabado_beige_nature'), ref('attr_acabado_hickory_nature'), ref('attr_acabado_verde_mineral'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_blanco_mate'), ref('attr_acabado_azul_navy_mate')])]"/>
+        </record>
+        <record id="mueble_vitale_reducido_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_reducido"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_60_3c'), ref('attr_modelo_mueble_set_80_3c')])]"/>
+        </record>
+        <record id="mueble_vitale_reducido_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_vitale_reducido"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+
+        <!-- 0019: Dai lavabo sobre encimera -->
+        <record id="mueble_dai_encimera" model="product.template">
+            <field name="name">Mueble Dai lavabo sobre encimera</field>
+            <field name="type">product</field>
+            <field name="list_price">406.00</field>
+            <field name="description">Mueble de baño Dai con lavabo sobre encimera</field>
+        </record>
+        <record id="mueble_dai_encimera_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_dai_encimera"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_roble_nordico'), ref('attr_acabado_fresno_samara'), ref('attr_acabado_arena_mate'), ref('attr_acabado_blanco_brillo')])]"/>
+        </record>
+        <record id="mueble_dai_encimera_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_dai_encimera"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c')])]"/>
+        </record>
+        <record id="mueble_dai_encimera_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_dai_encimera"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0022: Urban a suelo -->
+        <record id="mueble_urban_suelo" model="product.template">
+            <field name="name">Mueble Urban a suelo</field>
+            <field name="type">product</field>
+            <field name="list_price">561.00</field>
+            <field name="description">Mueble de baño Urban a suelo</field>
+        </record>
+        <record id="mueble_urban_suelo_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_urban_suelo"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_blanco_nature'), ref('attr_acabado_beige_nature'), ref('attr_acabado_gris_nature'), ref('attr_acabado_blanco_mate')])]"/>
+        </record>
+        <record id="mueble_urban_suelo_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_urban_suelo"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_3c'), ref('attr_modelo_mueble_set_80_3c'), ref('attr_modelo_mueble_set_100_3c'), ref('attr_modelo_mueble_set_120_6c')])]"/>
+        </record>
+        <record id="mueble_urban_suelo_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_urban_suelo"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+
+        <!-- 0024: Sansa sobre encimera -->
+        <record id="mueble_sansa_encimera" model="product.template">
+            <field name="name">Mueble Sansa lavabo sobre encimera</field>
+            <field name="type">product</field>
+            <field name="list_price">278.00</field>
+            <field name="description">Mueble de baño Sansa con lavabo sobre encimera</field>
+        </record>
+        <record id="mueble_sansa_encimera_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_encimera"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_roble_colonial'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_blanco_brillo')])]"/>
+        </record>
+        <record id="mueble_sansa_encimera_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_encimera"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c'), ref('attr_modelo_mueble_set_100_2c'), ref('attr_modelo_mueble_set_120_4c')])]"/>
+        </record>
+        <record id="mueble_sansa_encimera_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_encimera"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+
+        <!-- 0025: Sansa a suelo -->
+        <record id="mueble_sansa_suelo" model="product.template">
+            <field name="name">Mueble Sansa a suelo</field>
+            <field name="type">product</field>
+            <field name="list_price">365.00</field>
+            <field name="description">Mueble de baño Sansa a suelo</field>
+        </record>
+        <record id="mueble_sansa_suelo_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_suelo"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_roble_colonial'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_blanco_brillo')])]"/>
+        </record>
+        <record id="mueble_sansa_suelo_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_suelo"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_3c'), ref('attr_modelo_mueble_set_80_3c'), ref('attr_modelo_mueble_set_100_3c'), ref('attr_modelo_mueble_set_120_6c')])]"/>
+        </record>
+        <record id="mueble_sansa_suelo_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_suelo"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+
+        <!-- 0026: Sansa profundidad reducida -->
+        <record id="mueble_sansa_reducido" model="product.template">
+            <field name="name">Mueble Sansa profundidad reducida</field>
+            <field name="type">product</field>
+            <field name="list_price">302.00</field>
+            <field name="description">Mueble de baño Sansa profundidad reducida (fondo 39)</field>
+        </record>
+        <record id="mueble_sansa_reducido_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_reducido"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_gris_arenado'), ref('attr_acabado_roble_colonial'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_blanco_brillo')])]"/>
+        </record>
+        <record id="mueble_sansa_reducido_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_reducido"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_60_2c'), ref('attr_modelo_mueble_set_80_2c')])]"/>
+        </record>
+        <record id="mueble_sansa_reducido_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_sansa_reducido"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+
+        <!-- 0031: Essence Compact -->
+        <record id="mueble_essence" model="product.template">
+            <field name="name">Mueble Essence Compact</field>
+            <field name="type">product</field>
+            <field name="list_price">530.00</field>
+            <field name="description">Mueble de baño Essence Compact con lavabo sobre encimera</field>
+        </record>
+        <record id="mueble_essence_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_essence"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_beige_nature'), ref('attr_acabado_blanco_mate')])]"/>
+        </record>
+        <record id="mueble_essence_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_essence"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_80_1c'), ref('attr_modelo_mueble_set_100_1c')])]"/>
+        </record>
+        <record id="mueble_essence_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_essence"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo'), ref('attr_tipo_mueble_conjunto_premium')])]"/>
+        </record>
+
+        <!-- 0032: Bassi -->
+        <record id="mueble_bassi" model="product.template">
+            <field name="name">Mueble Bassi</field>
+            <field name="type">product</field>
+            <field name="list_price">175.00</field>
+            <field name="description">Mueble de baño Bassi (fondo 36)</field>
+        </record>
+        <record id="mueble_bassi_attr_acabado" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_bassi"/>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_acabado_arena_mate'), ref('attr_acabado_gris_arenado'), ref('attr_acabado_nogal_arenado'), ref('attr_acabado_roble_colonial'), ref('attr_acabado_blanco_brillo'), ref('attr_acabado_antracita_brillo')])]"/>
+        </record>
+        <record id="mueble_bassi_attr_modelo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_bassi"/>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_modelo_mueble_set_50_1p')])]"/>
+        </record>
+        <record id="mueble_bassi_attr_tipo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="mueble_bassi"/>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_tipo_mueble_mas_lavabo'), ref('attr_tipo_mueble_conjunto_completo')])]"/>
+        </record>
+    </data>
+</odoo>

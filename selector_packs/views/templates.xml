@@ -1,3 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data noupdate="1">
+        <function model="ir.config_parameter" name="sudo" eval="obj().search([('key','=','web.base.url')], limit=1).value or 'http://localhost:8069'"/>
+    </data>
+
+    <!-- ============================================ -->
+    <!-- PÁGINA PRINCIPAL: LISTA DE PACKS -->
+    <!-- ============================================ -->
+    <template id="packs_home" name="Packs de Reforma">
+        <t t-call="website.layout">
+            <div class="hg-packs-home">
+                <div class="container">
+                    <div class="hg-packs-header">
+                        <h1>Elige tu Reforma</h1>
+                        <p>Selecciona el pack que mejor se adapte a tus necesidades</p>
+                    </div>
+
+                    <div class="hg-packs-grid">
+                        <t t-foreach="packs" t-as="pack">
+                            <div class="hg-pack-card">
+                                <div class="hg-pack-image">
+                                    <img t-att-src="'/web/image/product.template/%s/image_512' % pack.id"
+                                         alt="pack.name"
+                                         onerror="this.src='https://placehold.co/400x300?text=Pack'"/>
+                                </div>
+                                <div class="hg-pack-content">
+                                    <h3 t-esc="pack.name"/>
+                                    <p class="hg-pack-desc" t-esc="pack.description_sale or 'Servicio de reforma'"/>
+                                    <div class="hg-pack-price">
+                                        <span class="price-label">Desde</span>
+                                        <!-- <span class="price-value" t-esc="f'{pack.list_price:.2f}€'"/> -->
+                                        <span class="price-value" t-esc="'%.2f' % pack.list_price + '€'"/>
+                                    </div>
+                                    <a t-att-href="'/reformas/packs/%s' % pack.id"
+                                       class="hg-btn hg-btn-primary">
+                                        Seleccionar
+                                    </a>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- ============================================ -->
+    <!-- SELECTOR STEP-BY-STEP -->
+    <!-- ============================================ -->
+    <template id="pack_selector" name="Selector de Pack">
+        <t t-call="website.layout">
+            <div id="hg-selector"
+                 class="hg-selector"
+                 t-att-data-pack-id="pack.id"
+                 t-att-data-pack-name="pack.name"
+                 t-att-data-total-steps="total_steps">
+                <aside class="hg-stepper">
+                    <div class="hg-stepper-header">
+                        <h3 t-esc="pack.name"/>
+                    </div>
+                    <div id="hg-stepper-content"/>
+                </aside>
+
+                <main class="hg-content">
+                    <div id="hg-content" class="hg-content-inner">
+                        <!-- El contenido se renderiza desde JavaScript -->
+                    </div>
+                </main>
+
+                <!-- Productos como JSON en data attribute -->
+                <div id="hg-products-data" style="display:none;">
+                    <t t-foreach="products" t-as="p">
+                        <span class="hg-product-item"
+                              t-att-data-id="p['base_product_id']"
+                              t-att-data-name="p['name']"
+                              t-att-data-price="p['price']"
+                              t-att-data-image="p['image']"/>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Snippet: Card de Pack (para uso futuro) -->
+    <template id="pack_card_snippet" name="Pack Card Snippet">
+        <div class="hg-pack-card-snippet">
+            <div class="hg-pack-image">
+                <img t-att-src="pack_image_url" alt="pack_name"/>
+            </div>
+            <div class="hg-pack-content">
+                <h3 t-esc="pack_name"/>
+                <p t-esc="pack_description"/>
+            </div>
+        </div>
+    </template>
+
+    <!-- Snippet: Selector de Variante -->
+    <template id="variant_selector_snippet" name="Variant Selector Snippet">
+        <div class="hg-variant-selector">
+            <label t-esc="attribute_name"/>
+            <select class="hg-attribute-select" t-att-data-attribute-id="attribute_id">
+                <option value="">Seleccionar...</option>
+                <t t-foreach="attribute_values" t-as="value">
+                    <option t-att-value="value.id" t-esc="value.name"/>
+                </t>
+            </select>
+        </div>
+    </template>
+
+    <!-- Snippet: Stepper Item -->
+    <template id="stepper_item_snippet" name="Stepper Item Snippet">
+        <div t-attf-class="hg-stepper-item #{'active' if is_active else ''} #{'completed' if is_completed else ''} #{'disabled' if is_disabled else ''}"
+             t-att-data-step="step_number">
+            <div class="hg-stepper-number">
+                <t t-if="is_completed">
+                    <i class="fa fa-check"/>
+                </t>
+                <t t-else="" t-esc="step_number"/>
+            </div>
+            <div class="hg-stepper-name" t-esc="step_name"/>
+        </div>
+    </template>
 
 </odoo>

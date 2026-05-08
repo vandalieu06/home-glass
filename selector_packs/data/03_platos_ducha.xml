@@ -1,0 +1,120 @@
+<odoo>
+    <data noupdate="1">
+        <!-- ========== PLATOS DE DUCHA ========== -->
+
+        <!-- Plato Nature -->
+        <record id="plato_nature" model="product.template">
+            <field name="name">Plato Ducha Nature</field>
+            <field name="type">product</field>
+            <field name="list_price">211.00</field>
+            <field name="description">Plato de ducha modelo Nature - Precio base (medida más pequeña)</field>
+        </record>
+        <record id="plato_nature_attr_color" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_nature"/>
+            <field name="attribute_id" ref="attr_color_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_color_plato_blanco'), ref('attr_color_plato_beige'), ref('attr_color_plato_moka'), ref('attr_color_plato_gris_perla'), ref('attr_color_plato_gris'), ref('attr_color_plato_grafito')])]"/>
+        </record>
+        <record id="plato_nature_attr_ancho" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_nature"/>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_ancho_plato_70'), ref('attr_ancho_plato_75'), ref('attr_ancho_plato_80'), ref('attr_ancho_plato_85'), ref('attr_ancho_plato_90'), ref('attr_ancho_plato_100'), ref('attr_ancho_plato_110'), ref('attr_ancho_plato_120')])]"/>
+        </record>
+        <record id="plato_nature_attr_largo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_nature"/>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_largo_plato_70'), ref('attr_largo_plato_80'), ref('attr_largo_plato_90'), ref('attr_largo_plato_100'), ref('attr_largo_plato_110'), ref('attr_largo_plato_120'), ref('attr_largo_plato_130'), ref('attr_largo_plato_140'), ref('attr_largo_plato_150'), ref('attr_largo_plato_160'), ref('attr_largo_plato_170'), ref('attr_largo_plato_180'), ref('attr_largo_plato_190'), ref('attr_largo_plato_200'), ref('attr_largo_plato_210'), ref('attr_largo_plato_220'), ref('attr_largo_plato_230'), ref('attr_largo_plato_240')])]"/>
+        </record>
+
+        <!-- Plato Hermes -->
+        <record id="plato_hermes" model="product.template">
+            <field name="name">Plato Ducha Hermes</field>
+            <field name="type">product</field>
+            <field name="list_price">248.00</field>
+            <field name="description">Plato de ducha modelo Hermes - Precio base</field>
+        </record>
+        <record id="plato_hermes_attr_color" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_hermes"/>
+            <field name="attribute_id" ref="attr_color_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_color_plato_blanco'), ref('attr_color_plato_beige'), ref('attr_color_plato_moka'), ref('attr_color_plato_gris_perla'), ref('attr_color_plato_gris'), ref('attr_color_plato_grafito')])]"/>
+        </record>
+        <record id="plato_hermes_attr_ancho" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_hermes"/>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_ancho_plato_70'), ref('attr_ancho_plato_80'), ref('attr_ancho_plato_90'), ref('attr_ancho_plato_100')])]"/>
+        </record>
+        <record id="plato_hermes_attr_largo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_hermes"/>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_largo_plato_80'), ref('attr_largo_plato_90'), ref('attr_largo_plato_100'), ref('attr_largo_plato_110'), ref('attr_largo_plato_120'), ref('attr_largo_plato_130'), ref('attr_largo_plato_140'), ref('attr_largo_plato_150'), ref('attr_largo_plato_160'), ref('attr_largo_plato_170'), ref('attr_largo_plato_180'), ref('attr_largo_plato_200'), ref('attr_largo_plato_220'), ref('attr_largo_plato_240')])]"/>
+        </record>
+
+        <!-- Plato Marco -->
+        <record id="plato_marco" model="product.template">
+            <field name="name">Plato Ducha Marco</field>
+            <field name="type">product</field>
+            <field name="list_price">275.00</field>
+            <field name="description">Plato de ducha modelo Marco - Precio base</field>
+        </record>
+        <record id="plato_marco_attr_color" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_marco"/>
+            <field name="attribute_id" ref="attr_color_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_color_plato_blanco'), ref('attr_color_plato_beige'), ref('attr_color_plato_moka'), ref('attr_color_plato_gris_perla'), ref('attr_color_plato_gris'), ref('attr_color_plato_grafito')])]"/>
+        </record>
+        <record id="plato_marco_attr_ancho" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_marco"/>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_ancho_plato_70'), ref('attr_ancho_plato_75'), ref('attr_ancho_plato_80'), ref('attr_ancho_plato_85'), ref('attr_ancho_plato_90'), ref('attr_ancho_plato_100')])]"/>
+        </record>
+        <record id="plato_marco_attr_largo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_marco"/>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_largo_plato_80'), ref('attr_largo_plato_90'), ref('attr_largo_plato_100'), ref('attr_largo_plato_110'), ref('attr_largo_plato_120'), ref('attr_largo_plato_130'), ref('attr_largo_plato_140'), ref('attr_largo_plato_145'), ref('attr_largo_plato_150'), ref('attr_largo_plato_160'), ref('attr_largo_plato_170'), ref('attr_largo_plato_180'), ref('attr_largo_plato_190'), ref('attr_largo_plato_200'), ref('attr_largo_plato_220'), ref('attr_largo_plato_240')])]"/>
+        </record>
+
+        <!-- Plato Premium -->
+        <record id="plato_premium" model="product.template">
+            <field name="name">Plato Ducha Premium</field>
+            <field name="type">product</field>
+            <field name="list_price">275.00</field>
+            <field name="description">Plato de ducha modelo Premium - Precio base</field>
+        </record>
+        <record id="plato_premium_attr_color" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_premium"/>
+            <field name="attribute_id" ref="attr_color_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_color_plato_blanco'), ref('attr_color_plato_beige'), ref('attr_color_plato_moka'), ref('attr_color_plato_gris_perla'), ref('attr_color_plato_gris'), ref('attr_color_plato_grafito')])]"/>
+        </record>
+        <record id="plato_premium_attr_ancho" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_premium"/>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_ancho_plato_70'), ref('attr_ancho_plato_80'), ref('attr_ancho_plato_90'), ref('attr_ancho_plato_100')])]"/>
+        </record>
+        <record id="plato_premium_attr_largo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_premium"/>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_largo_plato_80'), ref('attr_largo_plato_90'), ref('attr_largo_plato_100'), ref('attr_largo_plato_110'), ref('attr_largo_plato_120'), ref('attr_largo_plato_130'), ref('attr_largo_plato_140'), ref('attr_largo_plato_150'), ref('attr_largo_plato_160'), ref('attr_largo_plato_170'), ref('attr_largo_plato_180'), ref('attr_largo_plato_190'), ref('attr_largo_plato_200'), ref('attr_largo_plato_220'), ref('attr_largo_plato_240')])]"/>
+        </record>
+
+        <!-- Plato Neo -->
+        <record id="plato_neo" model="product.template">
+            <field name="name">Plato Ducha Neo</field>
+            <field name="type">product</field>
+            <field name="list_price">319.00</field>
+            <field name="description">Plato de ducha modelo Neo - Precio base</field>
+        </record>
+        <record id="plato_neo_attr_color" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_neo"/>
+            <field name="attribute_id" ref="attr_color_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_color_plato_blanco'), ref('attr_color_plato_beige'), ref('attr_color_plato_moka'), ref('attr_color_plato_gris_perla'), ref('attr_color_plato_gris'), ref('attr_color_plato_grafito')])]"/>
+        </record>
+        <record id="plato_neo_attr_ancho" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_neo"/>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_ancho_plato_70'), ref('attr_ancho_plato_80'), ref('attr_ancho_plato_90'), ref('attr_ancho_plato_100')])]"/>
+        </record>
+        <record id="plato_neo_attr_largo" model="product.template.attribute.line">
+            <field name="product_tmpl_id" ref="plato_neo"/>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+            <field name="value_ids" eval="[(6, 0, [ref('attr_largo_plato_80'), ref('attr_largo_plato_90'), ref('attr_largo_plato_100'), ref('attr_largo_plato_110'), ref('attr_largo_plato_120'), ref('attr_largo_plato_130'), ref('attr_largo_plato_140'), ref('attr_largo_plato_150'), ref('attr_largo_plato_160'), ref('attr_largo_plato_170'), ref('attr_largo_plato_180'), ref('attr_largo_plato_200'), ref('attr_largo_plato_220'), ref('attr_largo_plato_240')])]"/>
+        </record>
+    </data>
+</odoo>

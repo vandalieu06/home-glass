@@ -1,0 +1,563 @@
+<odoo>
+    <data noupdate="1">
+        <!-- ========== ATRIBUTOS PARA PLATOS DE DUCHA ========== -->
+
+        <!-- Color Plato Ducha -->
+        <record id="attr_color_plato" model="product.attribute">
+            <field name="name">Color Plato Ducha</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_color_plato_blanco" model="product.attribute.value">
+            <field name="name">Blanco</field>
+            <field name="attribute_id" ref="attr_color_plato"/>
+        </record>
+        <record id="attr_color_plato_beige" model="product.attribute.value">
+            <field name="name">Beige</field>
+            <field name="attribute_id" ref="attr_color_plato"/>
+        </record>
+        <record id="attr_color_plato_moka" model="product.attribute.value">
+            <field name="name">Moka</field>
+            <field name="attribute_id" ref="attr_color_plato"/>
+        </record>
+        <record id="attr_color_plato_gris_perla" model="product.attribute.value">
+            <field name="name">Gris Perla</field>
+            <field name="attribute_id" ref="attr_color_plato"/>
+        </record>
+        <record id="attr_color_plato_gris" model="product.attribute.value">
+            <field name="name">Gris</field>
+            <field name="attribute_id" ref="attr_color_plato"/>
+        </record>
+        <record id="attr_color_plato_grafito" model="product.attribute.value">
+            <field name="name">Grafito</field>
+            <field name="attribute_id" ref="attr_color_plato"/>
+        </record>
+
+        <!-- Medida Plato Ducha - Ancho -->
+        <record id="attr_ancho_plato" model="product.attribute">
+            <field name="name">Ancho (cm)</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_ancho_plato_70" model="product.attribute.value">
+            <field name="name">70</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+        <record id="attr_ancho_plato_75" model="product.attribute.value">
+            <field name="name">75</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+        <record id="attr_ancho_plato_80" model="product.attribute.value">
+            <field name="name">80</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+        <record id="attr_ancho_plato_85" model="product.attribute.value">
+            <field name="name">85</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+        <record id="attr_ancho_plato_90" model="product.attribute.value">
+            <field name="name">90</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+        <record id="attr_ancho_plato_100" model="product.attribute.value">
+            <field name="name">100</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+        <record id="attr_ancho_plato_110" model="product.attribute.value">
+            <field name="name">110</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+        <record id="attr_ancho_plato_120" model="product.attribute.value">
+            <field name="name">120</field>
+            <field name="attribute_id" ref="attr_ancho_plato"/>
+        </record>
+
+        <!-- Medida Plato Ducha - Largo -->
+        <record id="attr_largo_plato" model="product.attribute">
+            <field name="name">Largo (cm)</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_largo_plato_70" model="product.attribute.value">
+            <field name="name">70</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_80" model="product.attribute.value">
+            <field name="name">80</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_90" model="product.attribute.value">
+            <field name="name">90</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_100" model="product.attribute.value">
+            <field name="name">100</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_110" model="product.attribute.value">
+            <field name="name">110</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_120" model="product.attribute.value">
+            <field name="name">120</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_130" model="product.attribute.value">
+            <field name="name">130</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_140" model="product.attribute.value">
+            <field name="name">140</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_145" model="product.attribute.value">
+            <field name="name">145</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_150" model="product.attribute.value">
+            <field name="name">150</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_160" model="product.attribute.value">
+            <field name="name">160</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_170" model="product.attribute.value">
+            <field name="name">170</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_180" model="product.attribute.value">
+            <field name="name">180</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_190" model="product.attribute.value">
+            <field name="name">190</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_200" model="product.attribute.value">
+            <field name="name">200</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_210" model="product.attribute.value">
+            <field name="name">210</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_220" model="product.attribute.value">
+            <field name="name">220</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_230" model="product.attribute.value">
+            <field name="name">230</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+        <record id="attr_largo_plato_240" model="product.attribute.value">
+            <field name="name">240</field>
+            <field name="attribute_id" ref="attr_largo_plato"/>
+        </record>
+
+        <!-- ========== ATRIBUTOS PARA MAMPARAS ========== -->
+
+        <!-- Color Mampara -->
+        <record id="attr_color_mampara" model="product.attribute">
+            <field name="name">Color Mampara</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_color_mampara_blanco" model="product.attribute.value">
+            <field name="name">Blanco</field>
+            <field name="attribute_id" ref="attr_color_mampara"/>
+        </record>
+        <record id="attr_color_mampara_negro" model="product.attribute.value">
+            <field name="name">Negro</field>
+            <field name="attribute_id" ref="attr_color_mampara"/>
+        </record>
+        <record id="attr_color_mampara_aluminio_brillo" model="product.attribute.value">
+            <field name="name">Aluminio Brillo</field>
+            <field name="attribute_id" ref="attr_color_mampara"/>
+        </record>
+
+        <!-- Vidrio Mampara -->
+        <record id="attr_vidrio_mampara" model="product.attribute">
+            <field name="name">Vidrio</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_vidrio_transparente" model="product.attribute.value">
+            <field name="name">Transparente</field>
+            <field name="attribute_id" ref="attr_vidrio_mampara"/>
+        </record>
+        <record id="attr_vidrio_decorado" model="product.attribute.value">
+            <field name="name">Decorado Fast</field>
+            <field name="attribute_id" ref="attr_vidrio_mampara"/>
+        </record>
+
+        <!-- Medida Mampara -->
+        <record id="attr_medida_mampara" model="product.attribute">
+            <field name="name">Medida (cm)</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_medida_mampara_70" model="product.attribute.value">
+            <field name="name">70</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_80" model="product.attribute.value">
+            <field name="name">80</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_90" model="product.attribute.value">
+            <field name="name">90</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_100" model="product.attribute.value">
+            <field name="name">100</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_110" model="product.attribute.value">
+            <field name="name">110</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_120" model="product.attribute.value">
+            <field name="name">120</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_140" model="product.attribute.value">
+            <field name="name">140</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_160" model="product.attribute.value">
+            <field name="name">160</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_180" model="product.attribute.value">
+            <field name="name">180</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_200" model="product.attribute.value">
+            <field name="name">200</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_220" model="product.attribute.value">
+            <field name="name">220</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_240" model="product.attribute.value">
+            <field name="name">240</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+        <record id="attr_medida_mampara_260" model="product.attribute.value">
+            <field name="name">260</field>
+            <field name="attribute_id" ref="attr_medida_mampara"/>
+        </record>
+
+        <!-- ========== ATRIBUTOS PARA MUEBLES DE BAÑO ========== -->
+
+        <!-- Acabado Mueble -->
+        <record id="attr_acabado_mueble" model="product.attribute">
+            <field name="name">Acabado</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_acabado_hickory_nature" model="product.attribute.value">
+            <field name="name">Hickory Nature</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <record id="attr_acabado_nogal" model="product.attribute.value">
+            <field name="name">Nogal</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <record id="attr_acabado_notte" model="product.attribute.value">
+            <field name="name">Notte</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <record id="attr_acabado_blanco_mate" model="product.attribute.value">
+            <field name="name">Blanco Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <record id="attr_acabado_verde_mineral" model="product.attribute.value">
+            <field name="name">Verde Mineral</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <record id="attr_acabado_arena_mate" model="product.attribute.value">
+            <field name="name">Arena Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <record id="attr_acabado_habana_mate" model="product.attribute.value">
+            <field name="name">Habana Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+
+        <!-- Modelo Mueble -->
+        <record id="attr_modelo_mueble" model="product.attribute">
+            <field name="name">Modelo</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_modelo_mueble_set_60_1c" model="product.attribute.value">
+            <field name="name">Set 60 1C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <record id="attr_modelo_mueble_set_80_1c" model="product.attribute.value">
+            <field name="name">Set 80 1C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <record id="attr_modelo_mueble_set_100_1c" model="product.attribute.value">
+            <field name="name">Set 100 1C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <record id="attr_modelo_mueble_set_120_2c" model="product.attribute.value">
+            <field name="name">Set 120 2C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <record id="attr_modelo_mueble_set_60_2c" model="product.attribute.value">
+            <field name="name">Set 60 2C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <record id="attr_modelo_mueble_set_80_2c" model="product.attribute.value">
+            <field name="name">Set 80 2C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <record id="attr_modelo_mueble_set_100_2c" model="product.attribute.value">
+            <field name="name">Set 100 2C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <record id="attr_modelo_mueble_set_120_4c" model="product.attribute.value">
+            <field name="name">Set 120 4C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+
+        <!-- Tipo Mueble -->
+        <record id="attr_tipo_mueble" model="product.attribute">
+            <field name="name">Tipo</field>
+            <field name="create_variant">always</field>
+            <field name="display_type">radio</field>
+        </record>
+
+        <record id="attr_tipo_mueble_mas_lavabo" model="product.attribute.value">
+            <field name="name">Mueble + Lavabo</field>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+        </record>
+        <record id="attr_tipo_mueble_conjunto_completo" model="product.attribute.value">
+            <field name="name">Conjunto Completo</field>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+        </record>
+        <record id="attr_tipo_mueble_conjunto_premium" model="product.attribute.value">
+            <field name="name">Conjunto Premium</field>
+            <field name="attribute_id" ref="attr_tipo_mueble"/>
+        </record>
+
+        <!-- ========== NUEVOS ACABADOS PARA MUEBLES DE BAÑO ========== -->
+
+        <!-- Blanco Brillo -->
+        <record id="attr_acabado_blanco_brillo" model="product.attribute.value">
+            <field name="name">Blanco Brillo</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Roble Nórdico -->
+        <record id="attr_acabado_roble_nordico" model="product.attribute.value">
+            <field name="name">Roble Nórdico</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Fresno Samara -->
+        <record id="attr_acabado_fresno_samara" model="product.attribute.value">
+            <field name="name">Fresno Samara</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Nogal Ártico -->
+        <record id="attr_acabado_nogal_artico" model="product.attribute.value">
+            <field name="name">Nogal Ártico</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Beige Nature -->
+        <record id="attr_acabado_beige_nature" model="product.attribute.value">
+            <field name="name">Beige Nature</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Blanco Nature -->
+        <record id="attr_acabado_blanco_nature" model="product.attribute.value">
+            <field name="name">Blanco Nature</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Gris Nature -->
+        <record id="attr_acabado_gris_nature" model="product.attribute.value">
+            <field name="name">Gris Nature</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Roble Colonial -->
+        <record id="attr_acabado_roble_colonial" model="product.attribute.value">
+            <field name="name">Roble Colonial</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Nogal Arenado -->
+        <record id="attr_acabado_nogal_arenado" model="product.attribute.value">
+            <field name="name">Nogal Arenado</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Gris Arenado -->
+        <record id="attr_acabado_gris_arenado" model="product.attribute.value">
+            <field name="name">Gris Arenado</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Roble Vulcano -->
+        <record id="attr_acabado_roble_vulcano" model="product.attribute.value">
+            <field name="name">Roble Vulcano</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Roble Eternity -->
+        <record id="attr_acabado_roble_eternity" model="product.attribute.value">
+            <field name="name">Roble Eternity</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Verde Pure -->
+        <record id="attr_acabado_verde_pure" model="product.attribute.value">
+            <field name="name">Verde Pure</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Azul Navy Mate -->
+        <record id="attr_acabado_azul_navy_mate" model="product.attribute.value">
+            <field name="name">Azul Navy Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Antracita Brillo -->
+        <record id="attr_acabado_antracita_brillo" model="product.attribute.value">
+            <field name="name">Antracita Brillo</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Negro Mate -->
+        <record id="attr_acabado_negro_mate" model="product.attribute.value">
+            <field name="name">Negro Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Gris Mate -->
+        <record id="attr_acabado_gris_mate" model="product.attribute.value">
+            <field name="name">Gris Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Galet Brillo -->
+        <record id="attr_acabado_galet_brillo" model="product.attribute.value">
+            <field name="name">Galet Brillo</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Camel -->
+        <record id="attr_acabado_camel" model="product.attribute.value">
+            <field name="name">Camel</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Azul Mate -->
+        <record id="attr_acabado_azul_mate" model="product.attribute.value">
+            <field name="name">Azul Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Verde Mate -->
+        <record id="attr_acabado_verde_mate" model="product.attribute.value">
+            <field name="name">Verde Mate</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Blanco Pure -->
+        <record id="attr_acabado_blanco_pure" model="product.attribute.value">
+            <field name="name">Blanco Pure</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+        <!-- Roble Blanco -->
+        <record id="attr_acabado_roble_blanco" model="product.attribute.value">
+            <field name="name">Roble Blanco</field>
+            <field name="attribute_id" ref="attr_acabado_mueble"/>
+        </record>
+
+        <!-- ========== NUEVOS MODELOS (SETS) PARA MUEBLES DE BAÑO ========== -->
+
+        <!-- Set 70 2C -->
+        <record id="attr_modelo_mueble_set_70_2c" model="product.attribute.value">
+            <field name="name">Set 70 2C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 90 2C -->
+        <record id="attr_modelo_mueble_set_90_2c" model="product.attribute.value">
+            <field name="name">Set 90 2C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 60 1C2P -->
+        <record id="attr_modelo_mueble_set_60_1c2p" model="product.attribute.value">
+            <field name="name">Set 60 1C2P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 60 3C -->
+        <record id="attr_modelo_mueble_set_60_3c" model="product.attribute.value">
+            <field name="name">Set 60 3C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 80 3C -->
+        <record id="attr_modelo_mueble_set_80_3c" model="product.attribute.value">
+            <field name="name">Set 80 3C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 100 3C -->
+        <record id="attr_modelo_mueble_set_100_3c" model="product.attribute.value">
+            <field name="name">Set 100 3C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 120 6C -->
+        <record id="attr_modelo_mueble_set_120_6c" model="product.attribute.value">
+            <field name="name">Set 120 6C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 60 2P -->
+        <record id="attr_modelo_mueble_set_60_2p" model="product.attribute.value">
+            <field name="name">Set 60 2P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 70 2P -->
+        <record id="attr_modelo_mueble_set_70_2p" model="product.attribute.value">
+            <field name="name">Set 70 2P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 80 2P -->
+        <record id="attr_modelo_mueble_set_80_2p" model="product.attribute.value">
+            <field name="name">Set 80 2P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 120 4P -->
+        <record id="attr_modelo_mueble_set_120_4p" model="product.attribute.value">
+            <field name="name">Set 120 4P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 60 1C1H -->
+        <record id="attr_modelo_mueble_set_60_1c1h" model="product.attribute.value">
+            <field name="name">Set 60 1C1H</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 80 1C1H -->
+        <record id="attr_modelo_mueble_set_80_1c1h" model="product.attribute.value">
+            <field name="name">Set 80 1C1H</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 50 1P -->
+        <record id="attr_modelo_mueble_set_50_1p" model="product.attribute.value">
+            <field name="name">Set 50 1P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 45 1P -->
+        <record id="attr_modelo_mueble_set_45_1p" model="product.attribute.value">
+            <field name="name">Set 45 1P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 50 2P -->
+        <record id="attr_modelo_mueble_set_50_2p" model="product.attribute.value">
+            <field name="name">Set 50 2P</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+        <!-- Set 50 2C -->
+        <record id="attr_modelo_mueble_set_50_2c" model="product.attribute.value">
+            <field name="name">Set 50 2C</field>
+            <field name="attribute_id" ref="attr_modelo_mueble"/>
+        </record>
+    </data>
+</odoo>

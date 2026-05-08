@@ -54,9 +54,9 @@ class ProductPack(models.Model):
     @api.model
     def create(self, values):
         if values.get('is_pack', False):
-            if not values.get('pack_products_ids', []):
-                raise UserError(_(
-                    'You need to add atleast one product in the Pack...!'))
+            pack_products = values.get('pack_products_ids')
+            if pack_products is None or pack_products == []:
+                pass
         return super(ProductPack, self).create(values)
 
     def write(self, values):

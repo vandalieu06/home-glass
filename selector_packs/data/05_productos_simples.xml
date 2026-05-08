@@ -1,0 +1,69 @@
+<odoo>
+    <data noupdate="1">
+        <!-- ========== PRODUCTOS SIMPLES ========== -->
+
+        <!-- Grifo STAR -->
+        <record id="grifo_star" model="product.template">
+            <field name="name">Grifo STAR - Conjunto Ducha</field>
+            <field name="type">product</field>
+            <field name="list_price">0.00</field>
+            <field name="description">Conjunto de ducha STAR con monomando TESLA</field>
+        </record>
+
+        <!-- Grifo KAPPA -->
+        <record id="grifo_kappa" model="product.template">
+            <field name="name">Grifo KAPPA - Columna Ducha</field>
+            <field name="type">product</field>
+            <field name="list_price">0.00</field>
+            <field name="description">Columna de ducha KAPPA</field>
+        </record>
+
+        <!-- Azulejo Blanco Brillo 30x60 -->
+        <record id="azulejo_30x60_brillo" model="product.template">
+            <field name="name">Azulejo Blanco Brillo 30x60</field>
+            <field name="type">product</field>
+            <field name="list_price">10.57</field>
+            <field name="description">Azulejo blanco brillo 30x60 - Oferta</field>
+        </record>
+
+        <!-- Azulejo Blanco Mate 30x60 -->
+        <record id="azulejo_30x60_mate" model="product.template">
+            <field name="name">Azulejo Blanco Mate 30x60</field>
+            <field name="type">product</field>
+            <field name="list_price">10.57</field>
+            <field name="description">Azulejo blanco mate 30x60 - Oferta</field>
+        </record>
+
+        <!-- Revestimiento Blanco Brillo 30x90 -->
+        <record id="revestimiento_30x90_brillo" model="product.template">
+            <field name="name">Revestimiento Blanco Brillo 30x90</field>
+            <field name="type">product</field>
+            <field name="list_price">13.53</field>
+            <field name="description">Revestimiento blanco brillo 30x90 rectificado</field>
+        </record>
+
+        <!-- Revestimiento Blanco Mate 30x90 -->
+        <record id="revestimiento_30x90_mate" model="product.template">
+            <field name="name">Revestimiento Blanco Mate 30x90</field>
+            <field name="type">product</field>
+            <field name="list_price">13.53</field>
+            <field name="description">Revestimiento blanco mate 30x90 rectificado</field>
+        </record>
+
+        <!-- Inodoro Sanitario -->
+        <record id="inodoro_sanitario" model="product.template">
+            <field name="name">Inodoro Sanitario</field>
+            <field name="type">product</field>
+            <field name="list_price">0.00</field>
+            <field name="description">Inodoro sanitario estándar</field>
+        </record>
+
+        <!-- Mueble SANSA 80cm -->
+        <record id="mueble_sansa_80" model="product.template">
+            <field name="name">Mueble SANSA Integrado 80cm</field>
+            <field name="type">product</field>
+            <field name="list_price">0.00</field>
+            <field name="description">Mueble SANSA integrado suspendido 80cm con lavabo cerámico integrado + Espejo Murano + Luminaria URI 30</field>
+        </record>
+    </data>
+</odoo>
