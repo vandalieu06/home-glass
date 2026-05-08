@@ -1,0 +1,71 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Color Plato Ducha -->
+        <record id="attribute_color_plato" model="product.attribute">
+            <field name="name">Color Plato Ducha</field>
+            <field name="create_variant">always</field>
+        </record>
+
+        <record id="attribute_value_plato_blanco" model="product.attribute.value">
+            <field name="name">Blanco</field>
+            <field name="attribute_id" ref="attribute_color_plato"/>
+        </record>
+
+        <record id="attribute_value_plato_beige" model="product.attribute.value">
+            <field name="name">Beige</field>
+            <field name="attribute_id" ref="attribute_color_plato"/>
+        </record>
+
+        <record id="attribute_value_plato_moka" model="product.attribute.value">
+            <field name="name">Moka</field>
+            <field name="attribute_id" ref="attribute_color_plato"/>
+        </record>
+
+        <record id="attribute_value_plato_gris_perla" model="product.attribute.value">
+            <field name="name">Gris Perla</field>
+            <field name="attribute_id" ref="attribute_color_plato"/>
+        </record>
+
+        <record id="attribute_value_plato_gris" model="product.attribute.value">
+            <field name="name">Gris</field>
+            <field name="attribute_id" ref="attribute_color_plato"/>
+        </record>
+
+        <record id="attribute_value_plato_grafito" model="product.attribute.value">
+            <field name="name">Grafito</field>
+            <field name="attribute_id" ref="attribute_color_plato"/>
+        </record>
+
+        <!-- Color Mampara -->
+        <record id="attribute_color_mampara" model="product.attribute">
+            <field name="name">Color Mampara</field>
+            <field name="create_variant">always</field>
+        </record>
+
+        <record id="attribute_value_mampara_blanco" model="product.attribute.value">
+            <field name="name">Blanco</field>
+            <field name="attribute_id" ref="attribute_color_mampara"/>
+        </record>
+
+        <record id="attribute_value_mampara_negro" model="product.attribute.value">
+            <field name="name">Negro</field>
+            <field name="attribute_id" ref="attribute_color_mampara"/>
+        </record>
+
+        <record id="attribute_value_mampara_aluminio_brillo" model="product.attribute.value">
+            <field name="name">Aluminio Brillo</field>
+            <field name="attribute_id" ref="attribute_color_mampara"/>
+        </record>
+
+        <!-- Vidrio Mampara -->
+        <record id="attribute_vidrio" model="product.attribute">
+            <field name="name">Vidrio</field>
+            <field name="create_variant">always</field>
+        </record>
+
+        <record id="attribute_value_vidrio_transparente" model="product.attribute.value">
+            <field name="name">Transparente</field>
+            <field name="attribute_id" ref="attribute_vidrio"/>
+        </record>
+    </data>
+</odoo>

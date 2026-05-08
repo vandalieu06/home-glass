@@ -1,0 +1,45 @@
+# Mamparas 
+
+## SERIE ALFA
+- A20
+- A40
+- A25
+- A90
+
+## SERIE BETA
+- B20
+- B40
+- B90
+
+## SERIE XI
+- C20
+- C40
+- C25
+- C90
+
+## SERIE DELTA
+- D20
+- D40
+- D25
+- D90
+
+## SERIE EPSILON
+- E20
+
+## SERIE OMEGA
+- O10
+- O11
+- O15
+- O00
+
+## SERIE GAMMA
+- G01
+- G02
+
+## SERIE ALFA/GAMMA GOLD
+- AG20
+- AG40
+- AG25
+- AG90
+- AG01
+- AG02
