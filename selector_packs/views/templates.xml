@@ -75,7 +75,20 @@
                               t-att-data-id="p['base_product_id']"
                               t-att-data-name="p['name']"
                               t-att-data-price="p['price']"
-                              t-att-data-image="p['image']"/>
+                              t-att-data-image="p['image']"
+                              t-att-data-category="p['category']"
+                              t-att-data-preselected="p.get('is_preselected', False)"/>
+                    </t>
+                </div>
+
+                <!-- Categorías como JSON en data attribute -->
+                <div id="hg-categories-data" style="display:none;">
+                    <t t-foreach="categories_data" t-as="cat">
+                        <span class="hg-category-item"
+                              t-att-data-key="cat['key']"
+                              t-att-data-name="cat['name']"
+                              t-att-data-single="cat['single_product'] and 'True' or 'False'"
+                              t-att-data-product-count="len(cat['products'])"/>
                     </t>
                 </div>
             </div>

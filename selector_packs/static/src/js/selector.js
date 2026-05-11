@@ -23,7 +23,9 @@
         pack_name: '',
         current_step: 1,
         total_steps: 0,
+        steps: [],
         products: [],
+        selected_product: {},
         selections: {},
         contact: {
             name: '',
@@ -39,6 +41,7 @@
     // Cache para atributos y variantes
     let attributesCache = {};
     let variantsCache = {};
+    let productAttributesCache = {};
 
     // ============================================
     // UTILIDADES
@@ -114,16 +117,65 @@
             pack_name: '',
             current_step: 1,
             total_steps: 0,
+            steps: [],
             products: [],
+            selected_product: {},
             selections: {},
             contact: { name: '', email: '', phone: '', message: '' },
             errors: {},
             lead_id: null,
             is_loading: false,
         };
+        productAttributesCache = {};
         localStorage.removeItem(STORAGE_KEY);
         sessionStorage.removeItem(SESSION_KEY);
         log('State cleared');
+    }
+
+    // ============================================
+    // HELPERS DE ESTADO (Fase 3)
+    // ============================================
+
+    function getCurrentCategoryStep() {
+        if (state.current_step <= state.steps.length) {
+            return state.steps[state.current_step - 1];
+        }
+        return null;
+    }
+
+    function getSelectedProductInCategory(categoryKey) {
+        const productId = state.selected_product[categoryKey];
+        if (!productId) return null;
+        const step = state.steps.find(s => s.key === categoryKey);
+        if (!step) return null;
+        return step.products.find(p => p.base_product_id === productId) || null;
+    }
+
+    function getCategoryByProductId(productId) {
+        for (const step of state.steps) {
+            const found = step.products.find(p => p.base_product_id === productId);
+            if (found) return step;
+        }
+        return null;
+    }
+
+    function loadCategoryProductsFromApi(categoryKey) {
+        if (productAttributesCache[categoryKey]) {
+            return Promise.resolve(productAttributesCache[categoryKey]);
+        }
+        return api('get_category_products', {
+            pack_id: state.pack_id,
+            category_key: categoryKey,
+        }).then(data => {
+            if (data && !data.error) {
+                productAttributesCache[categoryKey] = data;
+                return data;
+            }
+            return [];
+        }).catch(err => {
+            log(`Error loading category ${categoryKey}`, err);
+            return [];
+        });
     }
 
     // ============================================
@@ -192,18 +244,14 @@
         const container = document.getElementById('hg-stepper-content');
         if (!container) return;
 
-        const steps = [];
-        for (let i = 1; i <= state.total_steps; i++) {
-            const product = state.products[i - 1];
-            const stepName = product ? product.name : `Paso ${i}`;
-            steps.push({ index: i, name: stepName });
-        }
+        const steps = [
+            ...state.steps.map((s, i) => ({ index: i + 1, name: s.name })),
+            { index: state.steps.length + 1, name: 'Resumen' },
+            { index: state.steps.length + 2, name: 'Contacto' },
+        ];
 
-        steps.push({ index: state.total_steps + 1, name: 'Resumen' });
-        steps.push({ index: state.total_steps + 2, name: 'Contacto' });
-
-        container.innerHTML = steps.map((s, i) => {
-            const stepNum = i + 1;
+        container.innerHTML = steps.map((s) => {
+            const stepNum = s.index;
             const isActive = state.current_step === stepNum;
             const isCompleted = state.current_step > stepNum;
             const isDisabled = !canGoToStep(stepNum);
@@ -227,87 +275,243 @@
         const container = document.getElementById('hg-content');
         if (!container) return;
 
-        if (state.current_step <= state.total_steps) {
-            const productIndex = state.current_step - 1;
-            const product = state.products[productIndex];
-            renderProductStep(product, productIndex, container);
-        } else if (state.current_step === state.total_steps + 1) {
+        if (state.current_step <= state.steps.length) {
+            const step = getCurrentCategoryStep();
+            if (step) {
+                renderCategoryStep(step, container);
+            }
+        } else if (state.current_step === state.steps.length + 1) {
             renderSummary(container);
-        } else if (state.current_step === state.total_steps + 2) {
+        } else if (state.current_step === state.steps.length + 2) {
             renderContactForm(container);
-        } else if (state.current_step === state.total_steps + 3) {
+        } else if (state.current_step === state.steps.length + 3) {
             renderSuccess(container);
         }
     }
 
     // ============================================
-    // RENDERIZADO DE PASOS
+    // RENDERIZADO DE PASOS (Fase 4 - Por Categoría)
     // ============================================
-    function renderProductStep(product, index, container) {
-        if (!product) return;
 
+    function renderCategoryStep(step, container) {
         showLoading(container, 'Cargando opciones...');
 
-        api('get_product_attributes', { product_tmpl_id: product.base_product_id })
-            .then(data => {
-                if (data && data.error) {
-                    showError(data.error);
-                    return;
+        loadCategoryProductsFromApi(step.key).then(categoryProducts => {
+            const selectedId = state.selected_product[step.key];
+
+            if (step.single_product) {
+                renderSingleProductInCategory(step, categoryProducts, selectedId, container);
+            } else {
+                renderProductGridInCategory(step, categoryProducts, selectedId, container);
+            }
+        }).catch(err => {
+            showError('Error al cargar productos de la categoría');
+            log('Error loading category', err);
+        });
+    }
+
+    function renderSingleProductInCategory(step, categoryProducts, selectedId, container) {
+        const product = categoryProducts[0];
+        if (!product) {
+            container.innerHTML = `<div class="hg-empty-category"><p>No hay productos disponibles en esta categoría.</p></div>`;
+            return;
+        }
+
+        const productId = product.base_product_id;
+        if (!selectedId) {
+            state.selected_product[step.key] = productId;
+        }
+
+        const selection = state.selections[productId] || {};
+        const attributes = product.attributes || [];
+        const isPreselected = product.is_preselected || false;
+
+        if (isPreselected && product.preselected_values && Object.keys(product.preselected_values).length > 0) {
+            Object.entries(product.preselected_values).forEach(([attrName, valueId]) => {
+                if (!selection[attrName]) {
+                    selectAttribute(product.base_product_id, attrName, valueId);
+                }
+            });
+        }
+
+        container.innerHTML = `
+            <div class="hg-category-step">
+                <div class="hg-category-header">
+                    <h2>${escapeHtml(step.name)}</h2>
+                </div>
+
+                <div class="hg-product-card">
+                    <div class="hg-product-image">
+                        <img src="${product.image || DEFAULT_PLACEHOLDER}"
+                             alt="${escapeHtml(product.name)}"
+                             onerror="this.src='${DEFAULT_PLACEHOLDER}'"/>
+                    </div>
+                    <div class="hg-product-info">
+                        <h3>${escapeHtml(product.name)}</h3>
+                        <p class="hg-product-price">${parseNumber(product.price).toFixed(2)}€</p>
+                    </div>
+                </div>
+
+                ${isPreselected ? renderPreselectedInfo(product, product) : ''}
+
+                <div class="hg-attributes">
+                    ${attributes.length === 0 ?
+                        '<div class="hg-no-variants"><p>Este producto no tiene variantes configuradas.</p></div>' :
+                        renderAttributesCascade(productId, attributes, selection, step.key)
+                    }
+                </div>
+
+                <div class="hg-actions">
+                    <button class="hg-btn hg-btn-secondary" onclick="prevStep()">Atrás</button>
+                    <button class="hg-btn hg-btn-primary" onclick="nextStep()">Siguiente</button>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderProductGridInCategory(step, categoryProducts, selectedId, container) {
+        let html = `
+            <div class="hg-category-step">
+                <div class="hg-category-header">
+                    <h2>${escapeHtml(step.name)}</h2>
+                    <p class="text-muted">Elige el producto que prefieras</p>
+                </div>
+                <div class="hg-product-grid">
+        `;
+
+        categoryProducts.forEach(product => {
+            const productId = product.base_product_id;
+            const isSelected = selectedId === productId;
+            html += `
+                <div class="hg-product-grid-item ${isSelected ? 'selected' : ''}"
+                     onclick="selectProductInCategory('${escapeAttr(step.key)}', ${productId})">
+                    <div class="hg-grid-image">
+                        <img src="${product.image || DEFAULT_PLACEHOLDER}"
+                             alt="${escapeHtml(product.name)}"
+                             onerror="this.src='${DEFAULT_PLACEHOLDER}'"/>
+                    </div>
+                    <div class="hg-grid-info">
+                        <h4>${escapeHtml(product.name)}</h4>
+                        <span class="hg-grid-price">${parseNumber(product.price).toFixed(2)}€</span>
+                    </div>
+                    ${isSelected ? '<div class="hg-grid-check"><i class="fa fa-check-circle"></i></div>' : ''}
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+
+        if (selectedId) {
+            const selectedProduct = categoryProducts.find(p => p.base_product_id === selectedId);
+            if (selectedProduct) {
+                const selection = state.selections[selectedId] || {};
+                const attributes = selectedProduct.attributes || [];
+                const isPreselected = selectedProduct.is_preselected || false;
+
+                if (isPreselected && selectedProduct.preselected_values && Object.keys(selectedProduct.preselected_values).length > 0) {
+                    Object.entries(selectedProduct.preselected_values).forEach(([attrName, valueId]) => {
+                        if (!selection[attrName]) {
+                            selectAttribute(selectedProduct.base_product_id, attrName, valueId);
+                        }
+                    });
                 }
 
-                const selection = state.selections[product.base_product_id] || {};
-                const attributes = data.attributes || [];
-
-                container.innerHTML = `
-                    <div class="hg-product-step">
-                        <div class="hg-product-header">
-                            <h2>${escapeHtml(product.name)}</h2>
-                            <p class="text-muted">Selecciona las opciones disponibles</p>
-                        </div>
-
-                        <div class="hg-product-card">
-                            <div class="hg-product-image">
-                                <img src="${product.image || DEFAULT_PLACEHOLDER}"
-                                     alt="${escapeHtml(product.name)}"
-                                     onerror="this.src='${DEFAULT_PLACEHOLDER}'"/>
-                            </div>
-                            <div class="hg-product-info">
-                                <h3>${escapeHtml(product.name)}</h3>
-                                <p class="hg-product-price">${parseNumber(product.price).toFixed(2)}€</p>
-                            </div>
-                        </div>
+                html += `
+                    <div class="hg-category-attributes">
+                        <h3>${escapeHtml(selectedProduct.name)}</h3>
+                        ${isPreselected ? renderPreselectedInfo(selectedProduct, selectedProduct) : ''}
 
                         <div class="hg-attributes">
                             ${attributes.length === 0 ?
                                 '<div class="hg-no-variants"><p>Este producto no tiene variantes configuradas.</p></div>' :
-                                attributes.map(attr => renderAttributeSelector(product.base_product_id, attr, selection)).join('')
+                                renderAttributesCascade(selectedId, attributes, selection, step.key)
                             }
-                        </div>
-
-                        <div class="hg-actions">
-                            <button class="hg-btn hg-btn-secondary" onclick="prevStep()">Atrás</button>
-                            <button class="hg-btn hg-btn-primary" onclick="nextStep()">Siguiente</button>
                         </div>
                     </div>
                 `;
-            })
-            .catch(err => {
-                showError('Error al cargar atributos');
-                log('Error loading attributes', err);
-            });
+            }
+        }
+
+        html += `
+                <div class="hg-actions">
+                    <button class="hg-btn hg-btn-secondary" onclick="prevStep()">Atrás</button>
+                    <button class="hg-btn hg-btn-primary" onclick="nextStep()">Siguiente</button>
+                </div>
+            </div>
+        `;
+
+        container.innerHTML = html;
+    }
+
+    function renderPreselectedInfo(product, data) {
+        const preselectedNames = [];
+        if (data.preselected_values) {
+            for (const [attrName, valueId] of Object.entries(data.preselected_values)) {
+                const attr = data.attributes.find(a => a.name === attrName);
+                if (attr) {
+                    const value = attr.values.find(v => v.id === valueId);
+                    if (value) {
+                        preselectedNames.push(value.name);
+                    }
+                }
+            }
+        }
+
+        if (preselectedNames.length === 0) return '';
+
+        return `
+            <div class="hg-preselected-info">
+                <i class="fa fa-check-circle"></i>
+                <span>Incluye: ${preselectedNames.join(' + ')}</span>
+            </div>
+        `;
+    }
+
+    function renderAttributesCascade(productId, attributes, selection, category) {
+        if (category !== 'mueble') {
+            return attributes.map(attr => renderAttributeSelector(productId, attr, selection)).join('');
+        }
+
+        const sortedAttrs = [...attributes].sort((a, b) => (a.order || 999) - (b.order || 999));
+
+        const rendered = [];
+        const selectionCopy = { ...selection };
+
+        for (const attr of sortedAttrs) {
+            const dependsOn = attr.depends_on;
+
+            if (dependsOn && !selectionCopy[dependsOn]) {
+                continue;
+            }
+
+            rendered.push(renderAttributeSelector(productId, attr, selectionCopy));
+
+            const selectedValueId = selectionCopy[attr.name];
+            if (selectedValueId) {
+                const selectedValue = attr.values.find(v => v.id === selectedValueId);
+                if (selectedValue) {
+                    selectionCopy[attr.name] = selectedValueId;
+                }
+            }
+        }
+
+        return rendered.join('');
     }
 
     function renderAttributeSelector(productId, attribute, selection) {
-        const selectedValue = selection[attribute.name] || null;
+        const selectedValue = selection[attribute.name] || attribute.default_value || null;
         const values = attribute.values || [];
 
         if (values.length === 0) return '';
 
+        const isDisabled = attribute.depends_on && !selection[attribute.depends_on];
+
         return `
-            <div class="hg-attribute">
-                <label class="hg-attribute-label">${escapeHtml(attribute.name)}</label>
+            <div class="hg-attribute ${isDisabled ? 'hg-attribute-disabled' : ''}">
+                <label class="hg-attribute-label">${escapeHtml(attribute.name)}${isDisabled ? ' <span class="text-muted">(selecciona primero ${attribute.depends_on})</span>' : ''}</label>
                 <select class="hg-attribute-select"
-                        onchange="selectAttribute('${escapeAttr(productId)}', '${escapeAttr(attribute.name)}', this.value)">
+                        onchange="selectAttribute('${escapeAttr(productId)}', '${escapeAttr(attribute.name)}', this.value)"
+                        ${isDisabled ? 'disabled' : ''}>
                     <option value="">Seleccionar...</option>
                     ${values.map(v => `
                         <option value="${v.id}" ${selectedValue == v.id ? 'selected' : ''}>
@@ -320,21 +524,55 @@
     }
 
     function renderSummary(container) {
-        const selectionsList = [];
-
-        state.products.forEach(product => {
-            const selection = state.selections[product.base_product_id];
-            if (selection) {
-                selectionsList.push({
-                    product: product,
-                    selection: selection,
-                });
-            }
-        });
-
         let totalPrice = 0;
-        state.products.forEach(p => {
-            totalPrice += parseNumber(p.price);
+        let categoryRows = '';
+
+        state.steps.forEach(step => {
+            const selectedProductId = state.selected_product[step.key];
+            if (!selectedProductId) return;
+
+            const product = step.products.find(p => p.base_product_id === selectedProductId);
+            if (!product) return;
+
+            const selection = state.selections[selectedProductId];
+
+            let variants = 'Sin variantes';
+            if (selection) {
+                const cached = productAttributesCache[step.key];
+                if (cached && Array.isArray(cached)) {
+                    const prodAttrs = cached.find(p => p.base_product_id === selectedProductId);
+                    if (prodAttrs && prodAttrs.attributes) {
+                        const parts = [];
+                        for (const attr of prodAttrs.attributes) {
+                            const valueId = selection[attr.name];
+                            if (valueId) {
+                                const value = attr.values.find(v => v.id === valueId);
+                                if (value) parts.push(value.name);
+                            }
+                        }
+                        variants = parts.length ? parts.join(', ') : 'Seleccionado';
+                    }
+                }
+            }
+
+            totalPrice += parseNumber(product.price);
+
+            categoryRows += `
+                <tr>
+                    <td>${escapeHtml(step.name)}</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="${product.image || DEFAULT_PLACEHOLDER}"
+                                 alt="${escapeHtml(product.name)}"
+                                 class="hg-summary-img"
+                                 onerror="this.src='${DEFAULT_PLACEHOLDER}'"/>
+                            <span>${escapeHtml(product.name)}</span>
+                        </div>
+                    </td>
+                    <td>${variants}</td>
+                    <td>${parseNumber(product.price).toFixed(2)}€</td>
+                </tr>
+            `;
         });
 
         container.innerHTML = `
@@ -346,35 +584,18 @@
                     <table class="table">
                         <thead>
                             <tr>
+                                <th>Categoría</th>
                                 <th>Producto</th>
                                 <th>Selección</th>
                                 <th>Precio</th>
                             </tr>
                         </thead>
                         <tbody>
-                            ${state.products.map(p => {
-                                const sel = state.selections[p.base_product_id];
-                                const variants = sel ? Object.entries(sel).map(([k, v]) => v).join(', ') : 'Sin seleccionar';
-                                return `
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="${p.image || DEFAULT_PLACEHOLDER}"
-                                                     alt="${escapeHtml(p.name)}"
-                                                     class="hg-summary-img"
-                                                     onerror="this.src='${DEFAULT_PLACEHOLDER}'"/>
-                                                <span>${escapeHtml(p.name)}</span>
-                                            </div>
-                                        </td>
-                                        <td>${variants}</td>
-                                        <td>${parseNumber(p.price).toFixed(2)}€</td>
-                                    </tr>
-                                `;
-                            }).join('')}
+                            ${categoryRows}
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2"><strong>Total estimado</strong></td>
+                                <td colspan="3"><strong>Total estimado</strong></td>
                                 <td><strong>${totalPrice.toFixed(2)}€</strong></td>
                             </tr>
                         </tfoot>
@@ -463,6 +684,41 @@
         state.selections[intProductId][attributeName] = valueId ? parseInt(valueId) : null;
         log('Attribute selected', { productId: intProductId, attributeName, valueId });
         saveState();
+
+        const container = document.getElementById('hg-content');
+        if (!container) return;
+
+        const step = getCurrentCategoryStep();
+        if (step) {
+            renderCategoryStep(step, container);
+        }
+    }
+
+    function selectProductInCategory(categoryKey, productId) {
+        const intProductId = parseInt(productId);
+        state.selected_product[categoryKey] = intProductId;
+
+        loadCategoryProductsFromApi(categoryKey).then(categoryProducts => {
+            const product = categoryProducts.find(p => p.base_product_id === intProductId);
+            if (product && product.preselected_values && Object.keys(product.preselected_values).length > 0) {
+                const selection = state.selections[intProductId] || {};
+                Object.entries(product.preselected_values).forEach(([attrName, valueId]) => {
+                    if (!selection[attrName]) {
+                        selectAttribute(intProductId, attrName, valueId);
+                    }
+                });
+            }
+        });
+
+        saveState();
+
+        const container = document.getElementById('hg-content');
+        if (container) {
+            const step = getCurrentCategoryStep();
+            if (step) {
+                renderCategoryStep(step, container);
+            }
+        }
     }
 
     function nextStep() {
@@ -511,19 +767,28 @@
     }
 
     function validateCurrentStep() {
-        if (state.current_step <= state.total_steps) {
-            const productIndex = state.current_step - 1;
-            const product = state.products[productIndex];
-            const selection = state.selections[product.base_product_id];
-            const productCategory = product.category || '';
+        if (state.current_step <= state.steps.length) {
+            const step = getCurrentCategoryStep();
+            if (!step) return false;
 
-            if (productCategory === 'azulejo') {
-                return true;
-            }
+            const selectedProductId = state.selected_product[step.key];
+            if (!selectedProductId) return false;
 
-            if (!selection || Object.keys(selection).length === 0) {
-                return false;
+            if (step.key === 'azulejo') return true;
+
+            const cached = productAttributesCache[step.key];
+            if (cached && Array.isArray(cached)) {
+                const prodAttrs = cached.find(p => p.base_product_id === selectedProductId);
+                if (prodAttrs && prodAttrs.attributes && prodAttrs.attributes.length > 0) {
+                    const selection = state.selections[selectedProductId];
+                    if (!selection) return false;
+                    for (const attr of prodAttrs.attributes) {
+                        if (attr.depends_on && !selection[attr.depends_on]) continue;
+                        if (!selection[attr.name]) return false;
+                    }
+                }
             }
+            return true;
         }
         return true;
     }
@@ -601,18 +866,42 @@
             state.total_steps = totalSteps;
         }
 
+        // Cargar productos planos (compatibilidad con renderizado antiguo)
         const productsContainer = document.getElementById('hg-products-data');
         if (productsContainer && (!state.products || state.products.length === 0)) {
             const productItems = productsContainer.querySelectorAll('.hg-product-item');
-            state.products = [];
+            const flatProducts = [];
             productItems.forEach(item => {
-                state.products.push({
+                flatProducts.push({
                     base_product_id: parseInt(item.dataset.id),
                     name: item.dataset.name,
                     price: parseFloat(item.dataset.price) || 0,
                     image: item.dataset.image || '',
+                    category: item.dataset.category || '',
+                    is_preselected: item.dataset.preselected === 'true',
                 });
             });
+            state.products = flatProducts;
+        }
+
+        // Construir steps desde categories_data del servidor
+        const categoriesContainer = document.getElementById('hg-categories-data');
+        if (categoriesContainer && (!state.steps || state.steps.length === 0)) {
+            const categoryItems = categoriesContainer.querySelectorAll('.hg-category-item');
+            state.steps = [];
+            categoryItems.forEach(item => {
+                const key = item.dataset.key;
+                const name = item.dataset.name;
+                const single = item.dataset.single === 'True';
+                const catProducts = state.products.filter(p => p.category === key);
+                state.steps.push({
+                    key: key,
+                    name: name,
+                    single_product: single,
+                    products: catProducts,
+                });
+            });
+            state.total_steps = state.steps.length;
         }
 
         if (!state.pack_id || state.products.length === 0) {
@@ -626,16 +915,25 @@
             state.current_step = 1;
         }
 
-        if (state.total_steps < state.products.length) {
-            state.total_steps = state.products.length;
-        }
+        // Auto-seleccionar productos en categorías con un solo producto
+        state.steps.forEach(step => {
+            if (step.single_product && step.products.length === 1) {
+                state.selected_product[step.key] = step.products[0].base_product_id;
+            }
+        });
 
-        log('App ready', { step: state.current_step, products: state.products.length });
+        log('App ready', {
+            step: state.current_step,
+            steps: state.steps.length,
+            products: state.products.length,
+            categories: state.steps.map(s => s.key),
+        });
         render();
     }
 
     // Exponer funciones al window para onclick handlers
     window.selectAttribute = selectAttribute;
+    window.selectProductInCategory = selectProductInCategory;
     window.nextStep = nextStep;
     window.prevStep = prevStep;
     window.goToStep = goToStep;

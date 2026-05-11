@@ -31,12 +31,14 @@ class SelectorPacksController(http.Controller):
 
         products = self._get_pack_products(pack_id)
         categories = self._get_categories_mapping()
+        categories_data = self._get_pack_categories(pack_id)
 
         values = {
             'pack': pack,
             'products': products,
             'categories': categories,
-            'total_steps': len(products),
+            'categories_data': categories_data,
+            'total_steps': len(categories_data),
         }
         return request.render('selector_packs.pack_selector', values)
 
@@ -60,6 +62,12 @@ class SelectorPacksController(http.Controller):
             result = self._get_pack_products_api(params)
         elif action == 'get_product_attributes':
             result = self._get_product_attributes(params)
+        elif action == 'get_pack_categories':
+            result = self._get_pack_categories(params.get('pack_id'))
+        elif action == 'get_category_products':
+            result = self._get_category_products_with_attributes(
+                params.get('pack_id'), params.get('category_key')
+            )
         elif action == 'validate_selections':
             result = self._validate_selections(params)
         elif action == 'create_lead':
@@ -114,10 +122,17 @@ class SelectorPacksController(http.Controller):
         if not product_tmpl_id:
             return {'error': 'Missing product_tmpl_id'}
 
+        return self._get_product_attributes_data(product_tmpl_id, pack_id)
+
+    def _get_product_attributes_data(self, product_tmpl_id, pack_id):
         product = request.env['product.template'].sudo().browse(product_tmpl_id)
 
         if not product.exists():
             return {'error': 'Product not found'}
+
+        category = self._get_product_category(product)
+        is_preselected = self._is_product_preselected(pack_id, product_tmpl_id)
+        preselected_values = self._get_preselected_values(pack_id, product_tmpl_id, product)
 
         attributes = []
         for line in product.attribute_line_ids:
@@ -129,22 +144,51 @@ class SelectorPacksController(http.Controller):
                 allowed_values = self._filter_attributes_by_pack(pack_id, product_tmpl_id, attr, values)
 
             if allowed_values:
-                attributes.append({
+                attr_info = {
                     'id': attr.id,
                     'name': attr.name,
                     'values': [
                         {'id': v.id, 'name': v.name}
                         for v in allowed_values
                     ]
-                })
+                }
+
+                if category == 'mueble':
+                    attr_info['depends_on'] = self._get_attribute_dependency(attr.name)
+                    attr_info['order'] = self._get_attribute_order(attr.name)
+                    attr_info['preselected'] = preselected_values.get(attr.name)
+
+                if is_preselected:
+                    attr_info['is_preselected'] = True
+                    if preselected_values.get(attr.name):
+                        attr_info['default_value'] = preselected_values[attr.name]
+
+                attributes.append(attr_info)
+
+        attributes.sort(key=lambda a: a.get('order', 999))
 
         return {
             'product_tmpl_id': product.id,
             'product_name': product.name,
             'price': product.list_price,
             'image': f'/web/image/product.template/{product.id}/image_1024',
+            'category': category,
+            'is_preselected': is_preselected,
+            'preselected_values': preselected_values,
             'attributes': attributes,
         }
+
+    def _get_category_products_with_attributes(self, pack_id, category_key):
+        products = self._get_pack_products(pack_id)
+        category_products = [p for p in products if p['category'] == category_key]
+
+        for p in category_products:
+            attrs_data = self._get_product_attributes_data(p['base_product_id'], pack_id)
+            p['attributes'] = attrs_data.get('attributes', [])
+            p['is_preselected'] = attrs_data.get('is_preselected', False)
+            p['preselected_values'] = attrs_data.get('preselected_values', {})
+
+        return category_products
 
     def _validate_selections(self, payload):
         pack_id = payload.get('pack_id')
@@ -210,6 +254,15 @@ class SelectorPacksController(http.Controller):
             ('product_tmpl_id', '=', pack_id)
         ])
 
+        pack_ext_id = pack.get_external_id()
+        pack_key = pack_ext_id.get(pack_id, '')
+
+        preselected_products = {
+            'pack_reforma_basic_plus': ['grifo_star', 'azulejo_30x60'],
+            'pack_reforma_integral_basic': ['grifo_kappa', 'mueble_sansa', 'azulejo_30x60'],
+        }
+        pack_preselected = preselected_products.get(pack_key, [])
+
         products = []
         for pp in pack_products:
             base_product = pp.base_product_id
@@ -220,6 +273,10 @@ class SelectorPacksController(http.Controller):
 
             category = self._get_product_category(base_product)
 
+            product_ext_id = base_product.get_external_id()
+            product_key = product_ext_id.get(base_product.id, '')
+            is_preselected = product_key in pack_preselected
+
             products.append({
                 'id': pp.id,
                 'name': base_product.name,
@@ -227,6 +284,7 @@ class SelectorPacksController(http.Controller):
                 'category': category,
                 'price': base_product.list_price or 0.0,
                 'image': image_url,
+                'is_preselected': is_preselected,
             })
 
         return products
@@ -258,6 +316,32 @@ class SelectorPacksController(http.Controller):
             'mueble': 'Mueble de Baño',
             'sanitario': 'Sanitario',
         }
+
+    def _get_pack_categories(self, pack_id):
+        products = self._get_pack_products(pack_id)
+        if not products:
+            return []
+
+        category_order = ['plato', 'azulejo', 'mampara', 'mueble', 'grifo', 'sanitario']
+
+        grouped = {}
+        for p in products:
+            cat = p['category']
+            if cat not in grouped:
+                grouped[cat] = []
+            grouped[cat].append(p)
+
+        steps = []
+        for cat_key in category_order:
+            if cat_key in grouped:
+                steps.append({
+                    'key': cat_key,
+                    'name': self._get_categories_mapping().get(cat_key, cat_key),
+                    'products': grouped[cat_key],
+                    'single_product': len(grouped[cat_key]) == 1,
+                })
+
+        return steps
 
     def _filter_attributes_by_pack(self, pack_id, product_tmpl_id, attribute, values):
         pack = request.env['product.template'].sudo().browse(pack_id)
@@ -300,6 +384,19 @@ class SelectorPacksController(http.Controller):
             'pack_reforma_integral_premium': {},
         }
 
+        azulejo_restrictions = {
+            'pack_reforma_basic': {
+                'all': ['Blanco Brillo', 'Blanco Mate'],
+            },
+            'pack_reforma_basic_plus': {
+                'all': ['Blanco Brillo', 'Blanco Mate'],
+            },
+            'pack_reforma_integral_basic': {
+                'all': ['Blanco Brillo', 'Blanco Mate'],
+            },
+            'pack_reforma_integral_premium': {},
+        }
+
         attr_name_lower = attribute.name.lower()
 
         if 'color' in attr_name_lower:
@@ -314,7 +411,103 @@ class SelectorPacksController(http.Controller):
             if allowed_vidrio is not None:
                 return values.filtered(lambda v: v.name in allowed_vidrio)
 
+        if 'acabado' in attr_name_lower:
+            category = self._get_product_category(product)
+            if category == 'azulejo':
+                restrictions = azulejo_restrictions.get(pack_key, {})
+                allowed_azulejos = restrictions.get('all', None)
+                if allowed_azulejos is not None:
+                    return values.filtered(lambda v: v.name in allowed_azulejos)
+
         return values
+
+    def _is_product_preselected(self, pack_id, product_tmpl_id):
+        pack = request.env['product.template'].sudo().browse(pack_id)
+        if not pack.exists():
+            return False
+
+        pack_ext_id = pack.get_external_id()
+        pack_key = pack_ext_id.get(pack_id, '')
+
+        product = request.env['product.template'].sudo().browse(product_tmpl_id)
+        product_ext_id = product.get_external_id()
+        product_key = product_ext_id.get(product_tmpl_id, '')
+
+        preselected_products = {
+            'pack_reforma_basic_plus': {
+                'grifo_star': True,
+                'azulejo_30x60': True,
+            },
+            'pack_reforma_integral_basic': {
+                'grifo_kappa': True,
+                'mueble_sansa': True,
+                'azulejo_30x60': True,
+            },
+        }
+
+        pack_preselected = preselected_products.get(pack_key, {})
+        return pack_preselected.get(product_key, False)
+
+    def _get_preselected_values(self, pack_id, product_tmpl_id, product):
+        pack = request.env['product.template'].sudo().browse(pack_id)
+        if not pack.exists():
+            return {}
+
+        pack_ext_id = pack.get_external_id()
+        pack_key = pack_ext_id.get(pack_id, '')
+
+        product_ext_id = product.get_external_id()
+        product_key = product_ext_id.get(product_tmpl_id, '')
+
+        preselected_values = {}
+
+        if pack_key == 'pack_reforma_integral_basic':
+            if product_key == 'mueble_sansa':
+                modelo_attr = request.env['product.attribute'].sudo().search([
+                    ('name', '=', 'Modelo')
+                ], limit=1)
+                if modelo_attr:
+                    modelo_value = request.env['product.attribute.value'].sudo().search([
+                        ('attribute_id', '=', modelo_attr.id),
+                        ('name', '=', 'Set 80 1C')
+                    ], limit=1)
+                    if modelo_value:
+                        preselected_values['Modelo'] = modelo_value.id
+
+                tipo_attr = request.env['product.attribute'].sudo().search([
+                    ('name', '=', 'Tipo')
+                ], limit=1)
+                if tipo_attr:
+                    tipo_value = request.env['product.attribute.value'].sudo().search([
+                        ('attribute_id', '=', tipo_attr.id),
+                        ('name', 'ilike', 'Integrado')
+                    ], limit=1)
+                    if tipo_value:
+                        preselected_values['Tipo'] = tipo_value.id
+
+        return preselected_values
+
+    def _get_attribute_dependency(self, attr_name):
+        if attr_name == 'Modelo':
+            return None
+        elif attr_name == 'Acabado':
+            return 'Modelo'
+        elif attr_name == 'Tipo':
+            return 'Acabado'
+        return None
+
+    def _get_attribute_order(self, attr_name):
+        order_map = {
+            'Modelo': 1,
+            'Acabado': 2,
+            'Tipo': 3,
+            'Color': 1,
+            'Ancho': 2,
+            'Largo': 3,
+            'Vidrio': 2,
+            'Medida': 3,
+        }
+        return order_map.get(attr_name, 999)
 
     def _create_or_get_partner(self, email, name, phone):
         existing_partner = request.env['res.partner'].sudo().search([

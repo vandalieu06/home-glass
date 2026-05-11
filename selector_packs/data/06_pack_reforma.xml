@@ -199,11 +199,161 @@
         <!-- Muebles -->
         <record id="pack_reforma_integral_premium_line_19" model="pack.products">
             <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
-            <field name="base_product_id" ref="mueble_sansa_80"/>
+            <field name="base_product_id" ref="mueble_vora_enzo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_20" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_vora_cairo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_21" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_win"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_22" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_vora_encimera"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_23" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_win_1c2p"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_24" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_logika"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_25" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_logika_encimera"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_26" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_econic"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_27" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_econic_encimera"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_28" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_vitale_enzo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_29" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_vitale_cairo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_30" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_vitale_suelo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_31" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_alfa"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_32" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_dai"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_33" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_urban"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_34" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_sansa"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_35" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_niwa"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_36" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_mio"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_37" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_vida"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_38" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_wave"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_39" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_street"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_40" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_enjoy"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_41" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_elegance"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_42" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_vitale_reducido"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_43" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_dai_encimera"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_44" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_urban_suelo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_45" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_sansa_encimera"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_46" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_sansa_suelo"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_47" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_sansa_reducido"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_48" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_essence"/>
+            <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_premium_line_49" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mueble_bassi"/>
             <field name="quantity">1</field>
         </record>
         <!-- Sanitarios -->
-        <record id="pack_reforma_integral_premium_line_20" model="pack.products">
+        <record id="pack_reforma_integral_premium_line_50" model="pack.products">
             <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
             <field name="base_product_id" ref="inodoro_sanitario"/>
             <field name="quantity">1</field>
