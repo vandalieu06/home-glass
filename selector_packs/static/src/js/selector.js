@@ -812,6 +812,7 @@
         api('create_lead', {
             pack_id: state.pack_id,
             selections: state.selections,
+            selected_product: state.selected_product,
             contact: state.contact,
         })
         .then(data => {

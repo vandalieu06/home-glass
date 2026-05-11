@@ -210,6 +210,7 @@ class SelectorPacksController(http.Controller):
     def _create_lead(self, payload):
         pack_id = payload.get('pack_id')
         selections = payload.get('selections', {})
+        selected_product = payload.get('selected_product', {})
         contact = payload.get('contact', {})
 
         if not contact.get('name') or not contact.get('email'):
@@ -223,7 +224,7 @@ class SelectorPacksController(http.Controller):
             contact.get('phone')
         )
 
-        description = self._build_description(pack, selections)
+        description = self._build_description(pack, selections, selected_product)
 
         lead = request.env['crm.lead'].sudo().create({
             'name': f'Presupuesto {pack.name if pack.exists() else "Pack"} - {contact.get("name")}',
@@ -235,8 +236,34 @@ class SelectorPacksController(http.Controller):
             'user_id': request.env.ref('base.user_admin').id,
         })
 
+        sale_order = request.env['sale.order'].sudo().create({
+            'partner_id': partner.id,
+            'opportunity_id': lead.id,
+            'origin': lead.name,
+        })
+
+        for product_tmpl_id in selected_product.values():
+            product_tmpl_id = int(product_tmpl_id)
+            template = request.env['product.template'].sudo().browse(product_tmpl_id)
+            if not template.exists():
+                continue
+
+            attribute_selections = selections.get(str(product_tmpl_id), {})
+            variant = self._resolve_variant(template, attribute_selections)
+            if not variant:
+                continue
+
+            request.env['sale.order.line'].sudo().create({
+                'order_id': sale_order.id,
+                'product_id': variant.id,
+                'product_uom_qty': 1,
+                'price_unit': variant.lst_price or 0.0,
+                'name': template.name,
+            })
+
         return {
             'lead_id': lead.id,
+            'sale_order_id': sale_order.id,
             'status': 'created',
         }
 
@@ -529,23 +556,46 @@ class SelectorPacksController(http.Controller):
 
         return partner
 
+    def _resolve_variant(self, template, attribute_selections):
+        """Resuelve product.product desde un template + selección de atributos"""
+        if not template.exists():
+            return None
+
+        if not attribute_selections or not any(attribute_selections.values()):
+            return template.product_variant_id
+
+        attr_value_ids = set()
+        for value_id in attribute_selections.values():
+            if value_id:
+                attr_value_ids.add(int(value_id))
+
+        if not attr_value_ids:
+            return template.product_variant_id
+
+        for variant in template.product_variant_ids:
+            variant_attr_ids = set(
+                variant.product_template_attribute_value_ids.mapped('product_attribute_value_id').ids
+            )
+            if variant_attr_ids == attr_value_ids:
+                return variant
+
+        return template.product_variant_id
+
     def _get_sales_team(self):
         team = request.env['crm.team'].sudo().search([], limit=1)
         return team.id if team else False
 
-    def _build_description(self, pack, selections):
+    def _build_description(self, pack, selections, selected_product):
         description = f"PRESUPUESTO - {pack.name}\n\n"
-
         description += "SELECCIONES:\n"
 
-        for product_id, selection_data in selections.items():
-            if not selection_data:
-                continue
-
-            product = request.env['product.template'].sudo().browse(product_id)
+        for product_tmpl_id in selected_product.values():
+            product_tmpl_id = int(product_tmpl_id)
+            product = request.env['product.template'].sudo().browse(product_tmpl_id)
             if not product.exists():
                 continue
 
+            selection_data = selections.get(str(product_tmpl_id), {})
             description += f"\n- {product.name}: "
 
             if isinstance(selection_data, dict):
@@ -559,14 +609,18 @@ class SelectorPacksController(http.Controller):
             else:
                 description += 'Sin variantes'
 
-            description += f" - {product.list_price or 0:.2f}€"
+            variant = self._resolve_variant(product, selection_data)
+            price = variant.lst_price if variant else product.list_price
+            description += f" - {price or 0:.2f}€"
 
         total_price = sum(
-            request.env['product.template'].sudo().browse(pid).list_price or 0
-            for pid in selections.keys()
-            if request.env['product.template'].sudo().browse(pid).exists()
+            self._resolve_variant(
+                request.env['product.template'].sudo().browse(int(pid)),
+                selections.get(str(pid), {})
+            ).lst_price or 0
+            for pid in selected_product.values()
+            if request.env['product.template'].sudo().browse(int(pid)).exists()
         )
 
         description += f"\n\nPRECIO ESTIMADO: {total_price:.2f}€ (sin IVA)"
-
         return description
