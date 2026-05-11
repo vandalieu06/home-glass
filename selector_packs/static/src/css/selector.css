@@ -649,22 +649,22 @@
 }
 
 /* ============================================
-   CATEGORY ATTRIBUTES PANEL
+   BACK TO GRID LINK
    ============================================ */
-.hg-category-attributes {
-  background: var(--mm-canvas);
-  border: 1px solid var(--mm-hairline);
-  border-radius: var(--mm-rounded-lg);
-  padding: var(--mm-space-xl);
-  margin-bottom: var(--mm-space-xl);
+.hg-back-to-grid {
+  margin-bottom: var(--mm-space-lg);
 }
 
-.hg-category-attributes h3 {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.50;
+.hg-back-to-grid a {
+  color: var(--mm-muted);
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.hg-back-to-grid a:hover {
   color: var(--mm-ink);
-  margin: 0 0 var(--mm-space-md) 0;
 }
 
 /* ============================================

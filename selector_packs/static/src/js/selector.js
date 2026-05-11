@@ -26,6 +26,7 @@
         steps: [],
         products: [],
         selected_product: {},
+        product_detail_mode: {},
         selections: {},
         contact: {
             name: '',
@@ -121,6 +122,7 @@
             steps: [],
             products: [],
             selected_product: {},
+            product_detail_mode: {},
             selections: {},
             contact: { name: '', email: '', phone: '', message: '' },
             errors: {},
@@ -372,6 +374,68 @@
     }
 
     function renderProductGridInCategory(step, categoryProducts, selectedId, container) {
+        const inDetailMode = state.product_detail_mode && state.product_detail_mode[step.key];
+
+        if (inDetailMode && selectedId) {
+            const selectedProduct = categoryProducts.find(p => p.base_product_id === selectedId);
+            if (!selectedProduct) {
+                renderProductGridInCategory(step, categoryProducts, null, container);
+                return;
+            }
+
+            const selection = state.selections[selectedId] || {};
+            const attributes = selectedProduct.attributes || [];
+
+            if (selectedProduct.is_preselected && selectedProduct.preselected_values && Object.keys(selectedProduct.preselected_values).length > 0) {
+                Object.entries(selectedProduct.preselected_values).forEach(([attrName, valueId]) => {
+                    if (!selection[attrName]) {
+                        selectAttribute(selectedProduct.base_product_id, attrName, valueId);
+                    }
+                });
+            }
+
+            container.innerHTML = `
+                <div class="hg-category-step">
+                    <div class="hg-category-header">
+                        <h2>${escapeHtml(step.name)}</h2>
+                    </div>
+
+                    <div class="hg-back-to-grid">
+                        <a href="#" onclick="showProductGrid('${escapeAttr(step.key)}'); return false;">
+                            ← Cambiar producto
+                        </a>
+                    </div>
+
+                    <div class="hg-product-card">
+                        <div class="hg-product-image">
+                            <img src="${selectedProduct.image || DEFAULT_PLACEHOLDER}"
+                                 alt="${escapeHtml(selectedProduct.name)}"
+                                 onerror="this.src='${DEFAULT_PLACEHOLDER}'"/>
+                        </div>
+                        <div class="hg-product-info">
+                            <h3>${escapeHtml(selectedProduct.name)}</h3>
+                            <p class="hg-product-price">${parseNumber(selectedProduct.price).toFixed(2)}€</p>
+                        </div>
+                    </div>
+
+                    ${selectedProduct.is_preselected ? renderPreselectedInfo(selectedProduct, selectedProduct) : ''}
+
+                    <div class="hg-attributes">
+                        ${attributes.length === 0 ?
+                            '<div class="hg-no-variants"><p>Este producto no tiene variantes configuradas.</p></div>' :
+                            renderAttributesCascade(selectedId, attributes, selection, step.key)
+                        }
+                    </div>
+
+                    <div class="hg-actions">
+                        <button class="hg-btn hg-btn-secondary" onclick="prevStep()">Atrás</button>
+                        <button class="hg-btn hg-btn-primary" onclick="nextStep()">Siguiente</button>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
         let html = `
             <div class="hg-category-step">
                 <div class="hg-category-header">
@@ -401,40 +465,8 @@
             `;
         });
 
-        html += `</div>`;
-
-        if (selectedId) {
-            const selectedProduct = categoryProducts.find(p => p.base_product_id === selectedId);
-            if (selectedProduct) {
-                const selection = state.selections[selectedId] || {};
-                const attributes = selectedProduct.attributes || [];
-                const isPreselected = selectedProduct.is_preselected || false;
-
-                if (isPreselected && selectedProduct.preselected_values && Object.keys(selectedProduct.preselected_values).length > 0) {
-                    Object.entries(selectedProduct.preselected_values).forEach(([attrName, valueId]) => {
-                        if (!selection[attrName]) {
-                            selectAttribute(selectedProduct.base_product_id, attrName, valueId);
-                        }
-                    });
-                }
-
-                html += `
-                    <div class="hg-category-attributes">
-                        <h3>${escapeHtml(selectedProduct.name)}</h3>
-                        ${isPreselected ? renderPreselectedInfo(selectedProduct, selectedProduct) : ''}
-
-                        <div class="hg-attributes">
-                            ${attributes.length === 0 ?
-                                '<div class="hg-no-variants"><p>Este producto no tiene variantes configuradas.</p></div>' :
-                                renderAttributesCascade(selectedId, attributes, selection, step.key)
-                            }
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
         html += `
+                </div>
                 <div class="hg-actions">
                     <button class="hg-btn hg-btn-secondary" onclick="prevStep()">Atrás</button>
                     <button class="hg-btn hg-btn-primary" onclick="nextStep()">Siguiente</button>
@@ -704,6 +736,7 @@
     function selectProductInCategory(categoryKey, productId) {
         const intProductId = parseInt(productId);
         state.selected_product[categoryKey] = intProductId;
+        state.product_detail_mode[categoryKey] = true;
 
         loadCategoryProductsFromApi(categoryKey).then(categoryProducts => {
             const product = categoryProducts.find(p => p.base_product_id === intProductId);
@@ -719,6 +752,20 @@
 
         saveState();
 
+        const container = document.getElementById('hg-content');
+        if (container) {
+            const step = getCurrentCategoryStep();
+            if (step) {
+                renderCategoryStep(step, container);
+            }
+        }
+    }
+
+    function showProductGrid(categoryKey) {
+        if (state.product_detail_mode) {
+            state.product_detail_mode[categoryKey] = false;
+        }
+        saveState();
         const container = document.getElementById('hg-content');
         if (container) {
             const step = getCurrentCategoryStep();
@@ -955,6 +1002,7 @@
     // Exponer funciones al window para onclick handlers
     window.selectAttribute = selectAttribute;
     window.selectProductInCategory = selectProductInCategory;
+    window.showProductGrid = showProductGrid;
     window.nextStep = nextStep;
     window.prevStep = prevStep;
     window.goToStep = goToStep;
