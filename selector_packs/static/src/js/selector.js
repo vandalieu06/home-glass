@@ -252,7 +252,7 @@
             { index: state.steps.length + 2, name: 'Contacto' },
         ];
 
-        container.innerHTML = steps.map((s) => {
+        container.innerHTML = `<div class="hg-stepper-content-inner">${steps.map((s) => {
             const stepNum = s.index;
             const isActive = state.current_step === stepNum;
             const isCompleted = state.current_step > stepNum;
@@ -268,7 +268,7 @@
                     <div class="hg-stepper-name">${escapeHtml(s.name)}</div>
                 </div>
             `;
-        }).join('');
+        }).join('')}</div>`;
 
         log('Stepper rendered', { currentStep: state.current_step });
     }

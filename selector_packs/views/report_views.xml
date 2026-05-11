@@ -17,72 +17,273 @@
                 <t t-set="lines" t-value="o.order_line.sudo()"/>
 
                 <t t-call="web.basic_layout">
-                    <div class="page">
-                        <div class="row">
-                            <div class="col-6">
-                                <h2>PRESUPUESTO #<span t-field="o.name"/></h2>
+                    <style>
+                        /* MiniMax-inspired design for PDF report */
+
+                        @page {
+                            margin: 20mm 15mm;
+                        }
+
+                        body {
+                            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                            color: #222222;
+                            font-size: 10pt;
+                            line-height: 1.50;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+                        .hg-report {
+                            max-width: 720px;
+                            margin: 0 auto;
+                        }
+
+                        /* Accent strip */
+                        .hg-report-accent {
+                            height: 4px;
+                            background: #ff5530;
+                            margin-bottom: 32px;
+                            border-radius: 2px;
+                        }
+
+                        /* Header */
+                        .hg-report-header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            margin-bottom: 32px;
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid #e5e7eb;
+                        }
+
+                        .hg-report-title h1 {
+                            font-size: 24pt;
+                            font-weight: 600;
+                            color: #0a0a0a;
+                            margin: 0 0 4px 0;
+                            letter-spacing: -0.5px;
+                            line-height: 1.25;
+                        }
+
+                        .hg-report-title .hg-report-sub {
+                            font-size: 10pt;
+                            color: #5f5f5f;
+                            margin: 0;
+                        }
+
+                        .hg-report-meta {
+                            text-align: right;
+                        }
+
+                        .hg-report-meta p {
+                            margin: 2px 0;
+                            font-size: 9pt;
+                            color: #5f5f5f;
+                        }
+
+                        .hg-report-meta strong {
+                            color: #0a0a0a;
+                        }
+
+                        .hg-report-meta .hg-meta-value {
+                            color: #222222;
+                            font-weight: 500;
+                        }
+
+                        /* Section labels */
+                        .hg-section-label {
+                            font-size: 7pt;
+                            font-weight: 600;
+                            color: #a8aab2;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            margin-bottom: 8px;
+                        }
+
+                        /* Client info card */
+                        .hg-client-card {
+                            background: #f7f8fa;
+                            border: 1px solid #e5e7eb;
+                            border-radius: 8px;
+                            padding: 16px 20px;
+                            margin-bottom: 28px;
+                        }
+
+                        .hg-client-card .hg-client-name {
+                            font-size: 12pt;
+                            font-weight: 600;
+                            color: #0a0a0a;
+                            margin: 0 0 4px 0;
+                        }
+
+                        .hg-client-card p {
+                            margin: 2px 0;
+                            font-size: 9pt;
+                            color: #45515e;
+                        }
+
+                        .hg-client-card .hg-client-label {
+                            color: #8e8e93;
+                        }
+
+                        /* Table styling */
+                        .hg-table-wrap {
+                            border: 1px solid #e5e7eb;
+                            border-radius: 8px;
+                            overflow: hidden;
+                            margin-bottom: 20px;
+                        }
+
+                        .hg-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            font-size: 9pt;
+                        }
+
+                        .hg-table thead th {
+                            background: #f7f8fa;
+                            color: #5f5f5f;
+                            font-size: 7pt;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            padding: 10px 14px;
+                            text-align: left;
+                            border-bottom: 1px solid #e5e7eb;
+                        }
+
+                        .hg-table thead th.hg-text-right {
+                            text-align: right;
+                        }
+
+                        .hg-table tbody td {
+                            padding: 10px 14px;
+                            border-bottom: 1px solid #eaecf0;
+                            color: #222222;
+                            vertical-align: top;
+                        }
+
+                        .hg-table tbody tr:last-child td {
+                            border-bottom: none;
+                        }
+
+                        .hg-table .hg-text-right {
+                            text-align: right;
+                        }
+
+                        .hg-table .hg-prod-name {
+                            font-weight: 500;
+                            color: #0a0a0a;
+                        }
+
+                        .hg-table .hg-prod-variant {
+                            display: block;
+                            font-size: 8pt;
+                            color: #8e8e93;
+                            margin-top: 2px;
+                        }
+
+                        /* Total row */
+                        .hg-total-row td {
+                            padding: 12px 14px;
+                            background: #f7f8fa;
+                            font-weight: 600;
+                            font-size: 11pt;
+                            color: #0a0a0a;
+                            border-top: 1px solid #e5e7eb;
+                        }
+
+                        .hg-total-row .hg-text-right {
+                            text-align: right;
+                        }
+
+                        /* Empty variant label */
+                        .hg-no-variant {
+                            color: #a8aab2;
+                            font-size: 8pt;
+                            font-style: italic;
+                        }
+
+                        /* Footer */
+                        .hg-report-footer {
+                            margin-top: 40px;
+                            padding-top: 16px;
+                            border-top: 1px solid #e5e7eb;
+                            text-align: center;
+                            font-size: 8pt;
+                            color: #a8aab2;
+                        }
+                    </style>
+
+                    <div class="hg-report">
+                        <div class="hg-report-accent"/>
+
+                        <div class="hg-report-header">
+                            <div class="hg-report-title">
+                                <h1>Presupuesto</h1>
+                                <p class="hg-report-sub">Referencia: <strong><span t-field="o.name"/></strong></p>
                             </div>
-                            <div class="col-6 text-right">
-                                <p><strong>Fecha:</strong> <span t-field="o.date_order" t-options='{"widget": "date"}'/></p>
+                            <div class="hg-report-meta">
+                                <p>Fecha: <span class="hg-meta-value"><span t-field="o.date_order" t-options='{"widget": "date"}'/></span></p>
+                                <p t-if="o.user_id">Comercial: <span class="hg-meta-value" t-field="o.user_id.name"/></p>
                             </div>
                         </div>
 
-                        <div class="row mt-4">
-                            <div class="col-12">
-                                <p t-if="o.origin"><strong>Pack:</strong> <span t-field="o.origin"/></p>
-                            </div>
+                        <div t-if="o.origin" class="hg-client-card">
+                            <p><span class="hg-client-label">Pack:</span> <span t-field="o.origin"/></p>
                         </div>
 
-                        <div class="row mt-3">
-                            <div class="col-12">
-                                <strong>Cliente:</strong>
-                                <p t-field="partner.name"/>
-                                <p t-if="partner.email" t-field="partner.email"/>
-                                <p t-if="partner.phone" t-field="partner.phone"/>
-                            </div>
+                        <div class="hg-client-card">
+                            <p class="hg-client-name" t-field="partner.name"/>
+                            <p t-if="partner.email"><span class="hg-client-label">Email:</span> <span t-field="partner.email"/></p>
+                            <p t-if="partner.phone"><span class="hg-client-label">Teléfono:</span> <span t-field="partner.phone"/></p>
+                            <p t-if="partner.street"><span class="hg-client-label">Dirección:</span> <span t-field="partner.street"/></p>
                         </div>
 
-                        <table class="table table-sm o_main_table mt-4">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th class="text-right">Cant.</th>
-                                    <th class="text-right">Precio Ud.</th>
-                                    <th class="text-right">Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <t t-foreach="lines" t-as="line">
-                                    <t t-set="product" t-value="line.product_id.sudo()"/>
+                        <div class="hg-table-wrap">
+                            <table class="hg-table">
+                                <thead>
                                     <tr>
-                                        <td>
-                                            <span t-field="line.name"/>
-                                            <t t-if="product.product_template_attribute_value_ids">
-                                                <br/>
-                                                <span class="text-muted">
-                                                    <t t-foreach="product.product_template_attribute_value_ids.sudo()" t-as="ptav">
-                                                        <span t-field="ptav.name"/><t t-if="not ptav_last">, </t>
-                                                    </t>
-                                                </span>
-                                            </t>
-                                        </td>
-                                        <td class="text-right"><span t-field="line.product_uom_qty"/></td>
-                                        <td class="text-right"><span t-field="line.price_unit"/></td>
-                                        <td class="text-right"><span t-field="line.price_subtotal"/></td>
+                                        <th>Producto</th>
+                                        <th class="hg-text-right">Cant.</th>
+                                        <th class="hg-text-right">Precio Ud.</th>
+                                        <th class="hg-text-right">Subtotal</th>
                                     </tr>
-                                </t>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="lines" t-as="line">
+                                        <t t-set="product" t-value="line.product_id.sudo()"/>
+                                        <tr>
+                                            <td>
+                                                <span class="hg-prod-name" t-field="line.name"/>
+                                                <t t-if="product.product_template_attribute_value_ids">
+                                                    <span class="hg-prod-variant">
+                                                        <t t-foreach="product.product_template_attribute_value_ids.sudo()" t-as="ptav">
+                                                            <span t-field="ptav.name"/><t t-if="not ptav_last">, </t>
+                                                        </t>
+                                                    </span>
+                                                </t>
+                                                <t t-else="">
+                                                    <span class="hg-no-variant">Sin variantes</span>
+                                                </t>
+                                            </td>
+                                            <td class="hg-text-right"><span t-field="line.product_uom_qty"/></td>
+                                            <td class="hg-text-right"><span t-field="line.price_unit" t-options='{"digits": 2}'/> €</td>
+                                            <td class="hg-text-right"><span t-field="line.price_subtotal" t-options='{"digits": 2}'/> €</td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="hg-total-row">
+                                        <td colspan="3">Total presupuesto</td>
+                                        <td class="hg-text-right"><span t-field="o.amount_total" t-options='{"digits": 2}'/> €</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
 
-                        <div class="row justify-content-end mt-3">
-                            <div class="col-4">
-                                <table class="table table-sm">
-                                    <tr>
-                                        <td><strong>Total:</strong></td>
-                                        <td class="text-right"><strong><span t-field="o.amount_total"/></strong></td>
-                                    </tr>
-                                </table>
-                            </div>
+                        <div class="hg-report-footer">
+                            Presupuesto generado el <span t-field="o.write_date" t-options='{"widget": "date"}'/> · Válido por 30 días
                         </div>
                     </div>
                 </t>

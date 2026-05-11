@@ -10,7 +10,7 @@
     <template id="packs_home" name="Packs de Reforma">
         <t t-call="website.layout">
             <div class="hg-packs-home">
-                <div class="container">
+                <div class="hg-container">
                     <div class="hg-packs-header">
                         <h1>Elige tu Reforma</h1>
                         <p>Selecciona el pack que mejor se adapte a tus necesidades</p>
@@ -18,18 +18,22 @@
 
                     <div class="hg-packs-grid">
                         <t t-foreach="packs" t-as="pack">
-                            <div class="hg-pack-card">
+                            <t t-set="pack_color_idx" t-value="pack_index % 4 + 1"/>
+                            <div t-attf-class="hg-pack-card hg-pack-accent-#{pack_color_idx}">
+                                <div class="hg-pack-accent-strip"/>
                                 <div class="hg-pack-image">
                                     <img t-att-src="'/web/image/product.template/%s/image_512' % pack.id"
                                          alt="pack.name"
                                          onerror="this.src='https://placehold.co/400x300?text=Pack'"/>
                                 </div>
                                 <div class="hg-pack-content">
-                                    <h3 t-esc="pack.name"/>
+                                    <div class="hg-pack-title-row">
+                                        <span class="hg-pack-dot"/>
+                                        <h3 t-esc="pack.name"/>
+                                    </div>
                                     <p class="hg-pack-desc" t-esc="pack.description_sale or 'Servicio de reforma'"/>
                                     <div class="hg-pack-price">
                                         <span class="price-label">Desde</span>
-                                        <!-- <span class="price-value" t-esc="f'{pack.list_price:.2f}€'"/> -->
                                         <span class="price-value" t-esc="'%.2f' % pack.list_price + '€'"/>
                                     </div>
                                     <a t-att-href="'/reformas/packs/%s' % pack.id"
@@ -50,17 +54,18 @@
     <!-- ============================================ -->
     <template id="pack_selector" name="Selector de Pack">
         <t t-call="website.layout">
-            <div id="hg-selector"
-                 class="hg-selector"
-                 t-att-data-pack-id="pack.id"
-                 t-att-data-pack-name="pack.name"
-                 t-att-data-total-steps="total_steps">
-                <aside class="hg-stepper">
-                    <div class="hg-stepper-header">
-                        <h3 t-esc="pack.name"/>
-                    </div>
-                    <div id="hg-stepper-content"/>
-                </aside>
+            <div class="hg-selector-wrapper">
+                <div id="hg-selector"
+                     class="hg-selector"
+                     t-att-data-pack-id="pack.id"
+                     t-att-data-pack-name="pack.name"
+                     t-att-data-total-steps="total_steps">
+                    <aside class="hg-stepper">
+                        <div class="hg-stepper-header">
+                            <h3 t-esc="pack.name"/>
+                        </div>
+                        <div id="hg-stepper-content"/>
+                    </aside>
 
                 <main class="hg-content">
                     <div id="hg-content" class="hg-content-inner">
@@ -92,6 +97,7 @@
                     </t>
                 </div>
             </div>
+                </div>
         </t>
     </template>
 
