@@ -32,10 +32,10 @@
                                         <h3 t-esc="pack.name"/>
                                     </div>
                                     <p class="hg-pack-desc" t-esc="pack.description_sale or 'Servicio de reforma'"/>
-                                    <div class="hg-pack-price">
+                                    <!-- <div class="hg-pack-price">
                                         <span class="price-label">Desde</span>
                                         <span class="price-value" t-esc="'%.2f' % pack.list_price + '€'"/>
-                                    </div>
+                                    </div> -->
                                     <a t-att-href="'/reformas/packs/%s' % pack.id"
                                        class="hg-btn hg-btn-primary">
                                         Seleccionar

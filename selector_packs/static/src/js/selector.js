@@ -874,6 +874,12 @@
         const packName = root.dataset.packName;
         const totalSteps = parseInt(root.dataset.totalSteps) || 0;
 
+        // Si entramos a un pack diferente al guardado, empezamos de cero
+        if (packId && state.pack_id && state.pack_id !== parseInt(packId)) {
+            log('Pack changed, resetting state');
+            clearState();
+        }
+
         if (packId && !state.pack_id) {
             log('Loading from server data', { packId, packName, totalSteps });
             state.pack_id = parseInt(packId);
