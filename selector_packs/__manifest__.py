@@ -16,6 +16,7 @@
         'data/05_productos_simples.xml',
         'data/06_pack_reforma.xml',
         'views/templates.xml',
+        'views/report_views.xml',
     ],
     'assets': {
         'web.assets_frontend': [

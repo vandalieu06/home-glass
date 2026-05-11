@@ -585,6 +585,26 @@ class SelectorPacksController(http.Controller):
         team = request.env['crm.team'].sudo().search([], limit=1)
         return team.id if team else False
 
+    # ============================================
+    # RUTA PARA GENERAR PDF DEL PRESUPUESTO
+    # ============================================
+
+    @http.route('/print/presupuesto/<int:sale_order_id>', type='http', auth='public', methods=['GET'])
+    def print_presupuesto(self, sale_order_id):
+        order = request.env['sale.order'].sudo().browse(sale_order_id)
+        if not order.exists():
+            return request.not_found()
+
+        report = request.env.ref('selector_packs.action_report_presupuesto').sudo()
+        pdf_content, _ = report.sudo()._render_qweb_pdf(order.ids)
+
+        pdfheaders = [
+            ('Content-Type', 'application/pdf'),
+            ('Content-Length', len(pdf_content)),
+            ('Content-Disposition', f'attachment; filename="Presupuesto_{order.name}.pdf"'),
+        ]
+        return request.make_response(pdf_content, headers=pdfheaders)
+
     def _build_description(self, pack, selections, selected_product):
         description = f"PRESUPUESTO - {pack.name}\n\n"
         description += "SELECCIONES:\n"

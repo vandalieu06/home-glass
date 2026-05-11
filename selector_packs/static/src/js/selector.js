@@ -35,6 +35,7 @@
         },
         errors: {},
         lead_id: null,
+        sale_order_id: null,
         is_loading: false,
     };
 
@@ -124,6 +125,7 @@
             contact: { name: '', email: '', phone: '', message: '' },
             errors: {},
             lead_id: null,
+            sale_order_id: null,
             is_loading: false,
         };
         productAttributesCache = {};
@@ -666,9 +668,14 @@
                 <p class="hg-lead-id">Referencia: <strong>#${state.lead_id}</strong></p>
                 <p>Nos pondremos en contacto contigo en breve.</p>
 
-                <button class="hg-btn hg-btn-primary" onclick="startNewSelection()">
-                    Nueva selección
-                </button>
+                <div class="hg-success-actions">
+                    <button class="hg-btn hg-btn-secondary" onclick="downloadPresupuesto()">
+                        <i class="fa fa-file-pdf-o"></i> Descargar Presupuesto PDF
+                    </button>
+                    <button class="hg-btn hg-btn-primary" onclick="startNewSelection()">
+                        Nueva selección
+                    </button>
+                </div>
             </div>
         `;
     }
@@ -824,6 +831,7 @@
             }
 
             state.lead_id = data.lead_id;
+            state.sale_order_id = data.sale_order_id;
             state.current_step = state.total_steps + 3;
             saveState();
             render();
@@ -839,6 +847,12 @@
     function startNewSelection() {
         clearState();
         window.location.href = '/reformas/packs';
+    }
+
+    function downloadPresupuesto() {
+        if (state.sale_order_id) {
+            window.open('/print/presupuesto/' + state.sale_order_id, '_blank');
+        }
     }
 
     // ============================================
@@ -940,6 +954,7 @@
     window.goToStep = goToStep;
     window.submitContact = submitContact;
     window.startNewSelection = startNewSelection;
+    window.downloadPresupuesto = downloadPresupuesto;
 
     // Iniciar cuando el DOM esté listo
     if (document.readyState === 'loading') {

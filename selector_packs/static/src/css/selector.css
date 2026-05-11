@@ -461,6 +461,14 @@
     border-radius: var(--hg-radius);
 }
 
+.hg-success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
 /* ============================================
    LOADING
    ============================================ */
