@@ -80,7 +80,7 @@
         </record>
         <record id="pack_reforma_integral_basic_line_4" model="pack.products">
             <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
-            <field name="base_product_id" ref="mueble_sansa_80"/>
+            <field name="base_product_id" ref="mueble_sansa"/>
             <field name="quantity">1</field>
         </record>
         <record id="pack_reforma_integral_basic_line_5" model="pack.products">

@@ -6,7 +6,7 @@
         <record id="grifo_star" model="product.template">
             <field name="name">Grifo STAR - Conjunto Ducha</field>
             <field name="type">product</field>
-            <field name="list_price">0.00</field>
+            <field name="list_price">182.00</field>
             <field name="description">Conjunto de ducha STAR con monomando TESLA</field>
             <field
                 name="image_1920"
@@ -19,7 +19,7 @@
         <record id="grifo_kappa" model="product.template">
             <field name="name">Grifo KAPPA - Columna Ducha</field>
             <field name="type">product</field>
-            <field name="list_price">0.00</field>
+            <field name="list_price">245.90</field>
             <field name="description">Columna de ducha KAPPA</field>
             <field
                 name="image_1920"
@@ -84,7 +84,7 @@
         <record id="inodoro_sanitario" model="product.template">
             <field name="name">Inodoro Sanitario</field>
             <field name="type">product</field>
-            <field name="list_price">0.00</field>
+            <field name="list_price">289.00</field>
             <field name="description">Inodoro sanitario estándar</field>
             <field
                 name="image_1920"
@@ -93,17 +93,5 @@
             />
         </record>
 
-        <!-- Mueble SANSA 80cm -->
-        <record id="mueble_sansa_80" model="product.template">
-            <field name="name">Mueble SANSA Integrado 80cm</field>
-            <field name="type">product</field>
-            <field name="list_price">0.00</field>
-            <field name="description">Mueble SANSA integrado suspendido 80cm con lavabo cerámico integrado + Espejo Murano + Luminaria URI 30</field>
-            <field
-                name="image_1920"
-                type="base64"
-                file="selector_packs/static/src/img/SANSA_INTEGRADO_SUSPENDIDO_MODELO_80CM.png"
-            />
-        </record>
     </data>
 </odoo>
