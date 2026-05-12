@@ -8,6 +8,11 @@
             <field name="type">product</field>
             <field name="list_price">211.00</field>
             <field name="description">Plato de ducha modelo Nature - Precio base (medida más pequeña)</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/platos_ducha/NATURE.png"
+            />
         </record>
         <record id="plato_nature_attr_color" model="product.template.attribute.line">
             <field name="product_tmpl_id" ref="plato_nature"/>
@@ -31,6 +36,11 @@
             <field name="type">product</field>
             <field name="list_price">248.00</field>
             <field name="description">Plato de ducha modelo Hermes - Precio base</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/platos_ducha/HERMES.png"
+            />
         </record>
         <record id="plato_hermes_attr_color" model="product.template.attribute.line">
             <field name="product_tmpl_id" ref="plato_hermes"/>
@@ -54,6 +64,11 @@
             <field name="type">product</field>
             <field name="list_price">275.00</field>
             <field name="description">Plato de ducha modelo Marco - Precio base</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/platos_ducha/MARCO.png"
+            />
         </record>
         <record id="plato_marco_attr_color" model="product.template.attribute.line">
             <field name="product_tmpl_id" ref="plato_marco"/>
@@ -77,6 +92,11 @@
             <field name="type">product</field>
             <field name="list_price">275.00</field>
             <field name="description">Plato de ducha modelo Premium - Precio base</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/platos_ducha/PREMIUM.png"
+            />
         </record>
         <record id="plato_premium_attr_color" model="product.template.attribute.line">
             <field name="product_tmpl_id" ref="plato_premium"/>
@@ -100,6 +120,11 @@
             <field name="type">product</field>
             <field name="list_price">319.00</field>
             <field name="description">Plato de ducha modelo Neo - Precio base</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/platos_ducha/NEO.png"
+            />
         </record>
         <record id="plato_neo_attr_color" model="product.template.attribute.line">
             <field name="product_tmpl_id" ref="plato_neo"/>
