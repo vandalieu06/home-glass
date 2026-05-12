@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <!-- <data noupdate="1">
         <function model="ir.config_parameter" name="sudo" eval="obj().search([('key','=','web.base.url')], limit=1).value or 'http://localhost:8069'"/>
-    </data>
+    </data> -->
 
     <!-- ============================================ -->
     <!-- PÁGINA PRINCIPAL: LISTA DE PACKS -->

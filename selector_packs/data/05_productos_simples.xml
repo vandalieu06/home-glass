@@ -8,6 +8,11 @@
             <field name="type">product</field>
             <field name="list_price">0.00</field>
             <field name="description">Conjunto de ducha STAR con monomando TESLA</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/columnas/Conjunto_de_Ducha_STAR_con_Monomando_TESLA.jpg"
+            />
         </record>
 
         <!-- Grifo KAPPA -->
@@ -16,6 +21,11 @@
             <field name="type">product</field>
             <field name="list_price">0.00</field>
             <field name="description">Columna de ducha KAPPA</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/columnas/Columna_KAPPA_Cuadrado_con_mango_cuadrado.jpg"
+            />
         </record>
 
         <!-- Azulejo Blanco Brillo 30x60 -->
@@ -24,6 +34,11 @@
             <field name="type">product</field>
             <field name="list_price">10.57</field>
             <field name="description">Azulejo blanco brillo 30x60 - Oferta</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/azulejos/AZULEJO_BLANCO_BRILLO_30X60_OFERTA.png"
+            />
         </record>
 
         <!-- Azulejo Blanco Mate 30x60 -->
@@ -32,6 +47,11 @@
             <field name="type">product</field>
             <field name="list_price">10.57</field>
             <field name="description">Azulejo blanco mate 30x60 - Oferta</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/azulejos/AZULEJO_BLANCO_MATE_30X60_OFERTA.png"
+            />
         </record>
 
         <!-- Revestimiento Blanco Brillo 30x90 -->
@@ -40,6 +60,11 @@
             <field name="type">product</field>
             <field name="list_price">13.53</field>
             <field name="description">Revestimiento blanco brillo 30x90 rectificado</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/revestimientos/REVESTIMIENTO_BLANCO_BRILLO_30X90_RECTIFICADO.png"
+            />
         </record>
 
         <!-- Revestimiento Blanco Mate 30x90 -->
@@ -48,6 +73,11 @@
             <field name="type">product</field>
             <field name="list_price">13.53</field>
             <field name="description">Revestimiento blanco mate 30x90 rectificado</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/revestimientos/REVESTIMIENTO_BLANCO_MATE_30X90_RECTIFICADO.png"
+            />
         </record>
 
         <!-- Inodoro Sanitario -->
@@ -56,6 +86,11 @@
             <field name="type">product</field>
             <field name="list_price">0.00</field>
             <field name="description">Inodoro sanitario estándar</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/inodoros/INODORO_SANITARIO.png"
+            />
         </record>
 
         <!-- Mueble SANSA 80cm -->
@@ -64,6 +99,11 @@
             <field name="type">product</field>
             <field name="list_price">0.00</field>
             <field name="description">Mueble SANSA integrado suspendido 80cm con lavabo cerámico integrado + Espejo Murano + Luminaria URI 30</field>
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/SANSA_INTEGRADO_SUSPENDIDO_MODELO_80CM.png"
+            />
         </record>
     </data>
 </odoo>

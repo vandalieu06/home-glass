@@ -7,22 +7,48 @@
             <field name="name">Mampara A20</field>
             <field name="type">product</field>
             <field name="list_price">324.00</field>
-            <field name="description">Mampara serie Alfa modelo A20 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa modelo A20 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_A20.png"
+            />
         </record>
-        <record id="mampara_a20_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a20"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_a20_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a20" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_a20_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a20"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_a20_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a20" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_a20_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a20"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"/>
+        <record
+            id="mampara_a20_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a20" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"
+            />
         </record>
 
         <!-- Mampara A40 -->
@@ -30,22 +56,48 @@
             <field name="name">Mampara A40</field>
             <field name="type">product</field>
             <field name="list_price">423.00</field>
-            <field name="description">Mampara serie Alfa modelo A40 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa modelo A40 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_A40.png"
+            />
         </record>
-        <record id="mampara_a40_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a40"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_a40_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a40" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_a40_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a40"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_a40_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a40" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_a40_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a40"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"/>
+        <record
+            id="mampara_a40_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a40" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"
+            />
         </record>
 
         <!-- Mampara A25 -->
@@ -53,22 +105,48 @@
             <field name="name">Mampara A25</field>
             <field name="type">product</field>
             <field name="list_price">471.00</field>
-            <field name="description">Mampara serie Alfa modelo A25 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa modelo A25 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_A25.png"
+            />
         </record>
-        <record id="mampara_a25_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a25"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_a25_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a25" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_a25_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a25"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_a25_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a25" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_a25_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a25"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"/>
+        <record
+            id="mampara_a25_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a25" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"
+            />
         </record>
 
         <!-- Mampara A90 -->
@@ -76,22 +154,48 @@
             <field name="name">Mampara A90</field>
             <field name="type">product</field>
             <field name="list_price">455.00</field>
-            <field name="description">Mampara serie Alfa modelo A90 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa modelo A90 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_A90.png"
+            />
         </record>
-        <record id="mampara_a90_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a90"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_a90_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a90" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_a90_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a90"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_a90_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a90" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_a90_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_a90"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"/>
+        <record
+            id="mampara_a90_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_a90" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"
+            />
         </record>
 
         <!-- ========== SERIE BETA - MAMPARAS ========== -->
@@ -101,22 +205,48 @@
             <field name="name">Mampara B20</field>
             <field name="type">product</field>
             <field name="list_price">298.00</field>
-            <field name="description">Mampara serie Beta modelo B20 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Beta modelo B20 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_B20.png"
+            />
         </record>
-        <record id="mampara_b20_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b20"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_b20_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b20" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_b20_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b20"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_b20_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b20" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_b20_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b20"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"/>
+        <record
+            id="mampara_b20_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b20" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"
+            />
         </record>
 
         <!-- Mampara B40 -->
@@ -124,22 +254,48 @@
             <field name="name">Mampara B40</field>
             <field name="type">product</field>
             <field name="list_price">389.00</field>
-            <field name="description">Mampara serie Beta modelo B40 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Beta modelo B40 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_B40.png"
+            />
         </record>
-        <record id="mampara_b40_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b40"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_b40_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b40" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_b40_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b40"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_b40_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b40" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_b40_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b40"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"/>
+        <record
+            id="mampara_b40_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b40" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"
+            />
         </record>
 
         <!-- Mampara B90 -->
@@ -147,22 +303,48 @@
             <field name="name">Mampara B90</field>
             <field name="type">product</field>
             <field name="list_price">434.00</field>
-            <field name="description">Mampara serie Beta modelo B90 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Beta modelo B90 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_B90.png"
+            />
         </record>
-        <record id="mampara_b90_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b90"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_b90_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b90" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_b90_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b90"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_b90_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b90" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_b90_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_b90"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"/>
+        <record
+            id="mampara_b90_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_b90" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"
+            />
         </record>
 
         <!-- ========== SERIE XI - MAMPARAS ========== -->
@@ -172,22 +354,48 @@
             <field name="name">Mampara C20</field>
             <field name="type">product</field>
             <field name="list_price">317.00</field>
-            <field name="description">Mampara serie Xi modelo C20 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Xi modelo C20 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_C20.png"
+            />
         </record>
-        <record id="mampara_c20_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c20"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_c20_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c20" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_c20_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c20"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_c20_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c20" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_c20_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c20"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"/>
+        <record
+            id="mampara_c20_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c20" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"
+            />
         </record>
 
         <!-- Mampara C40 -->
@@ -195,22 +403,48 @@
             <field name="name">Mampara C40</field>
             <field name="type">product</field>
             <field name="list_price">409.00</field>
-            <field name="description">Mampara serie Xi modelo C40 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Xi modelo C40 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_C40.png"
+            />
         </record>
-        <record id="mampara_c40_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c40"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_c40_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c40" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_c40_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c40"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_c40_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c40" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_c40_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c40"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"/>
+        <record
+            id="mampara_c40_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c40" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"
+            />
         </record>
 
         <!-- Mampara C25 -->
@@ -218,22 +452,48 @@
             <field name="name">Mampara C25</field>
             <field name="type">product</field>
             <field name="list_price">472.00</field>
-            <field name="description">Mampara serie Xi modelo C25 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Xi modelo C25 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_C25.png"
+            />
         </record>
-        <record id="mampara_c25_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c25"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_c25_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c25" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_c25_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c25"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_c25_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c25" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_c25_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c25"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"/>
+        <record
+            id="mampara_c25_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c25" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"
+            />
         </record>
 
         <!-- Mampara C90 -->
@@ -241,22 +501,48 @@
             <field name="name">Mampara C90</field>
             <field name="type">product</field>
             <field name="list_price">428.00</field>
-            <field name="description">Mampara serie Xi modelo C90 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Xi modelo C90 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_C90.png"
+            />
         </record>
-        <record id="mampara_c90_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c90"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_c90_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c90" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_c90_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c90"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_c90_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c90" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_c90_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_c90"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"/>
+        <record
+            id="mampara_c90_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_c90" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"
+            />
         </record>
 
         <!-- ========== SERIE DELTA - MAMPARAS ========== -->
@@ -266,22 +552,48 @@
             <field name="name">Mampara D20</field>
             <field name="type">product</field>
             <field name="list_price">315.00</field>
-            <field name="description">Mampara serie Delta modelo D20 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Delta modelo D20 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_D20.png"
+            />
         </record>
-        <record id="mampara_d20_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d20"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_d20_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d20" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_d20_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d20"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_d20_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d20" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_d20_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d20"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"/>
+        <record
+            id="mampara_d20_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d20" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"
+            />
         </record>
 
         <!-- Mampara D40 -->
@@ -289,22 +601,48 @@
             <field name="name">Mampara D40</field>
             <field name="type">product</field>
             <field name="list_price">389.00</field>
-            <field name="description">Mampara serie Delta modelo D40 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Delta modelo D40 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_D40.png"
+            />
         </record>
-        <record id="mampara_d40_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d40"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_d40_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d40" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_d40_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d40"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_d40_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d40" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_d40_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d40"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"/>
+        <record
+            id="mampara_d40_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d40" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"
+            />
         </record>
 
         <!-- Mampara D25 -->
@@ -312,22 +650,48 @@
             <field name="name">Mampara D25</field>
             <field name="type">product</field>
             <field name="list_price">488.00</field>
-            <field name="description">Mampara serie Delta modelo D25 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Delta modelo D25 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_D25.png"
+            />
         </record>
-        <record id="mampara_d25_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d25"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_d25_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d25" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_d25_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d25"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_d25_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d25" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_d25_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d25"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"/>
+        <record
+            id="mampara_d25_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d25" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"
+            />
         </record>
 
         <!-- Mampara D90 -->
@@ -335,22 +699,48 @@
             <field name="name">Mampara D90</field>
             <field name="type">product</field>
             <field name="list_price">414.00</field>
-            <field name="description">Mampara serie Delta modelo D90 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Delta modelo D90 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_D90.png"
+            />
         </record>
-        <record id="mampara_d90_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d90"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_d90_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d90" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_d90_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d90"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_d90_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d90" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_d90_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_d90"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"/>
+        <record
+            id="mampara_d90_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_d90" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"
+            />
         </record>
 
         <!-- ========== SERIE EPSILON - MAMPARAS ========== -->
@@ -360,22 +750,48 @@
             <field name="name">Mampara E20</field>
             <field name="type">product</field>
             <field name="list_price">433.00</field>
-            <field name="description">Mampara serie Epsilon modelo E20 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Epsilon modelo E20 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_E20.png"
+            />
         </record>
-        <record id="mampara_e20_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_e20"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_e20_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_e20" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_e20_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_e20"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_e20_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_e20" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_e20_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_e20"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"/>
+        <record
+            id="mampara_e20_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_e20" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"
+            />
         </record>
 
         <!-- ========== SERIE OMEGA - MAMPARAS ========== -->
@@ -385,22 +801,48 @@
             <field name="name">Mampara O00</field>
             <field name="type">product</field>
             <field name="list_price">208.00</field>
-            <field name="description">Mampara serie Omega modelo O00 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Omega modelo O00 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_O00.png"
+            />
         </record>
-        <record id="mampara_o00_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o00"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_o00_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o00" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_o00_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o00"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_o00_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o00" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_o00_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o00"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90')])]"/>
+        <record
+            id="mampara_o00_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o00" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90')])]"
+            />
         </record>
 
         <!-- Mampara O10 -->
@@ -408,23 +850,49 @@
             <field name="name">Mampara O10</field>
             <field name="type">product</field>
             <field name="list_price">297.00</field>
-            <field name="description">Mampara serie Omega modelo O10 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Omega modelo O10 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_O10.png"
+            />
         </record>
-        <record id="mampara_o10_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o10"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_o10_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o10" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_o10_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o10"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_o10_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o10" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
         <!-- O10 tiene medidas especiales (rangos), se usa un subconjunto -->
-        <record id="mampara_o10_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o10"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120')])]"/>
+        <record
+            id="mampara_o10_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o10" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120')])]"
+            />
         </record>
 
         <!-- Mampara O11 -->
@@ -432,22 +900,48 @@
             <field name="name">Mampara O11</field>
             <field name="type">product</field>
             <field name="list_price">367.00</field>
-            <field name="description">Mampara serie Omega modelo O11 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Omega modelo O11 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_O11.png"
+            />
         </record>
-        <record id="mampara_o11_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o11"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_o11_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o11" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_o11_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o11"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_o11_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o11" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_o11_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o11"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140')])]"/>
+        <record
+            id="mampara_o11_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o11" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140')])]"
+            />
         </record>
 
         <!-- Mampara O15 -->
@@ -455,22 +949,48 @@
             <field name="name">Mampara O15</field>
             <field name="type">product</field>
             <field name="list_price">255.00</field>
-            <field name="description">Mampara serie Omega modelo O15 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Omega modelo O15 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_O15.png"
+            />
         </record>
-        <record id="mampara_o15_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o15"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_o15_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o15" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_o15_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o15"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_o15_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o15" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_o15_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_o15"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_80')])]"/>
+        <record
+            id="mampara_o15_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_o15" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_80')])]"
+            />
         </record>
 
         <!-- ========== SERIE GAMMA - MAMPARAS ========== -->
@@ -480,22 +1000,48 @@
             <field name="name">Mampara G01</field>
             <field name="type">product</field>
             <field name="list_price">226.00</field>
-            <field name="description">Mampara serie Gamma modelo G01 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Gamma modelo G01 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_G01.png"
+            />
         </record>
-        <record id="mampara_g01_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_g01"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_g01_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_g01" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_g01_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_g01"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_g01_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_g01" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_g01_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_g01"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"/>
+        <record
+            id="mampara_g01_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_g01" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"
+            />
         </record>
 
         <!-- Mampara G02 -->
@@ -503,22 +1049,48 @@
             <field name="name">Mampara G02</field>
             <field name="type">product</field>
             <field name="list_price">226.00</field>
-            <field name="description">Mampara serie Gamma modelo G02 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Gamma modelo G02 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_G02.png"
+            />
         </record>
-        <record id="mampara_g02_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_g02"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_g02_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_g02" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_g02_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_g02"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_g02_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_g02" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_g02_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_g02"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"/>
+        <record
+            id="mampara_g02_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_g02" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"
+            />
         </record>
 
         <!-- ========== SERIE ALFA/GAMMA GOLD - MAMPARAS ========== -->
@@ -528,22 +1100,48 @@
             <field name="name">Mampara AG01</field>
             <field name="type">product</field>
             <field name="list_price">253.00</field>
-            <field name="description">Mampara serie Alfa/Gamma Gold modelo AG01 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa/Gamma Gold modelo AG01 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_AG01.png"
+            />
         </record>
-        <record id="mampara_ag01_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag01"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_ag01_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag01" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_ag01_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag01"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_ag01_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag01" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_ag01_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag01"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"/>
+        <record
+            id="mampara_ag01_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag01" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"
+            />
         </record>
 
         <!-- Mampara AG02 -->
@@ -551,22 +1149,48 @@
             <field name="name">Mampara AG02</field>
             <field name="type">product</field>
             <field name="list_price">253.00</field>
-            <field name="description">Mampara serie Alfa/Gamma Gold modelo AG02 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa/Gamma Gold modelo AG02 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_AG02.png"
+            />
         </record>
-        <record id="mampara_ag02_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag02"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_ag02_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag02" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_ag02_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag02"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_ag02_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag02" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_ag02_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag02"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"/>
+        <record
+            id="mampara_ag02_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag02" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_70'), ref('attr_medida_mampara_80'), ref('attr_medida_mampara_90'), ref('attr_medida_mampara_100'), ref('attr_medida_mampara_110')])]"
+            />
         </record>
 
         <!-- Mampara AG20 -->
@@ -574,22 +1198,48 @@
             <field name="name">Mampara AG20</field>
             <field name="type">product</field>
             <field name="list_price">355.00</field>
-            <field name="description">Mampara serie Alfa/Gamma Gold modelo AG20 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa/Gamma Gold modelo AG20 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_AG20.png"
+            />
         </record>
-        <record id="mampara_ag20_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag20"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_ag20_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag20" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_ag20_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag20"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_ag20_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag20" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_ag20_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag20"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"/>
+        <record
+            id="mampara_ag20_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag20" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_100'), ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180')])]"
+            />
         </record>
 
         <!-- Mampara AG40 -->
@@ -597,22 +1247,48 @@
             <field name="name">Mampara AG40</field>
             <field name="type">product</field>
             <field name="list_price">468.00</field>
-            <field name="description">Mampara serie Alfa/Gamma Gold modelo AG40 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa/Gamma Gold modelo AG40 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_AG40.png"
+            />
         </record>
-        <record id="mampara_ag40_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag40"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_ag40_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag40" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_ag40_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag40"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_ag40_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag40" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_ag40_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag40"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"/>
+        <record
+            id="mampara_ag40_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag40" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_120'), ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200')])]"
+            />
         </record>
 
         <!-- Mampara AG25 -->
@@ -620,22 +1296,48 @@
             <field name="name">Mampara AG25</field>
             <field name="type">product</field>
             <field name="list_price">513.00</field>
-            <field name="description">Mampara serie Alfa/Gamma Gold modelo AG25 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa/Gamma Gold modelo AG25 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_AG25.png"
+            />
         </record>
-        <record id="mampara_ag25_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag25"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_ag25_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag25" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_ag25_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag25"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_ag25_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag25" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_ag25_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag25"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"/>
+        <record
+            id="mampara_ag25_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag25" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220'), ref('attr_medida_mampara_240'), ref('attr_medida_mampara_260')])]"
+            />
         </record>
 
         <!-- Mampara AG90 -->
@@ -643,22 +1345,48 @@
             <field name="name">Mampara AG90</field>
             <field name="type">product</field>
             <field name="list_price">501.00</field>
-            <field name="description">Mampara serie Alfa/Gamma Gold modelo AG90 - Precio base (Transparente)</field>
+            <field
+                name="description"
+            >Mampara serie Alfa/Gamma Gold modelo AG90 - Precio base (Transparente)</field>
+
+            <field
+                name="image_1920"
+                type="base64"
+                file="selector_packs/static/src/img/mamparas/MAMPARA_AG90.png"
+            />
         </record>
-        <record id="mampara_ag90_attr_color" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag90"/>
-            <field name="attribute_id" ref="attr_color_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"/>
+        <record
+            id="mampara_ag90_attr_color"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag90" />
+            <field name="attribute_id" ref="attr_color_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_color_mampara_blanco'), ref('attr_color_mampara_negro'), ref('attr_color_mampara_aluminio_brillo')])]"
+            />
         </record>
-        <record id="mampara_ag90_attr_vidrio" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag90"/>
-            <field name="attribute_id" ref="attr_vidrio_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"/>
+        <record
+            id="mampara_ag90_attr_vidrio"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag90" />
+            <field name="attribute_id" ref="attr_vidrio_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_vidrio_transparente'), ref('attr_vidrio_decorado')])]"
+            />
         </record>
-        <record id="mampara_ag90_attr_medida" model="product.template.attribute.line">
-            <field name="product_tmpl_id" ref="mampara_ag90"/>
-            <field name="attribute_id" ref="attr_medida_mampara"/>
-            <field name="value_ids" eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"/>
+        <record
+            id="mampara_ag90_attr_medida"
+            model="product.template.attribute.line"
+        >
+            <field name="product_tmpl_id" ref="mampara_ag90" />
+            <field name="attribute_id" ref="attr_medida_mampara" />
+            <field
+                name="value_ids"
+                eval="[(6, 0, [ref('attr_medida_mampara_140'), ref('attr_medida_mampara_160'), ref('attr_medida_mampara_180'), ref('attr_medida_mampara_200'), ref('attr_medida_mampara_220')])]"
+            />
         </record>
     </data>
 </odoo>
