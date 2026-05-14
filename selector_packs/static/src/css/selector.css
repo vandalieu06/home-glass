@@ -749,7 +749,7 @@
   width: 44px;
   height: 44px;
   object-fit: cover;
-  border-radius: var(--mm-rounded-xs);
+  border-radius: var(--mm-rounded-sm);
   margin-right: var(--mm-space-sm);
 }
 
