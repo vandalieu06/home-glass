@@ -25,6 +25,12 @@
             <field name="base_product_id" ref="mampara_a20"/>
             <field name="quantity">1</field>
         </record>
+        <record id="pack_reforma_basic_line_4" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic"/>
+            <field name="base_product_id" ref="mano_obra_reforma_basica"/>
+            <field name="quantity">1</field>
+            <field name="is_labour">True</field>
+        </record>
 
         <!-- Reforma BASIC PLUS -->
         <record id="pack_reforma_basic_plus" model="product.template">
@@ -53,6 +59,12 @@
             <field name="product_tmpl_id" ref="pack_reforma_basic_plus"/>
             <field name="base_product_id" ref="grifo_star"/>
             <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_basic_plus_line_5" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic_plus"/>
+            <field name="base_product_id" ref="mano_obra_reforma_basic_plus"/>
+            <field name="quantity">1</field>
+            <field name="is_labour">True</field>
         </record>
 
         <!-- Reforma Integral BASIC -->
@@ -92,6 +104,12 @@
             <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
             <field name="base_product_id" ref="azulejo_30x60_brillo"/>
             <field name="quantity">1</field>
+        </record>
+        <record id="pack_reforma_integral_basic_line_7" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_basic"/>
+            <field name="base_product_id" ref="mano_obra_reforma_integral"/>
+            <field name="quantity">1</field>
+            <field name="is_labour">True</field>
         </record>
 
         <!-- Reforma Integral PREMIUM -->
@@ -357,6 +375,13 @@
             <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
             <field name="base_product_id" ref="inodoro_sanitario"/>
             <field name="quantity">1</field>
+        </record>
+        <!-- Mano de obra -->
+        <record id="pack_reforma_integral_premium_line_51" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_integral_premium"/>
+            <field name="base_product_id" ref="mano_obra_reforma_integral"/>
+            <field name="quantity">1</field>
+            <field name="is_labour">True</field>
         </record>
     </data>
 </odoo>

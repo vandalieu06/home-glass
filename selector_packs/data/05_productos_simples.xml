@@ -93,5 +93,48 @@
             />
         </record>
 
+        <!-- ========== PRODUCTOS DE MANO DE OBRA ========== -->
+
+        <!-- Reforma Basica -->
+        <record id="mano_obra_reforma_basica" model="product.template">
+            <field name="name">Reforma Basica</field>
+            <field name="type">service</field>
+            <field name="list_price">750.00</field>
+            <field name="description">Quitar bañera actual e instalar plato de ducha nuevo.
+Colocación de alicatado solo en alto bañera en todo el perímetro
+Creación de base de mortero para la colocación del plato de ducha conectando válvula
+de desagüe a tubería de PVC existente.</field>
+        </record>
+
+        <!-- Reforma Basic Plus -->
+        <record id="mano_obra_reforma_basic_plus" model="product.template">
+            <field name="name">Reforma Basic Plus</field>
+            <field name="type">service</field>
+            <field name="list_price">865.00</field>
+            <field name="description">Quitar bañera actual e instalar plato de ducha nuevo.
+Colocación de alicatado solo en alto bañera hasta la nueva altura del grifo en
+todo el perímetro.
+Creación de base de mortero para la colocaación del plato de ducha
+conectando válvula de desague a tubería de PVC existente.
+Subir grifo de bañera actual para altura de ducha.
+Incluye mortero y materiales de agarre y desescombro.</field>
+        </record>
+
+        <!-- Reforma Integral -->
+        <record id="mano_obra_reforma_integral" model="product.template">
+            <field name="name">Reforma Integral</field>
+            <field name="type">service</field>
+            <field name="list_price">2700.00</field>
+            <field name="description">Demolición alicatado y solería actual.
+Quitar bañera actual o plato de ducha e instalar plato de ducha nuevo.
+Nuevas instalaciones de fontanería y electricidad.
+Colocación de solería y alicatado.
+Instalación de sanitarios.
+Instalación 1 punto de luz+enchufe y mecanismo nuevo.
+Pintura techo color blanca.
+El material de pegamento para alicatado y mortero para el suelo de la ducha incluido
+en el precio.</field>
+        </record>
+
     </data>
 </odoo>

@@ -33,9 +33,23 @@ class SelectorPacksController(http.Controller):
         categories = self._get_categories_mapping()
         categories_data = self._get_pack_categories(pack_id)
 
+        labour_pack_items = request.env['pack.products'].sudo().search([
+            ('product_tmpl_id', '=', pack_id),
+            ('is_labour', '=', True)
+        ])
+        labour_products = []
+        for lp in labour_pack_items:
+            base = lp.base_product_id
+            labour_products.append({
+                'name': base.name,
+                'base_product_id': base.id,
+                'price': base.list_price or 0.0,
+            })
+
         values = {
             'pack': pack,
             'products': products,
+            'labour_products': labour_products,
             'categories': categories,
             'categories_data': categories_data,
             'total_steps': len(categories_data),
@@ -224,7 +238,8 @@ class SelectorPacksController(http.Controller):
             contact.get('phone')
         )
 
-        description = self._build_description(pack, selections, selected_product)
+        contact_msg = contact.get('message', '').strip()
+        description = self._build_description(pack, selections, selected_product, contact_msg)
 
         lead = request.env['crm.lead'].sudo().create({
             'name': f'Presupuesto {pack.name if pack.exists() else "Pack"} - {contact.get("name")}',
@@ -241,6 +256,25 @@ class SelectorPacksController(http.Controller):
             'opportunity_id': lead.id,
             'origin': lead.name,
         })
+
+        labour_products = request.env['pack.products'].sudo().search([
+            ('product_tmpl_id', '=', pack_id),
+            ('is_labour', '=', True)
+        ])
+        for lp in labour_products:
+            labour_template = lp.base_product_id
+            if not labour_template.exists():
+                continue
+            labour_variant = labour_template.product_variant_ids[:1]
+            if not labour_variant:
+                continue
+            request.env['sale.order.line'].sudo().create({
+                'order_id': sale_order.id,
+                'product_id': labour_variant.id,
+                'product_uom_qty': lp.quantity or 1,
+                'price_unit': labour_variant.lst_price or 0.0,
+                'name': labour_template.name,
+            })
 
         for product_tmpl_id in selected_product.values():
             product_tmpl_id = int(product_tmpl_id)
@@ -278,7 +312,8 @@ class SelectorPacksController(http.Controller):
             return []
 
         pack_products = request.env['pack.products'].sudo().search([
-            ('product_tmpl_id', '=', pack_id)
+            ('product_tmpl_id', '=', pack_id),
+            ('is_labour', '=', False)
         ])
 
         pack_ext_id = pack.get_external_id()
@@ -605,9 +640,10 @@ class SelectorPacksController(http.Controller):
         ]
         return request.make_response(pdf_content, headers=pdfheaders)
 
-    def _build_description(self, pack, selections, selected_product):
-        description = f"PRESUPUESTO - {pack.name}\n\n"
-        description += "SELECCIONES:\n"
+    def _build_description(self, pack, selections, selected_product, contact_msg=''):
+        description = f"<b>PRESUPUESTO - {pack.name}</b><br/><br/>"
+        description += "<b>SELECCIONES:</b><br/>"
+        description += "<ul>"
 
         for product_tmpl_id in selected_product.values():
             product_tmpl_id = int(product_tmpl_id)
@@ -616,7 +652,7 @@ class SelectorPacksController(http.Controller):
                 continue
 
             selection_data = selections.get(str(product_tmpl_id), {})
-            description += f"\n- {product.name}: "
+            line = f"<li><b>{product.name}</b>: "
 
             if isinstance(selection_data, dict):
                 attrs = []
@@ -625,13 +661,16 @@ class SelectorPacksController(http.Controller):
                         attr_val = request.env['product.attribute.value'].sudo().browse(attr_value)
                         if attr_val.exists():
                             attrs.append(attr_val.name)
-                description += ', '.join(attrs) if attrs else 'Sin seleccionar'
+                line += ', '.join(attrs) if attrs else 'Sin seleccionar'
             else:
-                description += 'Sin variantes'
+                line += 'Sin variantes'
 
             variant = self._resolve_variant(product, selection_data)
             price = variant.lst_price if variant else product.list_price
-            description += f" - {price or 0:.2f}€"
+            line += f" - {price or 0:.2f}€</li>"
+            description += line
+
+        description += "</ul>"
 
         total_price = sum(
             self._resolve_variant(
@@ -642,5 +681,18 @@ class SelectorPacksController(http.Controller):
             if request.env['product.template'].sudo().browse(int(pid)).exists()
         )
 
-        description += f"\n\nPRECIO ESTIMADO: {total_price:.2f}€ (sin IVA)"
+        labour_prices = sum(
+            lp.base_product_id.list_price or 0
+            for lp in request.env['pack.products'].sudo().search([
+                ('product_tmpl_id', '=', pack.id),
+                ('is_labour', '=', True)
+            ])
+        )
+        total_price += labour_prices
+
+        description += f"<b>PRECIO ESTIMADO: {total_price:.2f}€ (sin IVA)</b>"
+
+        if contact_msg:
+            description += f"<br/><br/><b>MENSAJE CLIENTE:</b><br/>{contact_msg}"
+
         return description

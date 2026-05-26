@@ -559,7 +559,25 @@
 
     function renderSummary(container) {
         let totalPrice = 0;
+        let labourRows = '';
         let categoryRows = '';
+
+        // Mano de obra (primera línea)
+        (state.labour_products || []).forEach(lp => {
+            totalPrice += lp.price;
+            labourRows += `
+                <tr>
+                    <td>Mano de obra</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span>${escapeHtml(lp.name)}</span>
+                        </div>
+                    </td>
+                    <td>Incluido</td>
+                    <td>${lp.price.toFixed(2)}€</td>
+                </tr>
+            `;
+        });
 
         state.steps.forEach(step => {
             const selectedProductId = state.selected_product[step.key];
@@ -625,7 +643,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            ${categoryRows}
+                            ${labourRows}${categoryRows}
                         </tbody>
                         <tfoot>
                             <tr>
@@ -950,6 +968,21 @@
                 });
             });
             state.products = flatProducts;
+        }
+
+        // Cargar productos de mano de obra
+        const labourContainer = document.getElementById('hg-labour-data');
+        if (labourContainer && (!state.labour_products || state.labour_products.length === 0)) {
+            const labourItems = labourContainer.querySelectorAll('.hg-labour-item');
+            const labourList = [];
+            labourItems.forEach(item => {
+                labourList.push({
+                    name: item.dataset.name,
+                    base_product_id: parseInt(item.dataset.baseProductId),
+                    price: parseFloat(item.dataset.price) || 0,
+                });
+            });
+            state.labour_products = labourList;
         }
 
         // Construir steps desde categories_data del servidor

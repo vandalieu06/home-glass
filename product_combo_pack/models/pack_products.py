@@ -30,6 +30,9 @@ class PackProducts(models.Model):
     _rec_name = 'base_product_id'
     _description = 'Select Pack Products'
 
+    is_labour = fields.Boolean(string='Mano de obra',
+                                default=False,
+                                help='If True, this product is labor and will be auto-added to the order (not shown on web)')
     product_id = fields.Many2one('product.product', string='Product (Variant)',
                                  domain=[('is_pack', '=', False)],
                                  help='Optional: Select specific variant for this pack line')

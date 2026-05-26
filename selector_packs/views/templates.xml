@@ -96,6 +96,16 @@
                               t-att-data-product-count="len(cat['products'])"/>
                     </t>
                 </div>
+
+                <!-- Mano de obra (no visible en selector, solo en resumen) -->
+                <div id="hg-labour-data" style="display:none;">
+                    <t t-foreach="labour_products" t-as="lp">
+                        <span class="hg-labour-item"
+                              t-att-data-name="lp['name']"
+                              t-att-data-price="lp['price']"
+                              t-att-data-base-product-id="lp['base_product_id']"/>
+                    </t>
+                </div>
             </div>
                 </div>
         </t>

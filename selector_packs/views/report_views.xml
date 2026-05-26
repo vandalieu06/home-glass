@@ -269,7 +269,7 @@
                                             </td>
                                             <td class="hg-text-right"><span t-field="line.product_uom_qty"/></td>
                                             <td class="hg-text-right"><span t-field="line.price_unit" t-options='{"digits": 2}'/> €</td>
-                                            <td class="hg-text-right"><span t-field="line.price_subtotal" t-options='{"digits": 2}'/> €</td>
+                                            <td class="hg-text-right"><span t-field="line.price_subtotal" t-options='{"digits": 2}'/></td>
                                         </tr>
                                     </t>
                                 </tbody>
