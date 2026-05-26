@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================================ -->
+    <!-- CSS GLOBAL: inyecta website.css en todas las páginas -->
+    <!-- ============================================ -->
+    <template id="inject_website_css" inherit_id="website.layout" name="Inject website.css" active="True">
+        <xpath expr="//head" position="inside">
+            <link href="/selector_packs/static/src/css/website.css" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+    <!-- ============================================ -->
+    <!-- PÁGINA DE INICIO (hereda la homepage de Odoo) -->
+    <!-- ============================================ -->
+    <template id="custom_homepage" inherit_id="website.homepage" name="Inicio - Home Glass" customize_show="True" active="True">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <div id="wrap" class="hg-home">
+
+                <!-- Hero Band Marketing -->
+                <section class="hg-hero-band">
+                    <div class="hg-container">
+                        <div class="hg-hero-content">
+                            <span class="hg-hero-badge">Reforma de Baños</span>
+                            <h1 class="hg-hero-title">Tu baño,<br/>a tu medida</h1>
+                            <p class="hg-hero-subtitle">Selecciona, personaliza y recibe tu reforma completa llave en mano. Calidad profesional, sin sorpresas.</p>
+                            <div class="hg-hero-actions">
+                                <a href="/reformas/packs" class="hg-btn hg-btn-primary hg-btn-lg">Ver Packs de Reforma</a>
+                                <a href="/sobre-nosotros" class="hg-btn hg-btn-secondary hg-btn-lg">Conócenos</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stats Row -->
+                <section class="hg-stats-row">
+                    <div class="hg-container">
+                        <div class="hg-stats-grid">
+                            <div class="hg-stat-cell">
+                                <span class="hg-stat-number">500+</span>
+                                <span class="hg-stat-label">Clientes satisfechos</span>
+                            </div>
+                            <div class="hg-stat-cell">
+                                <span class="hg-stat-number">1200+</span>
+                                <span class="hg-stat-label">Productos disponibles</span>
+                            </div>
+                            <div class="hg-stat-cell">
+                                <span class="hg-stat-number">15+</span>
+                                <span class="hg-stat-label">Años de experiencia</span>
+                            </div>
+                            <div class="hg-stat-cell">
+                                <span class="hg-stat-number">98%</span>
+                                <span class="hg-stat-label">Recomendación</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Grid -->
+                <section class="hg-features">
+                    <div class="hg-container">
+                        <div class="hg-section-header">
+                            <h2>¿Por qué elegirnos?</h2>
+                            <p>Todo lo que necesitas para reformar tu baño, en un solo lugar</p>
+                        </div>
+                        <div class="hg-features-grid">
+                            <div class="hg-feature-card">
+                                <div class="hg-feature-icon">
+                                    <i class="fa fa-cubes"/>
+                                </div>
+                                <h3>Packs Completos</h3>
+                                <p>Selecciona un pack y personaliza cada producto. Plato, mampara, mueble, grifo, sanitario y azulejos incluidos.</p>
+                            </div>
+                            <div class="hg-feature-card">
+                                <div class="hg-feature-icon">
+                                    <i class="fa fa-sliders"/>
+                                </div>
+                                <h3>Personalización Total</h3>
+                                <p>Elige colores, acabados, medidas y modelos. Cada baño es único, tu reforma también.</p>
+                            </div>
+                            <div class="hg-feature-card">
+                                <div class="hg-feature-icon">
+                                    <i class="fa fa-file-pdf-o"/>
+                                </div>
+                                <h3>Presupuesto al Instante</h3>
+                                <p>Recibe tu presupuesto detallado al momento. Sin esperas, sin compromiso, sin sorpresas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Strip -->
+                <section class="hg-cta-strip">
+                    <div class="hg-container">
+                        <div class="hg-cta-strip-inner">
+                            <h2>Empieza tu reforma hoy</h2>
+                            <p>Selecciona tu pack, personaliza los productos y recibe tu presupuesto en minutos.</p>
+                            <a href="/reformas/packs" class="hg-btn hg-btn-primary-inverse hg-btn-lg">Ir al Selector</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </xpath>
+    </template>
+
+    <!-- ============================================ -->
+    <!-- PÁGINA SOBRE NOSOTROS -->
+    <!-- ============================================ -->
+    <template id="page_sobre_nosotros" name="Sobre Nosotros - Home Glass">
+        <t t-call="website.layout">
+            <div id="wrap" class="hg-about">
+
+                <!-- Hero interior -->
+                <section class="hg-about-hero">
+                    <div class="hg-container">
+                        <h1>Sobre Nosotros</h1>
+                        <p class="lead">Artesanos del confort en tu cuarto de baño</p>
+                    </div>
+                </section>
+
+                <!-- Historia -->
+                <section class="hg-about-story">
+                    <div class="hg-container">
+                        <div class="hg-story-grid">
+                            <div class="hg-story-text">
+                                <h2>Nuestra Historia</h2>
+                                <p>Desde hace más de 15 años, en Home Glass nos dedicamos a transformar baños en espacios únicos. Nacimos con la idea de que reformar un baño no debería ser un dolor de cabeza.</p>
+                                <p>Seleccionamos los mejores materiales, trabajamos con fabricantes de confianza y ofrecemos un proceso transparente de principio a fin. Cada proyecto es tratado con el cuidado y la atención que merece.</p>
+                                <p>Hoy ayudamos a cientos de clientes cada año a crear el baño de sus sueños, combinando diseño, funcionalidad y precio justo.</p>
+                            </div>
+                            <div class="hg-story-image">
+                                <img src="/selector_packs/static/src/img/web/home_glass_sobre_nosotros.jpg"
+                                     alt="Equipo de Home Glass"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Valores -->
+                <section class="hg-about-values">
+                    <div class="hg-container">
+                        <div class="hg-section-header">
+                            <h2>Nuestros Valores</h2>
+                            <p>Lo que nos define y nos diferencia</p>
+                        </div>
+                        <div class="hg-values-grid">
+                            <div class="hg-value-card">
+                                <span class="hg-value-badge" style="--value-accent: var(--mm-brand-coral);">01</span>
+                                <h3>Calidad</h3>
+                                <p>Trabajamos con materiales y fabricantes que cumplen los más altos estándares.</p>
+                            </div>
+                            <div class="hg-value-card">
+                                <span class="hg-value-badge" style="--value-accent: var(--mm-brand-blue);">02</span>
+                                <h3>Transparencia</h3>
+                                <p>Precios claros desde el primer clic. Sin letra pequeña ni costes ocultos.</p>
+                            </div>
+                            <div class="hg-value-card">
+                                <span class="hg-value-badge" style="--value-accent: var(--mm-brand-magenta);">03</span>
+                                <h3>Personalización</h3>
+                                <p>Cada baño es único. Te damos las herramientas para que lo diseñes a tu medida.</p>
+                            </div>
+                            <div class="hg-value-card">
+                                <span class="hg-value-badge" style="--value-accent: var(--mm-brand-purple);">04</span>
+                                <h3>Compromiso</h3>
+                                <p>Te acompañamos durante todo el proceso, desde la selección hasta la instalación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA final -->
+                <section class="hg-about-cta">
+                    <div class="hg-container">
+                        <div class="hg-cta-strip-inner">
+                            <h2>¿Listo para empezar?</h2>
+                            <p>Descubre nuestros packs y personaliza tu reforma en minutos.</p>
+                            <a href="/reformas/packs" class="hg-btn hg-btn-primary-inverse hg-btn-lg">Ver Packs</a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </t>
+    </template>
+
+    <record id="website_page_sobre_nosotros" model="website.page">
+        <field name="name">Sobre Nosotros</field>
+        <field name="website_published">True</field>
+        <field name="url">/sobre-nosotros</field>
+        <field name="view_id" ref="page_sobre_nosotros"/>
+    </record>
+
+    <!-- ============================================ -->
+    <!-- MENÚS PRINCIPALES -->
+    <!-- ============================================ -->
+    <record id="menu_inicio" model="website.menu">
+        <field name="name">Inicio</field>
+        <field name="url">/</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">10</field>
+    </record>
+
+    <record id="menu_selector" model="website.menu">
+        <field name="name">Selector</field>
+        <field name="url">/reformas/packs</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">20</field>
+    </record>
+
+    <record id="menu_sobre_nosotros" model="website.menu">
+        <field name="name">Sobre Nosotros</field>
+        <field name="url">/sobre-nosotros</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">30</field>
+    </record>
+
+    <!-- ============================================ -->
+    <!-- FOOTER CUSTOM -->
+    <!-- ============================================ -->
+    <template id="custom_footer" inherit_id="website.layout" name="Footer Home Glass" customize_show="True" active="True">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <footer id="footer" class="hg-footer">
+                <div class="hg-container">
+                    <div class="hg-footer-grid">
+                        <div class="hg-footer-brand">
+                            <h4>Home Glass</h4>
+                            <p>Tu tienda de confianza para la reforma de baños. Calidad, diseño y transparencia.</p>
+                        </div>
+                        <div class="hg-footer-links">
+                            <h5>Navegación</h5>
+                            <ul>
+                                <li><a href="/">Inicio</a></li>
+                                <li><a href="/reformas/packs">Selector</a></li>
+                                <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+                            </ul>
+                        </div>
+                        <div class="hg-footer-links">
+                            <h5>Legal</h5>
+                            <ul>
+                                <li><a href="/legal">Aviso Legal</a></li>
+                                <li><a href="/privacy">Política de Privacidad</a></li>
+                                <li><a href="/cookies">Política de Cookies</a></li>
+                            </ul>
+                        </div>
+                        <div class="hg-footer-contact">
+                            <h5>Contacto</h5>
+                            <ul>
+                                <li><a href="mailto:info@homeglass.com">info@homeglass.com</a></li>
+                                <li><a href="tel:+34900000000">900 000 000</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hg-footer-badge">
+                        <img src="/selector_packs/static/src/img/web/footer_kit_digital.png"
+                             alt="Kit Digital"
+                             class="hg-footer-badge-img"/>
+                    </div>
+                    <div class="hg-footer-bottom">
+                        <p>2026 Home Glass. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+        </xpath>
+    </template>
+
+</odoo>

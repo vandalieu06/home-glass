@@ -10,11 +10,16 @@
     <template id="packs_home" name="Packs de Reforma">
         <t t-call="website.layout">
             <div class="hg-packs-home">
-                <div class="hg-container">
-                    <div class="hg-packs-header">
-                        <h1>Elige tu Reforma</h1>
-                        <p>Selecciona el pack que mejor se adapte a tus necesidades</p>
+                <section class="hg-packs-hero">
+                    <div class="hg-container">
+                        <div class="hg-packs-hero-content">
+                            <span class="hg-hero-badge">Packs de Reforma</span>
+                            <h1>Elige tu Reforma</h1>
+                            <p>Selecciona el pack que mejor se adapte a tus necesidades</p>
+                        </div>
                     </div>
+                </section>
+                <div class="hg-container">
 
                     <div class="hg-packs-grid">
                         <t t-foreach="packs" t-as="pack">
@@ -22,9 +27,8 @@
                             <div t-attf-class="hg-pack-card hg-pack-accent-#{pack_color_idx}">
                                 <div class="hg-pack-accent-strip"/>
                                 <div class="hg-pack-image">
-                                    <img t-att-src="'/web/image/product.template/%s/image_512' % pack.id"
-                                         alt="pack.name"
-                                         onerror="this.src='https://placehold.co/400x300?text=Pack'"/>
+                                    <img src="/selector_packs/static/src/img/web/home_glass_ejemplo_pack_reforma.jpeg"
+                                         alt="pack.name"/>
                                 </div>
                                 <div class="hg-pack-content">
                                     <div class="hg-pack-title-row">
