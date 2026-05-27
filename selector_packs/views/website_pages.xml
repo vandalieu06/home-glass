@@ -263,13 +263,13 @@
                              class="hg-footer-badge-img"
                              width="382" height="120"/>
                     </div>
-                    <div class="hg-footer-lang">
+                    <!-- <div class="hg-footer-lang">
                         <t t-call="portal.language_selector">
                             <t t-set="_div_classes" value="dropup"/>
                             <t t-set="_btn_class" value="hg-footer-lang-btn"/>
                             <t t-set="_dropdown_menu_class" value="hg-footer-lang-dropdown"/>
                         </t>
-                    </div>
+                    </div> -->
                     <div class="hg-footer-bottom">
                         <p>2026 Home Glass. Todos los derechos reservados.</p>
                     </div>
