@@ -1746,6 +1746,11 @@ msgid "Sobre Nosotros"
 msgstr "About Us"
 
 #. module: selector_packs
+#: model:website.menu,name:selector_packs.menu_contacto
+msgid "Contáctenos"
+msgstr "Contact Us"
+
+#. module: selector_packs
 #: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
 msgid "Subtotal"
 msgstr "Subtotal"
