@@ -28,7 +28,8 @@
                                 <div class="hg-pack-accent-strip"/>
                                 <div class="hg-pack-image">
                                     <img src="/selector_packs/static/src/img/web/home_glass_ejemplo_pack_reforma.jpeg"
-                                         alt="pack.name"/>
+                                             alt="pack.name"
+                                             width="400" height="300"/>
                                 </div>
                                 <div class="hg-pack-content">
                                     <div class="hg-pack-title-row">

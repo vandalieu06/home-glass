@@ -1,7 +1,7 @@
 {
     'name': 'Home Glass Selector Packs',
     'version': '1.0',
-    'depends': ['base', 'web', 'website', 'product', 'product_combo_pack', 'crm'],
+    'depends': ['base', 'web', 'website', 'product', 'product_combo_pack', 'crm', 'portal'],
     'author': 'GSATEK',
     'category': 'Customizations',
     'description': """

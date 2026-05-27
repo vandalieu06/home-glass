@@ -1,0 +1,1893 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* selector_packs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20240924\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-27 18:38+0000\n"
+"PO-Revision-Date: 2026-05-27 18:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_100
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_100
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_100
+msgid "100"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_110
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_110
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_110
+msgid "110"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_120
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_120
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_120
+msgid "120"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_130
+msgid "130"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_140
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_140
+msgid "140"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_145
+msgid "145"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_150
+msgid "150"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_160
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_160
+msgid "160"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_170
+msgid "170"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_180
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_180
+msgid "180"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_190
+msgid "190"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_200
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_200
+msgid "200"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "2026 Home Glass. Todos los derechos reservados."
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_210
+msgid "210"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_220
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_220
+msgid "220"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_230
+msgid "230"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_240
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_240
+msgid "240"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_260
+msgid "260"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_70
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_70
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_70
+msgid "70"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_75
+msgid "75"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_80
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_80
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_80
+msgid "80"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_85
+msgid "85"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_ancho_plato_90
+#: model:product.attribute.value,name:selector_packs.attr_largo_plato_90
+#: model:product.attribute.value,name:selector_packs.attr_medida_mampara_90
+msgid "90"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "900 000 000"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.variant_selector_snippet
+msgid "<option value=\"\">Seleccionar...</option>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "<span class=\"hg-client-label\">Dirección:</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "<span class=\"hg-client-label\">Email:</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "<span class=\"hg-client-label\">Pack:</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "<span class=\"hg-client-label\">Teléfono:</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.packs_home
+msgid "<span class=\"hg-hero-badge\">Packs de Reforma</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "<span class=\"hg-hero-badge\">Reforma de Baños</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "<span class=\"hg-no-variant\">Sin variantes</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"<span class=\"hg-stat-number\">1200+</span>\n"
+"                                <span class=\"hg-stat-label\">Productos disponibles</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"<span class=\"hg-stat-number\">15+</span>\n"
+"                                <span class=\"hg-stat-label\">Años de experiencia</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"<span class=\"hg-stat-number\">500+</span>\n"
+"                                <span class=\"hg-stat-label\">Clientes satisfechos</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"<span class=\"hg-stat-number\">98%</span>\n"
+"                                <span class=\"hg-stat-label\">Recomendación</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"<span class=\"hg-value-badge\" style=\"--value-accent: var(--mm-brand-"
+"blue);\">02</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"<span class=\"hg-value-badge\" style=\"--value-accent: var(--mm-brand-"
+"coral);\">01</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"<span class=\"hg-value-badge\" style=\"--value-accent: var(--mm-brand-"
+"magenta);\">03</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"<span class=\"hg-value-badge\" style=\"--value-accent: var(--mm-brand-"
+"purple);\">04</span>"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_acabado_mueble
+msgid "Acabado"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_mampara_aluminio_brillo
+msgid "Aluminio Brillo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_ancho_plato
+msgid "Ancho (cm)"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_antracita_brillo
+msgid "Antracita Brillo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_arena_mate
+msgid "Arena Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Artesanos del confort en tu cuarto de baño"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Aviso Legal"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_azul_mate
+msgid "Azul Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_azul_navy_mate
+msgid "Azul Navy Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.azulejo_30x60_brillo
+msgid "Azulejo Blanco Brillo 30x60"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.azulejo_30x60_mate
+msgid "Azulejo Blanco Mate 30x60"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.azulejo_30x60_brillo
+msgid "Azulejo blanco brillo 30x60 - Oferta"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.azulejo_30x60_mate
+msgid "Azulejo blanco mate 30x60 - Oferta"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_plato_beige
+msgid "Beige"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_beige_nature
+msgid "Beige Nature"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_mampara_blanco
+#: model:product.attribute.value,name:selector_packs.attr_color_plato_blanco
+msgid "Blanco"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_blanco_brillo
+msgid "Blanco Brillo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_blanco_mate
+msgid "Blanco Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_blanco_nature
+msgid "Blanco Nature"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_blanco_pure
+msgid "Blanco Pure"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"Cada baño es único. Te damos las herramientas para que lo diseñes a tu "
+"medida."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Calidad"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,description_sale:selector_packs.pack_reforma_basic
+msgid "Cambio de bañera por plato de ducha - Modelo básico"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,description_sale:selector_packs.pack_reforma_basic_plus
+msgid "Cambio de bañera por plato de ducha con grifo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_camel
+msgid "Camel"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Cant."
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_color_mampara
+msgid "Color Mampara"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_color_plato
+msgid "Color Plato Ducha"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.grifo_kappa
+msgid "Columna de ducha KAPPA"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Comercial:"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Compromiso"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_tipo_mueble_conjunto_completo
+msgid "Conjunto Completo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_tipo_mueble_conjunto_premium
+msgid "Conjunto Premium"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.grifo_star
+msgid "Conjunto de ducha STAR con monomando TESLA"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Contacto"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Conócenos"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_vidrio_decorado
+msgid "Decorado Fast"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mano_obra_reforma_integral
+msgid ""
+"Demolición alicatado y solería actual.\n"
+"Quitar bañera actual o plato de ducha e instalar plato de ducha nuevo.\n"
+"Nuevas instalaciones de fontanería y electricidad.\n"
+"Colocación de solería y alicatado.\n"
+"Instalación de sanitarios.\n"
+"Instalación 1 punto de luz+enchufe y mecanismo nuevo.\n"
+"Pintura techo color blanca.\n"
+"El material de pegamento para alicatado y mortero para el suelo de la ducha incluido\n"
+"en el precio."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Descubre nuestros packs y personaliza tu reforma en minutos."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"Desde hace más de 15 años, en Home Glass nos dedicamos a transformar baños "
+"en espacios únicos. Nacimos con la idea de que reformar un baño no debería "
+"ser un dolor de cabeza."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"Elige colores, acabados, medidas y modelos. Cada baño es único, tu reforma "
+"también."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.packs_home
+msgid "Elige tu Reforma"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Empieza tu reforma hoy"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Equipo de Home Glass"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Fecha:"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_fresno_samara
+msgid "Fresno Samara"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_galet_brillo
+msgid "Galet Brillo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_plato_grafito
+msgid "Grafito"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.grifo_kappa
+msgid "Grifo KAPPA - Columna Ducha"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.grifo_star
+msgid "Grifo STAR - Conjunto Ducha"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_plato_gris
+msgid "Gris"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_gris_arenado
+msgid "Gris Arenado"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_gris_mate
+msgid "Gris Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_gris_nature
+msgid "Gris Nature"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_plato_gris_perla
+msgid "Gris Perla"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_habana_mate
+msgid "Habana Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_hickory_nature
+msgid "Hickory Nature"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Home Glass"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"Hoy ayudamos a cientos de clientes cada año a crear el baño de sus sueños, "
+"combinando diseño, funcionalidad y precio justo."
+msgstr ""
+
+#. module: selector_packs
+#: model:website.menu,name:selector_packs.menu_inicio
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Inicio"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.inodoro_sanitario
+msgid "Inodoro Sanitario"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.inodoro_sanitario
+msgid "Inodoro sanitario estándar"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Ir al Selector"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Kit Digital"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_largo_plato
+msgid "Largo (cm)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Legal"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Lo que nos define y nos diferencia"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_a20
+msgid "Mampara A20"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_a25
+msgid "Mampara A25"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_a40
+msgid "Mampara A40"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_a90
+msgid "Mampara A90"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_ag01
+msgid "Mampara AG01"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_ag02
+msgid "Mampara AG02"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_ag20
+msgid "Mampara AG20"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_ag25
+msgid "Mampara AG25"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_ag40
+msgid "Mampara AG40"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_ag90
+msgid "Mampara AG90"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_b20
+msgid "Mampara B20"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_b40
+msgid "Mampara B40"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_b90
+msgid "Mampara B90"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_c20
+msgid "Mampara C20"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_c25
+msgid "Mampara C25"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_c40
+msgid "Mampara C40"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_c90
+msgid "Mampara C90"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_d20
+msgid "Mampara D20"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_d25
+msgid "Mampara D25"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_d40
+msgid "Mampara D40"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_d90
+msgid "Mampara D90"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_e20
+msgid "Mampara E20"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_g01
+msgid "Mampara G01"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_g02
+msgid "Mampara G02"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_o00
+msgid "Mampara O00"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_o10
+msgid "Mampara O10"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_o11
+msgid "Mampara O11"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mampara_o15
+msgid "Mampara O15"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_a20
+msgid "Mampara serie Alfa modelo A20 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_a25
+msgid "Mampara serie Alfa modelo A25 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_a40
+msgid "Mampara serie Alfa modelo A40 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_a90
+msgid "Mampara serie Alfa modelo A90 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_ag01
+msgid "Mampara serie Alfa/Gamma Gold modelo AG01 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_ag02
+msgid "Mampara serie Alfa/Gamma Gold modelo AG02 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_ag20
+msgid "Mampara serie Alfa/Gamma Gold modelo AG20 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_ag25
+msgid "Mampara serie Alfa/Gamma Gold modelo AG25 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_ag40
+msgid "Mampara serie Alfa/Gamma Gold modelo AG40 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_ag90
+msgid "Mampara serie Alfa/Gamma Gold modelo AG90 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_b20
+msgid "Mampara serie Beta modelo B20 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_b40
+msgid "Mampara serie Beta modelo B40 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_b90
+msgid "Mampara serie Beta modelo B90 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_d20
+msgid "Mampara serie Delta modelo D20 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_d25
+msgid "Mampara serie Delta modelo D25 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_d40
+msgid "Mampara serie Delta modelo D40 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_d90
+msgid "Mampara serie Delta modelo D90 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_e20
+msgid "Mampara serie Epsilon modelo E20 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_g01
+msgid "Mampara serie Gamma modelo G01 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_g02
+msgid "Mampara serie Gamma modelo G02 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_o00
+msgid "Mampara serie Omega modelo O00 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_o10
+msgid "Mampara serie Omega modelo O10 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_o11
+msgid "Mampara serie Omega modelo O11 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_o15
+msgid "Mampara serie Omega modelo O15 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_c20
+msgid "Mampara serie Xi modelo C20 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_c25
+msgid "Mampara serie Xi modelo C25 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_c40
+msgid "Mampara serie Xi modelo C40 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mampara_c90
+msgid "Mampara serie Xi modelo C90 - Precio base (Transparente)"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_medida_mampara
+msgid "Medida (cm)"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_modelo_mueble
+msgid "Modelo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_plato_moka
+msgid "Moka"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_tipo_mueble_mas_lavabo
+msgid "Mueble + Lavabo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_alfa
+msgid "Mueble Alfa Compact"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_bassi
+msgid "Mueble Bassi"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_dai
+msgid "Mueble Dai lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_dai_encimera
+msgid "Mueble Dai lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_econic
+msgid "Mueble Econic lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_econic_encimera
+msgid "Mueble Econic lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_elegance
+msgid "Mueble Elegance Pack"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_enjoy
+msgid "Mueble Enjoy Pack"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_essence
+msgid "Mueble Essence Compact"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_logika
+msgid "Mueble Logika lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_logika_encimera
+msgid "Mueble Logika lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_mio
+msgid "Mueble Mio Compact"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_niwa
+msgid "Mueble Niwa suspendido"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_sansa_suelo
+msgid "Mueble Sansa a suelo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_sansa_encimera
+msgid "Mueble Sansa lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_sansa_reducido
+msgid "Mueble Sansa profundidad reducida"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_sansa
+msgid "Mueble Sansa suspendido"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_street
+msgid "Mueble Street Pack"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_urban_suelo
+msgid "Mueble Urban a suelo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_urban
+msgid "Mueble Urban suspendido"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vida
+msgid "Mueble Vida Compact"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vitale_suelo
+msgid "Mueble Vitale a suelo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vitale_reducido
+msgid "Mueble Vitale profundidad reducida"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vitale_cairo
+msgid "Mueble Vitale suspendido Cairo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vitale_enzo
+msgid "Mueble Vitale suspendido Enzo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vora_cairo
+msgid "Mueble Vora lavabo integrado Cairo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vora_enzo
+msgid "Mueble Vora lavabo integrado Enzo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_vora_encimera
+msgid "Mueble Vora lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_wave
+msgid "Mueble Wave Compact"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_win_1c2p
+msgid "Mueble Win 1C2P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mueble_win
+msgid "Mueble Win lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_alfa
+msgid "Mueble de baño Alfa Compact con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_bassi
+msgid "Mueble de baño Bassi (fondo 36)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_dai
+msgid "Mueble de baño Dai con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_dai_encimera
+msgid "Mueble de baño Dai con lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_econic
+msgid "Mueble de baño Econic con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_econic_encimera
+msgid "Mueble de baño Econic con lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_essence
+msgid "Mueble de baño Essence Compact con lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_logika
+msgid "Mueble de baño Logika con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_logika_encimera
+msgid "Mueble de baño Logika con lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_mio
+msgid "Mueble de baño Mio Compact con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_niwa
+msgid "Mueble de baño Niwa suspendido con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_sansa_suelo
+msgid "Mueble de baño Sansa a suelo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_sansa_encimera
+msgid "Mueble de baño Sansa con lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_sansa_reducido
+msgid "Mueble de baño Sansa profundidad reducida (fondo 39)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_sansa
+msgid "Mueble de baño Sansa suspendido con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_urban_suelo
+msgid "Mueble de baño Urban a suelo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_urban
+msgid "Mueble de baño Urban suspendido con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vida
+msgid "Mueble de baño Vida Compact con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vitale_suelo
+msgid "Mueble de baño Vitale a suelo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vitale_reducido
+msgid "Mueble de baño Vitale profundidad reducida (fondo 39)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vitale_cairo
+msgid "Mueble de baño Vitale suspendido con lavabo Cairo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vitale_enzo
+msgid "Mueble de baño Vitale suspendido con lavabo Enzo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vora_cairo
+msgid "Mueble de baño Vora con lavabo integrado Cairo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vora_enzo
+msgid "Mueble de baño Vora con lavabo integrado Enzo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_vora_encimera
+msgid "Mueble de baño Vora con lavabo sobre encimera"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_wave
+msgid "Mueble de baño Wave Compact curvo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_win_1c2p
+msgid "Mueble de baño Win 1C2P con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_win
+msgid "Mueble de baño Win con lavabo integrado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Navegación"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_color_mampara_negro
+msgid "Negro"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_negro_mate
+msgid "Negro Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_nogal
+msgid "Nogal"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_nogal_arenado
+msgid "Nogal Arenado"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_nogal_artico
+msgid "Nogal Ártico"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_notte
+msgid "Notte"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Nuestra Historia"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Nuestros Valores"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_elegance
+msgid "Pack completo Elegance: Mueble + lavabo + espejo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_enjoy
+msgid "Pack completo Enjoy: Mueble + lavabo + espejo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mueble_street
+msgid "Pack completo Street: Mueble + lavabo + espejo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Packs Completos"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Personalización"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Personalización Total"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.plato_hermes
+msgid "Plato Ducha Hermes"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.plato_marco
+msgid "Plato Ducha Marco"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.plato_nature
+msgid "Plato Ducha Nature"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.plato_neo
+msgid "Plato Ducha Neo"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.plato_premium
+msgid "Plato Ducha Premium"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.plato_hermes
+msgid "Plato de ducha modelo Hermes - Precio base"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.plato_marco
+msgid "Plato de ducha modelo Marco - Precio base"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.plato_nature
+msgid "Plato de ducha modelo Nature - Precio base (medida más pequeña)"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.plato_neo
+msgid "Plato de ducha modelo Neo - Precio base"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.plato_premium
+msgid "Plato de ducha modelo Premium - Precio base"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Política de Cookies"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Política de Privacidad"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Precio Ud."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"Precios claros desde el primer clic. Sin letra pequeña ni costes ocultos."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Presupuesto"
+msgstr ""
+
+#. module: selector_packs
+#: model:ir.actions.report,name:selector_packs.action_report_presupuesto
+msgid "Presupuesto Personalizado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Presupuesto al Instante"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Presupuesto generado el"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Producto"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mano_obra_reforma_basica
+msgid ""
+"Quitar bañera actual e instalar plato de ducha nuevo.\n"
+"Colocación de alicatado solo en alto bañera en todo el perímetro\n"
+"Creación de base de mortero para la colocación del plato de ducha conectando válvula\n"
+"de desagüe a tubería de PVC existente."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.mano_obra_reforma_basic_plus
+msgid ""
+"Quitar bañera actual e instalar plato de ducha nuevo.\n"
+"Colocación de alicatado solo en alto bañera hasta la nueva altura del grifo en\n"
+"todo el perímetro.\n"
+"Creación de base de mortero para la colocaación del plato de ducha\n"
+"conectando válvula de desague a tubería de PVC existente.\n"
+"Subir grifo de bañera actual para altura de ducha.\n"
+"Incluye mortero y materiales de agarre y desescombro."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"Recibe tu presupuesto detallado al momento. Sin esperas, sin compromiso, sin"
+" sorpresas."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Referencia:"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.pack_reforma_basic
+msgid "Reforma BASIC"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.pack_reforma_basic_plus
+msgid "Reforma BASIC PLUS"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mano_obra_reforma_basic_plus
+msgid "Reforma Basic Plus"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mano_obra_reforma_basica
+msgid "Reforma Basica"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.mano_obra_reforma_integral
+msgid "Reforma Integral"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.pack_reforma_integral_basic
+msgid "Reforma Integral BASIC"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.pack_reforma_integral_premium
+msgid "Reforma Integral PREMIUM"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,description_sale:selector_packs.pack_reforma_integral_basic
+msgid "Reforma de baño integral hasta 5m2"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,description_sale:selector_packs.pack_reforma_integral_premium
+msgid "Reforma integral con todos los materiales a elegir"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.revestimiento_30x90_brillo
+msgid "Revestimiento Blanco Brillo 30x90"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,name:selector_packs.revestimiento_30x90_mate
+msgid "Revestimiento Blanco Mate 30x90"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.revestimiento_30x90_brillo
+msgid "Revestimiento blanco brillo 30x90 rectificado"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:product.template,description:selector_packs.revestimiento_30x90_mate
+msgid "Revestimiento blanco mate 30x90 rectificado"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_roble_blanco
+msgid "Roble Blanco"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_roble_colonial
+msgid "Roble Colonial"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_roble_eternity
+msgid "Roble Eternity"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_roble_nordico
+msgid "Roble Nórdico"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_roble_vulcano
+msgid "Roble Vulcano"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.packs_home
+msgid "Selecciona el pack que mejor se adapte a tus necesidades"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"Selecciona tu pack, personaliza los productos y recibe tu presupuesto en "
+"minutos."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"Selecciona un pack y personaliza cada producto. Plato, mampara, mueble, "
+"grifo, sanitario y azulejos incluidos."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid ""
+"Selecciona, personaliza y recibe tu reforma completa llave en mano. Calidad "
+"profesional, sin sorpresas."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"Seleccionamos los mejores materiales, trabajamos con fabricantes de "
+"confianza y ofrecemos un proceso transparente de principio a fin. Cada "
+"proyecto es tratado con el cuidado y la atención que merece."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.packs_home
+msgid "Seleccionar"
+msgstr ""
+
+#. module: selector_packs
+#: model:website.menu,name:selector_packs.menu_selector
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "Selector"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_100_1c
+msgid "Set 100 1C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_100_2c
+msgid "Set 100 2C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_100_3c
+msgid "Set 100 3C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_120_2c
+msgid "Set 120 2C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_120_4c
+msgid "Set 120 4C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_120_4p
+msgid "Set 120 4P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_120_6c
+msgid "Set 120 6C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_45_1p
+msgid "Set 45 1P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_50_1p
+msgid "Set 50 1P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_50_2c
+msgid "Set 50 2C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_50_2p
+msgid "Set 50 2P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_60_1c
+msgid "Set 60 1C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_60_1c1h
+msgid "Set 60 1C1H"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_60_1c2p
+msgid "Set 60 1C2P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_60_2c
+msgid "Set 60 2C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_60_2p
+msgid "Set 60 2P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_60_3c
+msgid "Set 60 3C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_70_2c
+msgid "Set 70 2C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_70_2p
+msgid "Set 70 2P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_80_1c
+msgid "Set 80 1C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_80_1c1h
+msgid "Set 80 1C1H"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_80_2c
+msgid "Set 80 2C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_80_2p
+msgid "Set 80 2P"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_80_3c
+msgid "Set 80 3C"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_modelo_mueble_set_90_2c
+msgid "Set 90 2C"
+msgstr ""
+
+#. module: selector_packs
+#: model:website.menu,name:selector_packs.menu_sobre_nosotros
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Sobre Nosotros"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Subtotal"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"Te acompañamos durante todo el proceso, desde la selección hasta la "
+"instalación."
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_tipo_mueble
+msgid "Tipo"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Todo lo que necesitas para reformar tu baño, en un solo lugar"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "Total presupuesto"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid ""
+"Trabajamos con materiales y fabricantes que cumplen los más altos "
+"estándares."
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Transparencia"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_vidrio_transparente
+msgid "Transparente"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Tu baño,<br/>a tu medida"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid ""
+"Tu tienda de confianza para la reforma de baños. Calidad, diseño y "
+"transparencia."
+msgstr ""
+
+#. module: selector_packs
+#: model:product.template,uom_name:selector_packs.azulejo_30x60_brillo
+#: model:product.template,uom_name:selector_packs.azulejo_30x60_mate
+#: model:product.template,uom_name:selector_packs.grifo_kappa
+#: model:product.template,uom_name:selector_packs.grifo_star
+#: model:product.template,uom_name:selector_packs.inodoro_sanitario
+#: model:product.template,uom_name:selector_packs.mampara_a20
+#: model:product.template,uom_name:selector_packs.mampara_a25
+#: model:product.template,uom_name:selector_packs.mampara_a40
+#: model:product.template,uom_name:selector_packs.mampara_a90
+#: model:product.template,uom_name:selector_packs.mampara_ag01
+#: model:product.template,uom_name:selector_packs.mampara_ag02
+#: model:product.template,uom_name:selector_packs.mampara_ag20
+#: model:product.template,uom_name:selector_packs.mampara_ag25
+#: model:product.template,uom_name:selector_packs.mampara_ag40
+#: model:product.template,uom_name:selector_packs.mampara_ag90
+#: model:product.template,uom_name:selector_packs.mampara_b20
+#: model:product.template,uom_name:selector_packs.mampara_b40
+#: model:product.template,uom_name:selector_packs.mampara_b90
+#: model:product.template,uom_name:selector_packs.mampara_c20
+#: model:product.template,uom_name:selector_packs.mampara_c25
+#: model:product.template,uom_name:selector_packs.mampara_c40
+#: model:product.template,uom_name:selector_packs.mampara_c90
+#: model:product.template,uom_name:selector_packs.mampara_d20
+#: model:product.template,uom_name:selector_packs.mampara_d25
+#: model:product.template,uom_name:selector_packs.mampara_d40
+#: model:product.template,uom_name:selector_packs.mampara_d90
+#: model:product.template,uom_name:selector_packs.mampara_e20
+#: model:product.template,uom_name:selector_packs.mampara_g01
+#: model:product.template,uom_name:selector_packs.mampara_g02
+#: model:product.template,uom_name:selector_packs.mampara_o00
+#: model:product.template,uom_name:selector_packs.mampara_o10
+#: model:product.template,uom_name:selector_packs.mampara_o11
+#: model:product.template,uom_name:selector_packs.mampara_o15
+#: model:product.template,uom_name:selector_packs.mano_obra_reforma_basic_plus
+#: model:product.template,uom_name:selector_packs.mano_obra_reforma_basica
+#: model:product.template,uom_name:selector_packs.mano_obra_reforma_integral
+#: model:product.template,uom_name:selector_packs.mueble_alfa
+#: model:product.template,uom_name:selector_packs.mueble_bassi
+#: model:product.template,uom_name:selector_packs.mueble_dai
+#: model:product.template,uom_name:selector_packs.mueble_dai_encimera
+#: model:product.template,uom_name:selector_packs.mueble_econic
+#: model:product.template,uom_name:selector_packs.mueble_econic_encimera
+#: model:product.template,uom_name:selector_packs.mueble_elegance
+#: model:product.template,uom_name:selector_packs.mueble_enjoy
+#: model:product.template,uom_name:selector_packs.mueble_essence
+#: model:product.template,uom_name:selector_packs.mueble_logika
+#: model:product.template,uom_name:selector_packs.mueble_logika_encimera
+#: model:product.template,uom_name:selector_packs.mueble_mio
+#: model:product.template,uom_name:selector_packs.mueble_niwa
+#: model:product.template,uom_name:selector_packs.mueble_sansa
+#: model:product.template,uom_name:selector_packs.mueble_sansa_encimera
+#: model:product.template,uom_name:selector_packs.mueble_sansa_reducido
+#: model:product.template,uom_name:selector_packs.mueble_sansa_suelo
+#: model:product.template,uom_name:selector_packs.mueble_street
+#: model:product.template,uom_name:selector_packs.mueble_urban
+#: model:product.template,uom_name:selector_packs.mueble_urban_suelo
+#: model:product.template,uom_name:selector_packs.mueble_vida
+#: model:product.template,uom_name:selector_packs.mueble_vitale_cairo
+#: model:product.template,uom_name:selector_packs.mueble_vitale_enzo
+#: model:product.template,uom_name:selector_packs.mueble_vitale_reducido
+#: model:product.template,uom_name:selector_packs.mueble_vitale_suelo
+#: model:product.template,uom_name:selector_packs.mueble_vora_cairo
+#: model:product.template,uom_name:selector_packs.mueble_vora_encimera
+#: model:product.template,uom_name:selector_packs.mueble_vora_enzo
+#: model:product.template,uom_name:selector_packs.mueble_wave
+#: model:product.template,uom_name:selector_packs.mueble_win
+#: model:product.template,uom_name:selector_packs.mueble_win_1c2p
+#: model:product.template,uom_name:selector_packs.pack_reforma_basic
+#: model:product.template,uom_name:selector_packs.pack_reforma_basic_plus
+#: model:product.template,uom_name:selector_packs.pack_reforma_integral_basic
+#: model:product.template,uom_name:selector_packs.pack_reforma_integral_premium
+#: model:product.template,uom_name:selector_packs.plato_hermes
+#: model:product.template,uom_name:selector_packs.plato_marco
+#: model:product.template,uom_name:selector_packs.plato_nature
+#: model:product.template,uom_name:selector_packs.plato_neo
+#: model:product.template,uom_name:selector_packs.plato_premium
+#: model:product.template,uom_name:selector_packs.revestimiento_30x90_brillo
+#: model:product.template,uom_name:selector_packs.revestimiento_30x90_mate
+msgid "Units"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "Ver Packs"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "Ver Packs de Reforma"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_verde_mate
+msgid "Verde Mate"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_verde_mineral
+msgid "Verde Mineral"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute.value,name:selector_packs.attr_acabado_verde_pure
+msgid "Verde Pure"
+msgstr ""
+
+#. module: selector_packs
+#: model:product.attribute,name:selector_packs.attr_vidrio_mampara
+msgid "Vidrio"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
+msgid "info@homeglass.com"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.packs_home
+msgid "pack.name"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.pack_card_snippet
+msgid "pack_name"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template
+msgid "· Válido por 30 días"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
+#: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
+msgid "¿Listo para empezar?"
+msgstr ""
+
+#. module: selector_packs
+#: model_terms:ir.ui.view,arch_db:selector_packs.custom_homepage
+msgid "¿Por qué elegirnos?"
+msgstr ""

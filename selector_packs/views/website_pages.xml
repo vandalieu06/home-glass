@@ -6,7 +6,12 @@
     <!-- ============================================ -->
     <template id="inject_website_css" inherit_id="website.layout" name="Inject website.css" active="True">
         <xpath expr="//head" position="inside">
-            <link href="/selector_packs/static/src/css/website.css" rel="stylesheet"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;display=swap" rel="stylesheet"/>
+            <link href="/selector_packs/static/src/css/website.css" rel="stylesheet" media="print" onload="this.media='all'"/>
+            <noscript><link href="/selector_packs/static/src/css/website.css" rel="stylesheet"/></noscript>
+            <link rel="preload" as="image" href="/selector_packs/static/src/img/web/home_glass_portada.webp"/>
         </xpath>
     </template>
 
@@ -131,7 +136,8 @@
                             </div>
                             <div class="hg-story-image">
                                 <img src="/selector_packs/static/src/img/web/home_glass_sobre_nosotros.jpg"
-                                     alt="Equipo de Home Glass"/>
+                                     alt="Equipo de Home Glass"
+                                     width="640" height="360"/>
                             </div>
                         </div>
                     </div>
@@ -252,9 +258,17 @@
                         </div>
                     </div>
                     <div class="hg-footer-badge">
-                        <img src="/selector_packs/static/src/img/web/footer_kit_digital.png"
+                        <img src="/selector_packs/static/src/img/web/footer_kit_digital.webp"
                              alt="Kit Digital"
-                             class="hg-footer-badge-img"/>
+                             class="hg-footer-badge-img"
+                             width="382" height="120"/>
+                    </div>
+                    <div class="hg-footer-lang">
+                        <t t-call="portal.language_selector">
+                            <t t-set="_div_classes" value="dropup"/>
+                            <t t-set="_btn_class" value="hg-footer-lang-btn"/>
+                            <t t-set="_dropdown_menu_class" value="hg-footer-lang-dropdown"/>
+                        </t>
                     </div>
                     <div class="hg-footer-bottom">
                         <p>2026 Home Glass. Todos los derechos reservados.</p>
