@@ -1,6 +1,7 @@
 from odoo import http
 from odoo.http import request
 from odoo.exceptions import UserError
+from odoo.tools import html_escape, plaintext2html
 import json
 
 
@@ -33,18 +34,14 @@ class SelectorPacksController(http.Controller):
         categories = self._get_categories_mapping()
         categories_data = self._get_pack_categories(pack_id)
 
-        labour_pack_items = request.env['pack.products'].sudo().search([
-            ('product_tmpl_id', '=', pack_id),
-            ('is_labour', '=', True)
-        ])
-        labour_products = []
-        for lp in labour_pack_items:
-            base = lp.base_product_id
-            labour_products.append({
-                'name': base.name,
-                'base_product_id': base.id,
-                'price': base.list_price or 0.0,
-            })
+        labour_products = [
+            {
+                'name': line['name'],
+                'base_product_id': line['base_product_id'],
+                'price': line['subtotal'],
+            }
+            for line in self._get_labour_lines(pack_id)
+        ]
 
         values = {
             'pack': pack,
@@ -55,6 +52,34 @@ class SelectorPacksController(http.Controller):
             'total_steps': len(categories_data),
         }
         return request.render('selector_packs.pack_selector', values)
+
+    # ============================================
+    # IMÁGENES PÚBLICAS DEL SELECTOR
+    # ============================================
+
+    PUBLIC_IMAGE_FIELDS = ('image_128', 'image_256', 'image_512', 'image_1024', 'image_1920')
+
+    @http.route('/homeglass/image/<int:product_tmpl_id>/<string:field>', type='http', auth='public')
+    def selector_image(self, product_tmpl_id, field, **kwargs):
+        """Imagen de un pack o de un producto de pack, visible sin login.
+        Sin website_sale el usuario público no puede leer product.template y /web/image
+        devuelve el placeholder; aquí se sirve con sudo, solo para productos del selector."""
+        if field not in self.PUBLIC_IMAGE_FIELDS:
+            return request.not_found()
+
+        template = request.env['product.template'].sudo().browse(product_tmpl_id).exists()
+        if not template:
+            return request.not_found()
+        in_pack = template.is_pack or request.env['pack.products'].sudo().search_count([
+            ('base_product_id', '=', template.id)
+        ])
+        if not in_pack:
+            return request.not_found()
+
+        return request.env['ir.http'].sudo()._content_image(
+            model='product.template', res_id=template.id, field=field,
+            unique=kwargs.get('unique'),
+        )
 
     # ============================================
     # API JSON CENTRALIZADA
@@ -111,7 +136,7 @@ class SelectorPacksController(http.Controller):
                     'name': p.name,
                     'description': p.description_sale or '',
                     'price': p.list_price,
-                    'image': f'/web/image/product.template/{p.id}/image_1024',
+                    'image': f'/homeglass/image/{p.id}/image_1024',
                 }
                 for p in packs
             ]
@@ -185,7 +210,7 @@ class SelectorPacksController(http.Controller):
             'product_tmpl_id': product.id,
             'product_name': product.name,
             'price': product.list_price,
-            'image': f'/web/image/product.template/{product.id}/image_1024',
+            'image': f'/homeglass/image/{product.id}/image_1024',
             'category': category,
             'is_preselected': is_preselected,
             'preselected_values': preselected_values,
@@ -238,7 +263,7 @@ class SelectorPacksController(http.Controller):
             contact.get('phone')
         )
 
-        contact_msg = contact.get('message', '').strip()
+        contact_msg = (contact.get('message') or '').strip()
         description = self._build_description(pack, selections, selected_product, contact_msg)
 
         lead = request.env['crm.lead'].sudo().create({
@@ -257,23 +282,13 @@ class SelectorPacksController(http.Controller):
             'origin': lead.name,
         })
 
-        labour_products = request.env['pack.products'].sudo().search([
-            ('product_tmpl_id', '=', pack_id),
-            ('is_labour', '=', True)
-        ])
-        for lp in labour_products:
-            labour_template = lp.base_product_id
-            if not labour_template.exists():
-                continue
-            labour_variant = labour_template.product_variant_ids[:1]
-            if not labour_variant:
-                continue
+        for line in self._get_labour_lines(pack_id):
             request.env['sale.order.line'].sudo().create({
                 'order_id': sale_order.id,
-                'product_id': labour_variant.id,
-                'product_uom_qty': lp.quantity or 1,
-                'price_unit': labour_variant.lst_price or 0.0,
-                'name': labour_template.name,
+                'product_id': line['variant'].id,
+                'product_uom_qty': line['quantity'],
+                'price_unit': line['unit_price'],
+                'name': line['name'],
             })
 
         for product_tmpl_id in selected_product.values():
@@ -305,6 +320,34 @@ class SelectorPacksController(http.Controller):
     # MÉTODOS AUXILIARES
     # ============================================
 
+    def _get_xml_name(self, record):
+        """Nombre del XML ID sin prefijo de módulo ('selector_packs.plato_nature' -> 'plato_nature')"""
+        return (record.get_external_id().get(record.id) or '').split('.')[-1]
+
+    def _get_labour_lines(self, pack_id):
+        """Líneas de mano de obra del pack con precio unitario y subtotal (precio * cantidad)"""
+        lines = []
+        labour_items = request.env['pack.products'].sudo().search([
+            ('product_tmpl_id', '=', pack_id),
+            ('is_labour', '=', True)
+        ])
+        for lp in labour_items:
+            template = lp.base_product_id
+            variant = template.product_variant_ids[:1]
+            if not variant:
+                continue
+            quantity = lp.quantity or 1
+            unit_price = variant.lst_price or 0.0
+            lines.append({
+                'name': template.name,
+                'base_product_id': template.id,
+                'variant': variant,
+                'quantity': quantity,
+                'unit_price': unit_price,
+                'subtotal': unit_price * quantity,
+            })
+        return lines
+
     def _get_pack_products(self, pack_id):
         pack = request.env['product.template'].sudo().browse(pack_id)
 
@@ -316,12 +359,11 @@ class SelectorPacksController(http.Controller):
             ('is_labour', '=', False)
         ])
 
-        pack_ext_id = pack.get_external_id()
-        pack_key = pack_ext_id.get(pack_id, '')
+        pack_key = self._get_xml_name(pack)
 
         preselected_products = {
-            'pack_reforma_basic_plus': ['grifo_star', 'azulejo_30x60'],
-            'pack_reforma_integral_basic': ['grifo_kappa', 'mueble_sansa', 'azulejo_30x60'],
+            'pack_reforma_basic_plus': ['grifo_star', 'azulejo_30x60_brillo'],
+            'pack_reforma_integral_basic': ['grifo_kappa', 'mueble_sansa', 'azulejo_30x60_brillo'],
         }
         pack_preselected = preselected_products.get(pack_key, [])
 
@@ -331,12 +373,11 @@ class SelectorPacksController(http.Controller):
 
             image_url = False
             if base_product.image_1024:
-                image_url = f'/web/image/product.template/{base_product.id}/image_1024'
+                image_url = f'/homeglass/image/{base_product.id}/image_1024'
 
             category = self._get_product_category(base_product)
 
-            product_ext_id = base_product.get_external_id()
-            product_key = product_ext_id.get(base_product.id, '')
+            product_key = self._get_xml_name(base_product)
             is_preselected = product_key in pack_preselected
 
             products.append({
@@ -410,12 +451,10 @@ class SelectorPacksController(http.Controller):
         if not pack.exists():
             return values
 
-        pack_ext_id = pack.get_external_id()
-        pack_key = pack_ext_id.get(pack_id, '')
+        pack_key = self._get_xml_name(pack)
 
         product = request.env['product.template'].sudo().browse(product_tmpl_id)
-        product_ext_id = product.get_external_id()
-        product_key = product_ext_id.get(product_tmpl_id, '')
+        product_key = self._get_xml_name(product)
 
         color_restrictions = {
             'pack_reforma_basic': {
@@ -488,22 +527,20 @@ class SelectorPacksController(http.Controller):
         if not pack.exists():
             return False
 
-        pack_ext_id = pack.get_external_id()
-        pack_key = pack_ext_id.get(pack_id, '')
+        pack_key = self._get_xml_name(pack)
 
         product = request.env['product.template'].sudo().browse(product_tmpl_id)
-        product_ext_id = product.get_external_id()
-        product_key = product_ext_id.get(product_tmpl_id, '')
+        product_key = self._get_xml_name(product)
 
         preselected_products = {
             'pack_reforma_basic_plus': {
                 'grifo_star': True,
-                'azulejo_30x60': True,
+                'azulejo_30x60_brillo': True,
             },
             'pack_reforma_integral_basic': {
                 'grifo_kappa': True,
                 'mueble_sansa': True,
-                'azulejo_30x60': True,
+                'azulejo_30x60_brillo': True,
             },
         }
 
@@ -515,11 +552,8 @@ class SelectorPacksController(http.Controller):
         if not pack.exists():
             return {}
 
-        pack_ext_id = pack.get_external_id()
-        pack_key = pack_ext_id.get(pack_id, '')
-
-        product_ext_id = product.get_external_id()
-        product_key = product_ext_id.get(product_tmpl_id, '')
+        pack_key = self._get_xml_name(pack)
+        product_key = self._get_xml_name(product)
 
         preselected_values = {}
 
@@ -547,7 +581,14 @@ class SelectorPacksController(http.Controller):
                     if tipo_value:
                         preselected_values['Tipo'] = tipo_value.id
 
-        return preselected_values
+        # Solo valores que el producto tiene de verdad: una preselección que no existe
+        # en el producto se ignora en vez de dejar una selección inválida
+        product_value_ids = set(product.attribute_line_ids.mapped('value_ids').ids)
+        return {
+            attr_name: value_id
+            for attr_name, value_id in preselected_values.items()
+            if value_id in product_value_ids
+        }
 
     def _get_attribute_dependency(self, attr_name):
         if attr_name == 'Modelo':
@@ -641,7 +682,7 @@ class SelectorPacksController(http.Controller):
         return request.make_response(pdf_content, headers=pdfheaders)
 
     def _build_description(self, pack, selections, selected_product, contact_msg=''):
-        description = f"<b>PRESUPUESTO - {pack.name}</b><br/><br/>"
+        description = f"<b>PRESUPUESTO - {html_escape(pack.name or '')}</b><br/><br/>"
         description += "<b>SELECCIONES:</b><br/>"
         description += "<ul>"
 
@@ -652,7 +693,7 @@ class SelectorPacksController(http.Controller):
                 continue
 
             selection_data = selections.get(str(product_tmpl_id), {})
-            line = f"<li><b>{product.name}</b>: "
+            line = f"<li><b>{html_escape(product.name)}</b>: "
 
             if isinstance(selection_data, dict):
                 attrs = []
@@ -661,7 +702,7 @@ class SelectorPacksController(http.Controller):
                         attr_val = request.env['product.attribute.value'].sudo().browse(attr_value)
                         if attr_val.exists():
                             attrs.append(attr_val.name)
-                line += ', '.join(attrs) if attrs else 'Sin seleccionar'
+                line += f"{html_escape(', '.join(attrs))}" if attrs else 'Sin seleccionar'
             else:
                 line += 'Sin variantes'
 
@@ -681,18 +722,11 @@ class SelectorPacksController(http.Controller):
             if request.env['product.template'].sudo().browse(int(pid)).exists()
         )
 
-        labour_prices = sum(
-            lp.base_product_id.list_price or 0
-            for lp in request.env['pack.products'].sudo().search([
-                ('product_tmpl_id', '=', pack.id),
-                ('is_labour', '=', True)
-            ])
-        )
-        total_price += labour_prices
+        total_price += sum(line['subtotal'] for line in self._get_labour_lines(pack.id))
 
         description += f"<b>PRECIO ESTIMADO: {total_price:.2f}€ (sin IVA)</b>"
 
         if contact_msg:
-            description += f"<br/><br/><b>MENSAJE CLIENTE:</b><br/>{contact_msg}"
+            description += f"<br/><br/><b>MENSAJE CLIENTE:</b><br/>{plaintext2html(contact_msg)}"
 
         return description

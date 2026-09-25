@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Líneas del pack: columna "Mano de obra" (is_labour) editable desde el backend -->
+    <record id="product_template_pack_labour_view" model="ir.ui.view">
+        <field name="name">product.template.pack.labour</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_combo_pack.product_template_inherit_pack"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pack_products_ids']/tree/field[@name='quantity']" position="after">
+                <field name="is_labour"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

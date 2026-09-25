@@ -270,9 +270,50 @@
                     <div class="hg-stepper-name">${escapeHtml(s.name)}</div>
                 </div>
             `;
-        }).join('')}</div>`;
+        }).join('')}</div>${renderStepperMobile(steps)}`;
 
         log('Stepper rendered', { currentStep: state.current_step });
+    }
+
+    // Móvil/tablet (< 1024px): cabecera "Paso N de M" + barra segmentada (la lista se oculta por CSS)
+    function renderStepperMobile(steps) {
+        const total = steps.length;
+        const isDone = state.current_step > total;
+        const current = steps.find(s => s.index === state.current_step);
+        const next = steps.find(s => s.index === state.current_step + 1);
+        const caption = isDone ? 'Completado' : `Paso ${state.current_step} de ${total}`;
+        const currentName = current ? current.name : '';
+
+        const segments = steps.map(s => {
+            const filled = isDone || s.index <= state.current_step;
+            const disabled = isDone || !canGoToStep(s.index);
+            return `
+                <button type="button"
+                        class="hg-progress-segment ${filled ? 'filled' : ''}"
+                        aria-label="Paso ${s.index}: ${escapeHtml(s.name)}"
+                        ${disabled ? 'disabled' : `onclick="goToStep(${s.index})"`}>
+                    <span class="hg-progress-bar"></span>
+                </button>
+            `;
+        }).join('');
+
+        return `
+            <div class="hg-stepper-mobile">
+                <div class="hg-progress-header">
+                    <span class="hg-progress-caption">${caption}</span>
+                    ${next && !isDone ? `<span class="hg-progress-next">Siguiente:&nbsp;${escapeHtml(next.name)}</span>` : ''}
+                </div>
+                ${currentName && !isDone ? `<div class="hg-progress-current">${escapeHtml(currentName)}</div>` : ''}
+                <div class="hg-progress-segments"
+                     role="progressbar"
+                     aria-valuemin="1"
+                     aria-valuemax="${total}"
+                     aria-valuenow="${Math.min(state.current_step, total)}"
+                     aria-valuetext="${escapeHtml(isDone ? caption : caption + ': ' + currentName)}">
+                    ${segments}
+                </div>
+            </div>
+        `;
     }
 
     function renderContent() {
@@ -314,6 +355,27 @@
         });
     }
 
+    // Atributos con un único valor permitido (restricción del pack): se seleccionan y guardan
+    // directamente en el estado, sin re-renderizar (selectAttribute re-renderiza).
+    function autoSelectSingleValues(productId, attributes) {
+        const intProductId = parseInt(productId);
+        let changed = false;
+        attributes.forEach(attr => {
+            const values = attr.values || [];
+            const current = state.selections[intProductId] && state.selections[intProductId][attr.name];
+            if (values.length === 1 && !current) {
+                if (!state.selections[intProductId]) {
+                    state.selections[intProductId] = {};
+                }
+                state.selections[intProductId][attr.name] = values[0].id;
+                changed = true;
+            }
+        });
+        if (changed) {
+            saveState();
+        }
+    }
+
     function renderSingleProductInCategory(step, categoryProducts, selectedId, container) {
         const product = categoryProducts[0];
         if (!product) {
@@ -326,6 +388,7 @@
             state.selected_product[step.key] = productId;
         }
 
+        autoSelectSingleValues(productId, product.attributes || []);
         const selection = state.selections[productId] || {};
         const attributes = product.attributes || [];
         const isPreselected = product.is_preselected || false;
@@ -383,6 +446,7 @@
                 return;
             }
 
+            autoSelectSingleValues(selectedId, selectedProduct.attributes || []);
             const selection = state.selections[selectedId] || {};
             const attributes = selectedProduct.attributes || [];
 
@@ -496,7 +560,7 @@
         return `
             <div class="hg-preselected-info">
                 <i class="fa fa-check-circle"></i>
-                <span>Incluye: ${preselectedNames.join(' + ')}</span>
+                <span>Incluye:&nbsp;${preselectedNames.join(' + ')}</span>
             </div>
         `;
     }
@@ -970,9 +1034,9 @@
             state.products = flatProducts;
         }
 
-        // Cargar productos de mano de obra
+        // Cargar productos de mano de obra (siempre desde el DOM: el precio del servidor manda sobre el guardado)
         const labourContainer = document.getElementById('hg-labour-data');
-        if (labourContainer && (!state.labour_products || state.labour_products.length === 0)) {
+        if (labourContainer) {
             const labourItems = labourContainer.querySelectorAll('.hg-labour-item');
             const labourList = [];
             labourItems.forEach(item => {

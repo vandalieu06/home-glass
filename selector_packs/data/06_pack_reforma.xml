@@ -31,6 +31,11 @@
             <field name="quantity">1</field>
             <field name="is_labour">True</field>
         </record>
+        <record id="pack_reforma_basic_line_5" model="pack.products">
+            <field name="product_tmpl_id" ref="pack_reforma_basic"/>
+            <field name="base_product_id" ref="azulejo_30x60_mate"/>
+            <field name="quantity">1</field>
+        </record>
 
         <!-- Reforma BASIC PLUS -->
         <record id="pack_reforma_basic_plus" model="product.template">

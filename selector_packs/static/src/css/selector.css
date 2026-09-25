@@ -389,6 +389,85 @@
   text-overflow: ellipsis;
 }
 
+/* Stepper móvil (< 1024px): "Paso N de M" + barra segmentada */
+.hg-stepper-mobile {
+  display: none;
+}
+
+.hg-progress-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--mm-space-sm);
+  min-width: 0;
+}
+
+.hg-progress-caption {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.50;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--mm-steel);
+  flex-shrink: 0;
+}
+
+.hg-progress-next {
+  font-size: 13px;
+  line-height: 1.50;
+  color: var(--mm-stone);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.hg-progress-current {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.40;
+  color: var(--mm-ink);
+  margin-top: 2px;
+}
+
+.hg-progress-segments {
+  display: flex;
+  gap: 4px;
+  margin-top: var(--mm-space-xs);
+}
+
+/* Botón con área táctil de 24px; la barra visible mide 6px */
+.hg-progress-segment {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hg-progress-segment:disabled {
+  cursor: default;
+}
+
+.hg-progress-bar {
+  display: block;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--mm-hairline);
+  transition: background 0.2s ease;
+}
+
+.hg-progress-segment.filled .hg-progress-bar {
+  background: var(--mm-primary);
+}
+
+.hg-progress-segment:focus-visible {
+  outline: 2px solid var(--mm-brand-blue-deep);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* ============================================
    CONTENT AREA
    ============================================ */
@@ -595,7 +674,8 @@
 
 .hg-attribute-select {
   width: 100%;
-  padding: var(--mm-space-sm) var(--mm-space-md);
+  /* Sin padding vertical: con 40px de alto, 12px arriba/abajo cortaban la línea de 24px */
+  padding: 0 var(--mm-space-md);
   border: 1px solid var(--mm-hairline);
   border-radius: var(--mm-rounded-md);
   font-size: 16px;
@@ -612,6 +692,8 @@
 .hg-attribute-select:focus {
   outline: none;
   border: 2px solid var(--mm-brand-blue-deep);
+  /* Compensa el borde de 2px para que el texto no se desplace */
+  padding-inline: calc(var(--mm-space-md) - 1px);
 }
 
 .hg-attribute-select:disabled {
@@ -823,10 +905,16 @@
   min-height: 80px;
 }
 
+/* Inputs de 40px: sin padding vertical para que quepa la línea de 24px */
+.hg-form-group input {
+  padding: 0 var(--mm-space-md);
+}
+
 .hg-form-group input:focus,
 .hg-form-group textarea:focus {
   outline: none;
   border: 2px solid var(--mm-brand-blue-deep);
+  padding-inline: calc(var(--mm-space-md) - 1px);
 }
 
 /* ============================================
@@ -934,21 +1022,18 @@
   }
 
   .hg-stepper-header h3 {
-    margin-bottom: var(--mm-space-md);
+    font-size: 16px;
+    margin-bottom: var(--mm-space-sm);
+    padding-bottom: var(--mm-space-sm);
   }
 
+  /* La lista lateral se sustituye por la barra de progreso */
   .hg-stepper-content-inner {
-    display: flex;
-    gap: var(--mm-space-xs);
-    overflow-x: auto;
-    padding-bottom: var(--mm-space-xs);
+    display: none;
   }
 
-  .hg-stepper-item {
-    flex-shrink: 0;
-    white-space: nowrap;
-    margin-bottom: 0;
-    padding: var(--mm-space-xs) var(--mm-space-sm);
+  .hg-stepper-mobile {
+    display: block;
   }
 
   .hg-content {
@@ -958,6 +1043,12 @@
 
 /* Mobile: < 768px */
 @media (max-width: 767px) {
+  /* DESIGN.md: inputs de 44px en mobile */
+  .hg-attribute-select,
+  .hg-form-group input {
+    height: 44px;
+  }
+
   .hg-container {
     padding-left: var(--mm-space-md);
     padding-right: var(--mm-space-md);

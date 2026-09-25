@@ -17,6 +17,7 @@
         'data/06_pack_reforma.xml',
         'data/07_limpieza_menus.xml',
         'views/templates.xml',
+        'views/product_pack_views.xml',
         'views/website_pages.xml',
         'views/report_views.xml',
     ],
