@@ -610,7 +610,6 @@ msgstr ""
 "combinant disseny, funcionalitat i preu just."
 
 #. module: selector_packs
-#: model:website.menu,name:selector_packs.menu_inicio
 #: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
 msgid "Inicio"
 msgstr "Inici"
@@ -1745,11 +1744,6 @@ msgstr "Set 90 2C"
 #: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
 msgid "Sobre Nosotros"
 msgstr "Sobre Nosaltres"
-
-#. module: selector_packs
-#: model:website.menu,name:selector_packs.menu_contacto
-msgid "Contáctenos"
-msgstr "Contacteu"
 
 #. module: selector_packs
 #: model_terms:ir.ui.view,arch_db:selector_packs.report_presupuesto_template

@@ -15,6 +15,7 @@
         'data/04_muebles_bano_fase1.xml',
         'data/05_productos_simples.xml',
         'data/06_pack_reforma.xml',
+        'data/07_limpieza_menus.xml',
         'views/templates.xml',
         'views/website_pages.xml',
         'views/report_views.xml',
@@ -22,6 +23,7 @@
     'assets': {
         'web.assets_frontend': [
             'selector_packs/static/src/css/selector.css',
+            'selector_packs/static/src/css/website.css',
             'selector_packs/static/src/js/selector.js',
         ],
     },

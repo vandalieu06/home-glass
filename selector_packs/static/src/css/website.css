@@ -5,7 +5,7 @@
 /* Sticky white header bar */
 header#top {
   position: sticky !important;
-  top: 0;
+  top: 0 !important;
   z-index: 1030;
   background: var(--mm-canvas);
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -803,72 +803,6 @@ header .js_language_selector .o_add_language i {
   height: 120px;
   width: auto;
   display: inline-block;
-}
-
-.o_footer_copyright {
-  display: none !important;
-}
-
-.hg-footer-lang {
-  text-align: center;
-  padding: var(--mm-space-lg) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hg-footer-lang .js_language_selector {
-  display: inline-flex;
-  align-items: center;
-}
-
-.hg-footer-lang .js_language_selector .btn.hg-footer-lang-btn {
-  background: transparent;
-  color: var(--mm-muted);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 13px;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.hg-footer-lang .js_language_selector .btn.hg-footer-lang-btn:hover,
-.hg-footer-lang .js_language_selector .btn.hg-footer-lang-btn:focus {
-  border-color: rgba(255, 255, 255, 0.4);
-  color: var(--mm-on-dark);
-}
-
-.hg-footer-lang .js_language_selector .btn.hg-footer-lang-btn::after {
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-.hg-footer-lang .js_language_selector .hg-footer-lang-dropdown {
-  background: var(--mm-primary);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 8px;
-  padding: 4px 0;
-  margin-bottom: 4px;
-  min-width: 140px;
-}
-
-.hg-footer-lang .js_language_selector .hg-footer-lang-dropdown .dropdown-item {
-  color: var(--mm-muted);
-  font-size: 13px;
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  padding: 6px 16px;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.hg-footer-lang .js_language_selector .hg-footer-lang-dropdown .dropdown-item:hover,
-.hg-footer-lang .js_language_selector .hg-footer-lang-dropdown .dropdown-item:focus {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--mm-on-dark);
-}
-
-.hg-footer-lang .js_language_selector .hg-footer-lang-dropdown .dropdown-item.active {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--mm-on-dark);
-  font-weight: 600;
 }
 
 .hg-footer-bottom {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- ========== LIMPIEZA MENÚS DUPLICADOS (un solo uso) ========== -->
+        <!-- Borra las copias por website de los antiguos menús Inicio y Contáctenos
+             de selector_packs, que duplicaban website.menu_home y website.menu_contactus.
+             Se ejecuta una vez y Odoo lo deja inactivo (numbercall=1). -->
+        <record id="cron_limpieza_menus_duplicados" model="ir.cron">
+            <field name="name">Home Glass: limpieza menús duplicados (un solo uso)</field>
+            <field name="model_id" ref="website.model_website_menu"/>
+            <field name="state">code</field>
+            <!-- lang='en_US': compara con el nombre fuente, no con la traducción
+                 (en es_ES "Home" y "Contact us" del core se traducen como Inicio/Contáctenos).
+                 page_id=False: los menús del core tienen página asociada, los nuestros no. -->
+            <field name="code">env['website.menu'].with_context(lang='en_US').search([
+    ('website_id', '!=', False),
+    ('page_id', '=', False),
+    ('url', 'in', ['/', '/contactus']),
+    ('name', 'in', ['Inicio', 'Contáctenos']),
+]).unlink()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">1</field>
+            <field name="doall" eval="False"/>
+            <field name="nextcall" eval="DateTime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

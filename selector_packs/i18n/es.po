@@ -576,7 +576,6 @@ msgid ""
 msgstr ""
 
 #. module: selector_packs
-#: model:website.menu,name:selector_packs.menu_inicio
 #: model_terms:ir.ui.view,arch_db:selector_packs.custom_footer
 msgid "Inicio"
 msgstr ""
@@ -1687,11 +1686,6 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:selector_packs.page_sobre_nosotros
 #: model_terms:website.page,arch_db:selector_packs.website_page_sobre_nosotros
 msgid "Sobre Nosotros"
-msgstr ""
-
-#. module: selector_packs
-#: model:website.menu,name:selector_packs.menu_contacto
-msgid "Contáctenos"
 msgstr ""
 
 #. module: selector_packs
