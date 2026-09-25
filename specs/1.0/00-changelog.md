@@ -12,3 +12,4 @@ Correcciones tras la revisión de los commits e9f4b97 → f1df331 (mano de obra,
 | [06](06-restricciones-reforma-basic.md) | Restricciones y preselecciones por pack que no se aplican (Reforma BASIC) | Implementada | pendiente |
 | [07](07-imagenes-usuario-publico.md) | Imágenes de producto visibles para usuarios sin login | Implementada | pendiente |
 | [08](08-stepper-movil.md) | Indicador de pasos en móvil: barra de progreso | Implementada | pendiente |
+| [09](09-imagen-por-pack.md) | Imagen propia por pack en /reformas/packs (respaldo a la de ejemplo) | Implementada | pendiente |

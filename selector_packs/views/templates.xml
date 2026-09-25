@@ -27,9 +27,20 @@
                             <div t-attf-class="hg-pack-card hg-pack-accent-#{pack_color_idx}">
                                 <div class="hg-pack-accent-strip"/>
                                 <div class="hg-pack-image">
-                                    <img src="/selector_packs/static/src/img/web/home_glass_ejemplo_pack_reforma.jpeg"
+                                    <!-- Imagen del pack (subida desde el backend); si no tiene, la de ejemplo.
+                                         Se decide en servidor: /homeglass/image devuelve placeholder (200) si falta -->
+                                    <t t-set="pack_img_url" t-value="'/homeglass/image/%s/' % pack.id"/>
+                                    <t t-if="pack.image_1920">
+                                        <img t-att-src="pack_img_url + 'image_512'"
+                                             t-att-srcset="'%simage_512 1x, %simage_1024 2x' % (pack_img_url, pack_img_url)"
                                              t-att-alt="pack.name"
-                                             width="400" height="300"/>
+                                             width="400" height="300" loading="lazy"/>
+                                    </t>
+                                    <t t-else="">
+                                        <img src="/selector_packs/static/src/img/web/home_glass_ejemplo_pack_reforma.jpeg"
+                                             t-att-alt="pack.name"
+                                             width="400" height="300" loading="lazy"/>
+                                    </t>
                                 </div>
                                 <div class="hg-pack-content">
                                     <div class="hg-pack-title-row">
